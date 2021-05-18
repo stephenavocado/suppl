@@ -1,5 +1,24 @@
 Rails.application.routes.draw do
 
+  # Routes for the Project resource:
+
+  # CREATE
+  post("/insert_project", { :controller => "projects", :action => "create" })
+          
+  # READ
+  get("/projects", { :controller => "projects", :action => "index" })
+  
+  get("/projects/:path_id", { :controller => "projects", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_project/:path_id", { :controller => "projects", :action => "update" })
+  
+  # DELETE
+  get("/delete_project/:path_id", { :controller => "projects", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the User account:
 
   # SIGN UP FORM
