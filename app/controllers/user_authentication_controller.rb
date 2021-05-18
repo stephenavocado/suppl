@@ -41,14 +41,14 @@ class UserAuthenticationController < ApplicationController
     @user.email = params.fetch("query_email")
     @user.password = params.fetch("query_password")
     @user.password_confirmation = params.fetch("query_password_confirmation")
-    @user.user_type = params.fetch("query_user_type")
+    # @user.user_type = params.fetch("query_user_type")
     @user.username = params.fetch("query_username")
     @user.first_name = params.fetch("query_first_name")
     @user.last_name = params.fetch("query_last_name")
-    @user.comments_count = params.fetch("query_comments_count")
-    @user.projects_count = params.fetch("query_projects_count")
-    @user.invitations_sent_count = params.fetch("query_invitations_sent_count")
-    @user.invitation_requests_count = params.fetch("query_invitation_requests_count")
+    # @user.comments_count = params.fetch("query_comments_count")
+    # @user.projects_count = params.fetch("query_projects_count")
+    # @user.invitations_sent_count = params.fetch("query_invitations_sent_count")
+    # @user.invitation_requests_count = params.fetch("query_invitation_requests_count")
 
     save_status = @user.save
 
