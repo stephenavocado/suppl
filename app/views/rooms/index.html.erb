@@ -1,0 +1,134 @@
+<div>
+  <div>
+    <h1>
+      List of all rooms
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new room
+    </h2>
+
+    <form action="/insert_room" method="post">
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name">
+      </div>
+
+      <div>
+        <label for="project_id_box">
+          Project
+        </label>
+
+        <input type="text" id="project_id_box" name="query_project_id">
+      </div>
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <input type="text" id="description_box" name="query_description">
+      </div>
+
+      <div>
+        <label for="elements_count_box">
+          Elements count
+        </label>
+
+        <input type="text" id="elements_count_box" name="query_elements_count">
+      </div>
+
+      <button>
+        Create room
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Project
+        </th>
+
+        <th>
+          Description
+        </th>
+
+        <th>
+          Elements count
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_rooms.each do |a_room| %>
+      <tr>
+        <td>
+          <%= a_room.id %>
+        </td>
+
+        <td>
+          <%= a_room.name %>
+        </td>
+
+        <td>
+          <%= a_room.project_id %>
+        </td>
+
+        <td>
+          <%= a_room.description %>
+        </td>
+
+        <td>
+          <%= a_room.elements_count %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_room.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_room.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/rooms/<%= a_room.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

@@ -1,0 +1,116 @@
+<div>
+  <div>
+    <h1>
+      Room #<%= @the_room.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/rooms">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_room/<%= @the_room.id %>">
+          Delete room
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_room.name %>
+      </dd>
+
+      <dt>
+        Project
+      </dt>
+      <dd>
+        <%= @the_room.project_id %>
+      </dd>
+
+      <dt>
+        Description
+      </dt>
+      <dd>
+        <%= @the_room.description %>
+      </dd>
+
+      <dt>
+        Elements count
+      </dt>
+      <dd>
+        <%= @the_room.elements_count %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_room.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_room.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit room
+    </h2>
+
+    <form action="/modify_room/<%= @the_room.id %>"  method="post" >
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_room.name %>">
+      </div>
+
+      <div>
+        <label for="project_id_box">
+          Project
+        </label>
+
+        <input type="text" id="project_id_box" name="query_project_id" value="<%= @the_room.project_id %>">
+      </div>
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <input type="text" id="description_box" name="query_description" value="<%= @the_room.description %>">
+      </div>
+
+      <div>
+        <label for="elements_count_box">
+          Elements count
+        </label>
+
+        <input type="text" id="elements_count_box" name="query_elements_count" value="<%= @the_room.elements_count %>">
+      </div>
+
+      <button>
+        Update room
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

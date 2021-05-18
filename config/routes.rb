@@ -1,5 +1,24 @@
 Rails.application.routes.draw do
 
+  # Routes for the Room resource:
+
+  # CREATE
+  post("/insert_room", { :controller => "rooms", :action => "create" })
+          
+  # READ
+  get("/rooms", { :controller => "rooms", :action => "index" })
+  
+  get("/rooms/:path_id", { :controller => "rooms", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_room/:path_id", { :controller => "rooms", :action => "update" })
+  
+  # DELETE
+  get("/delete_room/:path_id", { :controller => "rooms", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the Project resource:
 
   # CREATE

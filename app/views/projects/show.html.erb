@@ -27,10 +27,10 @@
       </dd>
 
       <dt>
-        User
+        Created By
       </dt>
       <dd>
-        <%= @the_project.user_id %>
+        <%= @the_project.user.username %>
       </dd>
 
       <dt>
@@ -44,7 +44,7 @@
         Photo
       </dt>
       <dd>
-        <%= @the_project.photo %>
+        <img src="<%= @the_project.photo %>">
       </dd>
 
       <dt>
@@ -55,21 +55,21 @@
       </dd>
 
       <dt>
-        Invitations count
+        Collaborators
       </dt>
       <dd>
         <%= @the_project.invitations_count %>
       </dd>
 
       <dt>
-        Created at
+        Created
       </dt>
       <dd>
         <%= time_ago_in_words(@the_project.created_at) %> ago
       </dd>
 
       <dt>
-        Updated at
+        Last Update
       </dt>
       <dd>
         <%= time_ago_in_words(@the_project.updated_at) %> ago
@@ -128,3 +128,7 @@
 </div>
 
 <hr>
+
+<div>
+  <h2> Rooms </h2>
+</div>
