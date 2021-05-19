@@ -22,13 +22,13 @@ class RoomsController < ApplicationController
     the_room.name = params.fetch("query_name")
     the_room.project_id = params.fetch("query_project_id")
     the_room.description = params.fetch("query_description")
-    the_room.elements_count = params.fetch("query_elements_count")
+    # the_room.elements_count = params.fetch("query_elements_count")
 
     if the_room.valid?
       the_room.save
-      redirect_to("/rooms", { :notice => "Room created successfully." })
+      redirect_to("/projects", { :notice => "Room created successfully." })
     else
-      redirect_to("/rooms", { :notice => "Room failed to create successfully." })
+      redirect_to("/projects", { :notice => "Room failed to create successfully." })
     end
   end
 

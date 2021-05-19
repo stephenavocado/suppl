@@ -67,14 +67,6 @@
       <dd>
         <%= time_ago_in_words(@the_project.updated_at) %> ago
       </dd>
-
-      <dt>
-      Rooms
-      </dt>
-      <dd>
-        
-      </dd>
-
     </dl>
   </div>
 </div>
@@ -132,4 +124,72 @@
 
 <div>
   <h2> Rooms </h2>
+</div>
+
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          Name
+        </th>
+
+        <th>
+          Description
+        </th>
+      </tr>
+
+      <% @the_project.spaces.each do |a_room| %>
+      <tr>
+        <td>
+          <%= a_room.name %>
+        </td>
+
+        <td>
+          <%= a_room.description %>
+        </td>
+        
+        <td>
+          <a href="/rooms/<%= a_room.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<div>
+  <div>
+    <h2>
+      Add a new room
+    </h2>
+
+    <form action="/insert_room" method="post">
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name">
+      </div>
+
+      <div>
+        <input type="hidden" id="project_id_box" name="query_project_id" value="<%= @the_project.id %>">
+      </div>
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <input type="text" id="description_box" name="query_description">
+      </div>
+
+      <button>
+        Create room
+      </button>
+    </form>
+  </div>
 </div>
