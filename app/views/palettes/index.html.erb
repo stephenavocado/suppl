@@ -36,11 +36,10 @@
         <th>
         </th>
       </tr>
-
       <% @list_of_palettes.each do |a_palette| %>
       <tr>
         <td>
-          <%= a_palette.user_id %>
+          <%= a_palette.user.username %>
         </td>
 
         <td>

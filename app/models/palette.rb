@@ -12,4 +12,6 @@
 #  user_id     :integer
 #
 class Palette < ApplicationRecord
+  belongs_to(:user, { :required => false, :class_name => "User", :foreign_key => "user_id", :counter_cache => :pallets_count })
+  has_many(:saves, { :class_name => "Safe", :foreign_key => "palette_id", :dependent => :nullify })
 end
