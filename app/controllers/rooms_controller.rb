@@ -52,9 +52,10 @@ class RoomsController < ApplicationController
   def destroy
     the_id = params.fetch("path_id")
     the_room = Room.where({ :id => the_id }).at(0)
+    the_project_id = the_room.project_id
 
     the_room.destroy
 
-    redirect_to("/rooms", { :notice => "Room deleted successfully."} )
+    redirect_to("/projects/#{the_project_id}", { :notice => "Room deleted successfully."} )
   end
 end
