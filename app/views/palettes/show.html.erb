@@ -20,14 +20,7 @@
 
     <dl>
       <dt>
-        Material
-      </dt>
-      <dd>
-        <%= @the_palette.material_id %>
-      </dd>
-
-      <dt>
-        User
+        Created by
       </dt>
       <dd>
         <%= @the_palette.user_id %>
@@ -80,23 +73,6 @@
       Edit palette
     </h2>
 
-    <form action="/modify_palette/<%= @the_palette.id %>"  method="post" >
-      <div>
-        <label for="material_id_box">
-          Material
-        </label>
-
-        <input type="text" id="material_id_box" name="query_material_id" value="<%= @the_palette.material_id %>">
-      </div>
-
-      <div>
-        <label for="user_id_box">
-          User
-        </label>
-
-        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_palette.user_id %>">
-      </div>
-
       <div>
         <label for="name_box">
           Name
@@ -111,14 +87,6 @@
         </label>
 
         <input type="text" id="description_box" name="query_description" value="<%= @the_palette.description %>">
-      </div>
-
-      <div>
-        <label for="saves_count_box">
-          Saves count
-        </label>
-
-        <input type="text" id="saves_count_box" name="query_saves_count" value="<%= @the_palette.saves_count %>">
       </div>
 
       <button>
