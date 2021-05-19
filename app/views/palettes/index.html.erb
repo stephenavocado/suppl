@@ -4,77 +4,11 @@
       List of all palettes
     </h1>
   </div>
-</div>
 
-<hr>
-
-<div>
-  <div>
-    <h2>
-      Add a new palette
-    </h2>
-
-    <form action="/insert_palette" method="post">
-      <div>
-        <label for="material_id_box">
-          Material
-        </label>
-
-        <input type="text" id="material_id_box" name="query_material_id">
-      </div>
-
-      <div>
-        <label for="user_id_box">
-          User
-        </label>
-
-        <input type="text" id="user_id_box" name="query_user_id">
-      </div>
-
-      <div>
-        <label for="name_box">
-          Name
-        </label>
-
-        <input type="text" id="name_box" name="query_name">
-      </div>
-
-      <div>
-        <label for="description_box">
-          Description
-        </label>
-
-        <input type="text" id="description_box" name="query_description">
-      </div>
-
-      <div>
-        <label for="saves_count_box">
-          Saves count
-        </label>
-
-        <input type="text" id="saves_count_box" name="query_saves_count">
-      </div>
-
-      <button>
-        Create palette
-      </button>
-    </form>
-  </div>
-</div>
-
-<hr>
 <div>
   <div>
     <table>
       <tr>
-        <th>
-          ID
-        </th>
-
-        <th>
-          Material
-        </th>
-
         <th>
           User
         </th>
@@ -106,14 +40,6 @@
       <% @list_of_palettes.each do |a_palette| %>
       <tr>
         <td>
-          <%= a_palette.id %>
-        </td>
-
-        <td>
-          <%= a_palette.material_id %>
-        </td>
-
-        <td>
           <%= a_palette.user_id %>
         </td>
 
@@ -144,6 +70,50 @@
       </tr>
       <% end %>
     </table>
+  </div>
+</div>
+
+
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new palette
+    </h2>
+
+    <form action="/insert_palette" method="post">
+      <div>
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name">
+      </div>
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <input type="text" id="description_box" name="query_description">
+      </div>
+
+      <button>
+        Create palette
+      </button>
+    </form>
   </div>
 </div>
 
