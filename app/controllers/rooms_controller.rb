@@ -26,9 +26,9 @@ class RoomsController < ApplicationController
 
     if the_room.valid?
       the_room.save
-      redirect_to("/projects", { :notice => "Room created successfully." })
+      redirect_to("/projects/#{the_room.project_id}", { :notice => "Room created successfully." })
     else
-      redirect_to("/projects", { :notice => "Room failed to create successfully." })
+      redirect_to("/projects/#{the_room.project_id}", { :notice => "Room failed to create successfully." })
     end
   end
 
