@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_18_171117) do
+ActiveRecord::Schema.define(version: 2021_05_19_043934) do
+
+  create_table "palettes", force: :cascade do |t|
+    t.integer "material_id"
+    t.integer "user_id"
+    t.integer "name"
+    t.string "description"
+    t.integer "saves_count"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string "project_name"

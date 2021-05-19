@@ -1,5 +1,24 @@
 Rails.application.routes.draw do
 
+  # Routes for the Palette resource:
+
+  # CREATE
+  post("/insert_palette", { :controller => "palettes", :action => "create" })
+          
+  # READ
+  get("/palettes", { :controller => "palettes", :action => "index" })
+  
+  get("/palettes/:path_id", { :controller => "palettes", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_palette/:path_id", { :controller => "palettes", :action => "update" })
+  
+  # DELETE
+  get("/delete_palette/:path_id", { :controller => "palettes", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the Room resource:
 
   # CREATE
