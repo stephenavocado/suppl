@@ -4,7 +4,7 @@ class RoomsController < ApplicationController
 
     @list_of_rooms = matching_rooms.order({ :created_at => :desc })
 
-    render({ :template => "rooms/index.html.erb" })
+    redirect_to({ :template => "rooms/index.html.erb" })
   end
 
   def show

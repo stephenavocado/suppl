@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      Project #<%= @the_project.id %> details
+      <%= @the_project.project_name %>
     </h1>
 
     <div>
@@ -48,13 +48,6 @@
       </dd>
 
       <dt>
-        Spaces count
-      </dt>
-      <dd>
-        <%= @the_project.spaces_count %>
-      </dd>
-
-      <dt>
         Collaborators
       </dt>
       <dd>
@@ -74,6 +67,14 @@
       <dd>
         <%= time_ago_in_words(@the_project.updated_at) %> ago
       </dd>
+
+      <dt>
+      Rooms
+      </dt>
+      <dd>
+        
+      </dd>
+
     </dl>
   </div>
 </div>

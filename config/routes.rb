@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   # READ
   get("/projects", { :controller => "projects", :action => "index" })
   
-  get("/projects/:path_id", { :controller => "projects", :action => "show" })
+  get("/projects/:an_id", { :controller => "projects", :action => "show" })
   
   # UPDATE
   

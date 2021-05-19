@@ -108,18 +108,7 @@
         <td>
           <%= a_room.description %>
         </td>
-
-        <td>
-          <%= a_room.elements_count %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(a_room.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_room.updated_at) %> ago
-        </td>
-
+        
         <td>
           <a href="/rooms/<%= a_room.id %>">
             Show details

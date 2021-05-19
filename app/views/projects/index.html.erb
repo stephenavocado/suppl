@@ -60,15 +60,11 @@
     <table>
       <tr>
         <th>
-          ID
-        </th>
-
-        <th>
           Project name
         </th>
 
         <th>
-          User
+          Created By
         </th>
 
         <th>
@@ -80,11 +76,7 @@
         </th>
 
         <th>
-          Spaces count
-        </th>
-
-        <th>
-          Invitations count
+          Collaborators
         </th>
 
         <th>
@@ -102,10 +94,6 @@
       <% @list_of_projects.each do |a_project| %>
       <tr>
         <td>
-          <%= a_project.id %>
-        </td>
-
-        <td>
           <%= a_project.project_name %>
         </td>
 
@@ -119,10 +107,6 @@
 
         <td>
           <img src="<%= a_project.photo %>"
-        </td>
-
-        <td>
-          <%= a_project.spaces_count %>
         </td>
 
         <td>

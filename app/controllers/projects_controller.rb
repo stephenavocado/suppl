@@ -8,7 +8,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    the_id = params.fetch("path_id")
+    the_id = params.fetch("an_id")
 
     matching_projects = Project.where({ :id => the_id })
 
