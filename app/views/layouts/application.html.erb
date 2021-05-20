@@ -34,11 +34,18 @@
       <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
       </ul>
       <a href="/">Home</a>
-      <a href="/user_sign_up">Sign Up</a>
+
+      <% if session.fetch(:user_id) == nil %>
       <a href="/user_sign_in">Sign In</a>
+      <a href="/user_sign_up">Sign Up</a>
+      <% end %>
+
+      <% if session.fetch(:user_id) != nil %>
       <a href="/user_sign_out">Sign Out</a>
       <a href="/projects">Projects</a>
       <a href="/palettes">Palettes</a>
+      <% end %>
+      
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
