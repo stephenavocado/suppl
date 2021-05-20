@@ -158,13 +158,20 @@
   </div>
 </div>
 
-<div>
-  <div>
-    <h2>
-      Add a new room
-    </h2>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+<i class="fas fa-plus-circle"></i> New Room
+</button>
 
-    <form action="/insert_room" method="post">
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Add new room</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+      <form action="/insert_room" method="post">
       <div>
         <label for="name_box">
           Name
@@ -189,6 +196,12 @@
         Create room
       </button>
     </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Create Room</button>
+      </div>
+    </div>
   </div>
 </div>
 
