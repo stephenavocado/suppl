@@ -48,10 +48,12 @@
       <a class="btn btn-dark" href="/palettes"><i class="fas fa-swatchbook"></i></a>
       <% end %>
       
+      <% if request.path != "/" %>
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <input class="form-control me-2" type="search" name="query_search" placeholder="Suppl away..." aria-label="Search">
+        <button class="btn btn-outline-dark" type="submit">Search</button>
       </form>
+      <% end %>
     </div>
   </div>
 </nav>
