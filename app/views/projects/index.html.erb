@@ -1,8 +1,88 @@
 <div>
   <div>
     <h1>
-      List of all projects
+      Projects
     </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          Project name
+        </th>
+
+        <th>
+          Created By
+        </th>
+
+        <th>
+          Description
+        </th>
+
+        <th>
+          Photo
+        </th>
+
+        <th>
+          Collaborators
+        </th>
+
+        <th>
+          Created
+        </th>
+
+        <th>
+          Last Update
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_projects.each do |a_project| %>
+         <%if a_project.user_id == session.fetch(:user_id)%>
+      <tr>
+        <td>
+          <%= a_project.project_name %>
+        </td>
+
+        <td>
+          <%= a_project.user.username %>
+        </td>
+
+        <td>
+          <%= a_project.description %>
+        </td>
+
+        <td>
+          <img src="<%= a_project.photo %>" width="100" height="100">
+        </td>
+
+        <td>
+          <%= a_project.invitations_count %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_project.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_project.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/projects/<%= a_project.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+        <% end %>
+      <% end %>
+    </table>
   </div>
 </div>
 
@@ -53,82 +133,3 @@
     </form>
   </div>
 </div>
-
-<hr>
-<div>
-  <div>
-    <table>
-      <tr>
-        <th>
-          Project name
-        </th>
-
-        <th>
-          Created By
-        </th>
-
-        <th>
-          Description
-        </th>
-
-        <th>
-          Photo
-        </th>
-
-        <th>
-          Collaborators
-        </th>
-
-        <th>
-          Created
-        </th>
-
-        <th>
-          Last Update
-        </th>
-
-        <th>
-        </th>
-      </tr>
-
-      <% @list_of_projects.each do |a_project| %>
-      <tr>
-        <td>
-          <%= a_project.project_name %>
-        </td>
-
-        <td>
-          <%= a_project.user.username %>
-        </td>
-
-        <td>
-          <%= a_project.description %>
-        </td>
-
-        <td>
-          <img src="<%= a_project.photo %>"
-        </td>
-
-        <td>
-          <%= a_project.invitations_count %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(a_project.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_project.updated_at) %> ago
-        </td>
-
-        <td>
-          <a href="/projects/<%= a_project.id %>">
-            Show details
-          </a>
-        </td>
-      </tr>
-      <% end %>
-    </table>
-  </div>
-</div>
-
-<hr>
