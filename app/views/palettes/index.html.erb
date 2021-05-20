@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      List of all palettes
+      Your Palettes
     </h1>
   </div>
 
@@ -86,11 +86,7 @@
     <form action="/insert_palette" method="post">
       <div>
       <div>
-        <label for="user_id_box">
-          User
-        </label>
-
-        <input type="text" id="user_id_box" name="query_user_id">
+        <input type="hidden" name="query_user_id" value="<%= session.fetch(:user_id) %>">
       </div>
 
       <div>
