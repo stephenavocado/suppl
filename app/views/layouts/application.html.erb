@@ -42,10 +42,8 @@
 
       <% if session.fetch(:user_id) != nil %>
       <a href="/user_sign_out">Sign Out</a>
-      <i class="fas fa-building"></i>
-      <a href="/projects">Projects</a>
-      <i class="fas fa-swatchbook"></i>
-      <a href="/palettes">Palettes</a>
+      <a class="btn btn-dark" href="/projects"><i class="fas fa-building"></i></a>
+      <a class="btn btn-dark" href="/palettes"><i class="fas fa-swatchbook"></i></a>
       <% end %>
       
       <form class="d-flex">

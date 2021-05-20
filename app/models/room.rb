@@ -13,5 +13,5 @@
 class Room < ApplicationRecord
   belongs_to(:project, { :required => false, :class_name => "Project", :foreign_key => "project_id" })
   # , :counter_cache => :spaces_count
-  # has_many(:elements, { :class_name => "Element", :foreign_key => "room_id", :dependent => :destroy })
+  has_many(:elements, { :class_name => "Element", :foreign_key => "room_id", :dependent => :destroy })
 end
