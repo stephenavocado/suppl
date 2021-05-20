@@ -126,43 +126,31 @@
   <h2> Rooms </h2>
 </div>
 
+<hr>
+
 <div>
   <div>
-    <table>
-      <tr>
-        <th>
-          Name
-        </th>
-
-        <th>
-          Description
-        </th>
-      </tr>
-
       <% @the_project.spaces.each do |a_room| %>
-      <tr>
-        <td>
+        <h4>
           <%= a_room.name %>
-        </td>
+        </h4>
 
-        <td>
+        <div>
           <%= a_room.description %>
-        </td>
+        </div>
         
-        <td>
+        <div>
           <a href="/rooms/<%= a_room.id %>">
             Show details
           </a>
-        </td>
+        </div>
 
-        <td>
+        <div>
           <a href="/delete_room/<%=a_room.id%>">
           Delete Room
           </a>
-        </td>
-      </tr>
+        </div>
       <% end %>
-    </table>
   </div>
 </div>
 
