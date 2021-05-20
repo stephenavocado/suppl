@@ -81,13 +81,22 @@
 
 <hr>
 
-<div>
-  <div>
-    <h2>
-      Add a new palette
-    </h2>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+<i class="fas fa-plus-circle"></i> New Palette
+</button>
 
-    <form action="/insert_palette" method="post">
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Add new palette</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body"> 
+      
+      <! modal body >
+
+<form action="/insert_palette" method="post">
       <div>
       <div>
         <input type="hidden" name="query_user_id" value="<%= session.fetch(:user_id) %>">
@@ -115,5 +124,11 @@
     </form>
   </div>
 </div>
+    
+      <! modal body end>
 
-<hr>
+    </form>
+      </div>
+    </div>
+  </div>
+</div>
