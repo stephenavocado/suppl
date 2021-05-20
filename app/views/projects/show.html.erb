@@ -131,6 +131,10 @@
 <div>
   <div>
       <% @the_project.spaces.each do |a_room| %>
+        <% a_room.elements.each do |an_element|%>
+          <%= an_element.name %>
+        <% end %>
+
         <h4>
           <%= a_room.name %>
         </h4>
