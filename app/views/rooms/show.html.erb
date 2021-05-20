@@ -83,14 +83,6 @@
       </div>
 
       <div>
-        <label for="project_id_box">
-          Project
-        </label>
-
-        <input type="text" id="project_id_box" name="query_project_id" value="<%= @the_room.project_id %>">
-      </div>
-
-      <div>
         <label for="description_box">
           Description
         </label>
@@ -98,13 +90,6 @@
         <input type="text" id="description_box" name="query_description" value="<%= @the_room.description %>">
       </div>
 
-      <div>
-        <label for="elements_count_box">
-          Elements count
-        </label>
-
-        <input type="text" id="elements_count_box" name="query_elements_count" value="<%= @the_room.elements_count %>">
-      </div>
 
       <button>
         Update room
@@ -114,3 +99,60 @@
 </div>
 
 <hr>
+
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          Name
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @the_room.elements.each do |an_element| %>
+      <tr>
+        <td>
+          <%= an_element.name %>
+        </td>
+
+        <td>
+          <a href="/elements/<%= an_element.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new element
+    </h2>
+
+    <form action="/insert_element" method="post">
+      <div>
+        <input type="hidden" id="room_id_box" name="query_room_id" value="<%= @the_room.id %>">
+      </div>
+
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name">
+      </div>
+
+      <button>
+        Create element
+      </button>
+    </form>
+  </div>
+</div>

@@ -21,13 +21,13 @@ class ElementsController < ApplicationController
     the_element = Element.new
     the_element.room_id = params.fetch("query_room_id")
     the_element.name = params.fetch("query_name")
-    the_element.saves_count = params.fetch("query_saves_count")
+    # the_element.saves_count = params.fetch("query_saves_count")
 
     if the_element.valid?
       the_element.save
-      redirect_to("/elements", { :notice => "Element created successfully." })
+      redirect_to("/rooms/#{the_element.room_id}", { :notice => "Element created successfully." })
     else
-      redirect_to("/elements", { :notice => "Element failed to create successfully." })
+      redirect_to("/rooms/#{the_element.room_id}", { :notice => "Element failed to create successfully." })
     end
   end
 
