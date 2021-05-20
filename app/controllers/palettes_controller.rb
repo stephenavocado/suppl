@@ -21,7 +21,7 @@ class PalettesController < ApplicationController
     the_palette = Palette.new
     # the_palette.material_id = params.fetch("query_material_id")
     the_palette.user_id = params.fetch("query_user_id")
-    the_palette.name = params.fetch("query_name")
+    the_palette.palette_name = params.fetch("query_name")
     the_palette.description = params.fetch("query_description")
     # the_palette.saves_count = params.fetch("query_saves_count")
 
