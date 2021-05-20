@@ -1,5 +1,24 @@
 Rails.application.routes.draw do
 
+  # Routes for the Element resource:
+
+  # CREATE
+  post("/insert_element", { :controller => "elements", :action => "create" })
+          
+  # READ
+  get("/elements", { :controller => "elements", :action => "index" })
+  
+  get("/elements/:path_id", { :controller => "elements", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_element/:path_id", { :controller => "elements", :action => "update" })
+  
+  # DELETE
+  get("/delete_element/:path_id", { :controller => "elements", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the Palette resource:
 
   # CREATE

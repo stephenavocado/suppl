@@ -1,0 +1,101 @@
+<div>
+  <div>
+    <h1>
+      Element #<%= @the_element.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/elements">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_element/<%= @the_element.id %>">
+          Delete element
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Room
+      </dt>
+      <dd>
+        <%= @the_element.room_id %>
+      </dd>
+
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_element.name %>
+      </dd>
+
+      <dt>
+        Saves count
+      </dt>
+      <dd>
+        <%= @the_element.saves_count %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_element.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_element.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit element
+    </h2>
+
+    <form action="/modify_element/<%= @the_element.id %>"  method="post" >
+      <div>
+        <label for="room_id_box">
+          Room
+        </label>
+
+        <input type="text" id="room_id_box" name="query_room_id" value="<%= @the_element.room_id %>">
+      </div>
+
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_element.name %>">
+      </div>
+
+      <div>
+        <label for="saves_count_box">
+          Saves count
+        </label>
+
+        <input type="text" id="saves_count_box" name="query_saves_count" value="<%= @the_element.saves_count %>">
+      </div>
+
+      <button>
+        Update element
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

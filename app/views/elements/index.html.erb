@@ -1,0 +1,118 @@
+<div>
+  <div>
+    <h1>
+      List of all elements
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new element
+    </h2>
+
+    <form action="/insert_element" method="post">
+      <div>
+        <label for="room_id_box">
+          Room
+        </label>
+
+        <input type="text" id="room_id_box" name="query_room_id">
+      </div>
+
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name">
+      </div>
+
+      <div>
+        <label for="saves_count_box">
+          Saves count
+        </label>
+
+        <input type="text" id="saves_count_box" name="query_saves_count">
+      </div>
+
+      <button>
+        Create element
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Room
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Saves count
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_elements.each do |an_element| %>
+      <tr>
+        <td>
+          <%= an_element.id %>
+        </td>
+
+        <td>
+          <%= an_element.room_id %>
+        </td>
+
+        <td>
+          <%= an_element.name %>
+        </td>
+
+        <td>
+          <%= an_element.saves_count %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(an_element.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(an_element.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/elements/<%= an_element.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>
