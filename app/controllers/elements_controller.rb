@@ -41,9 +41,9 @@ class ElementsController < ApplicationController
 
     if the_element.valid?
       the_element.save
-      redirect_to("/elements/#{the_element.id}", { :notice => "Element updated successfully."} )
+      redirect_to("/rooms/#{the_element.room_id}", { :notice => "Element updated successfully."} )
     else
-      redirect_to("/elements/#{the_element.id}", { :alert => "Element failed to update successfully." })
+      redirect_to("/rooms/#{the_element.room_id}", { :alert => "Element failed to update successfully." })
     end
   end
 
@@ -53,6 +53,6 @@ class ElementsController < ApplicationController
 
     the_element.destroy
 
-    redirect_to("/elements", { :notice => "Element deleted successfully."} )
+    redirect_to("/rooms/#{the_element.room_id}", { :notice => "Element deleted successfully."} )
   end
 end

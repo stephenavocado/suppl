@@ -100,6 +100,8 @@
 
 <hr>
 
+<h3>Elements</h3>
+
 <div>
   <div>
     <table>
@@ -122,6 +124,14 @@
           <a href="/elements/<%= an_element.id %>">
             Show details
           </a>
+        </td>
+
+        <td>
+        <a href="/delete_element/<%= an_element.id %>">
+          Delete element
+        </a>
+      </div>
+    </div>
         </td>
       </tr>
       <% end %>
