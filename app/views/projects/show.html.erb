@@ -203,7 +203,7 @@
     <% else%>
       <% active_class ="" %>
     <% end %>
-    <button class="nav-link <%= active_class %>" id="<%= a_room.name %>" data-bs-toggle="tab" data-bs-target="#<%= a_room.id %>" type="button" role="tab" aria-controls="nav-home" aria-selected="true"><%= a_room.name %></button>
+    <button class="nav-link <%= active_class %>" id="<%= a_room.name %>_<%= a_room.id%>" data-bs-toggle="tab" data-bs-target="#Room<%= a_room.id %>" type="button" role="tab" aria-controls="Room<%= a_room.id %>" aria-selected="true"><%= a_room.name %></button>
   <% end %>
   </div>
 
@@ -216,6 +216,6 @@
   <% else %>
     <% active_class = "" %>
   <% end %>
-  <div class="tab-pane fade <%= active_class %>" id="<%= a_room.id %>" role="tabpanel" aria-labelledby="<%= a_room.name %>">...</div>
+  <div class="tab-pane fade <%= active_class %>" id="Room<%= a_room.id %>" role="tabpanel" aria-labelledby="<%= a_room.name %>_<%= a_room.id%>"><%= a_room.description %></div>
 <% end %>
 </div>
