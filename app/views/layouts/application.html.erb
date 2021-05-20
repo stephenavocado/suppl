@@ -33,7 +33,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
       </ul>
+      <% if request.path != "/" %>
       <a href="/">Home</a>
+      <% end %>
 
       <% if session.fetch(:user_id) == nil %>
       <a href="/user_sign_in">Sign In</a>
