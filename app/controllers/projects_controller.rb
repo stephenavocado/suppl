@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
     the_project.project_name = params.fetch("query_project_name")
     the_project.user_id = params.fetch("query_user_id")
     the_project.description = params.fetch("query_description")
-    the_project.photo = params.fetch("photo_upload")
+    # the_project.photo = params.fetch("photo_upload")
     # the_project.spaces_count = params.fetch("query_spaces_count")
     # the_project.invitations_count = params.fetch("query_invitations_count")
 
