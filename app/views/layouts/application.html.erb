@@ -59,8 +59,13 @@
 </nav>
 
 <% if notice != nil %>
-<div class="alert alert-success" role="alert"><%= notice %></div>
+  <div class="alert alert-success alert-dismissible fade show" role="alert"> <%= notice %>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+  </button>
+</div></div>
 <% end %>
+
+
 
 <% if alert != nil %>
 <div class="alert alert-danger" role="alert"><%= alert %></div>
