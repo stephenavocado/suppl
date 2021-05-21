@@ -153,11 +153,15 @@
       </div>
 
       <div>
-        <label for="name_box">
-          Name
-        </label>
-
-        <input type="text" id="name_box" name="query_name">
+        
+      <label for="element_select">
+        Select Elements
+      </label>
+        <select id="element_select" name="query_element">
+          <option value="Lighting">Lighting</option>
+          <option value="Wall Covering">Wall Covering</option>
+          <option value="Countertops">Countertop</option>
+        </select>
       </div>
 
       <button>
@@ -166,3 +170,23 @@
     </form>
   </div>
 </div>
+
+<form action="/insert_element" method="post">
+
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="Flooring" id="flooring_check" name="query_flooring" checked>
+  <label class="form-check-label" for="flooring_check">
+    Flooring
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="Lighting" id="lighting_check" name="query_lighting">
+  <label class="form-check-label" for="lighting_check">
+    Lighting
+  </label>
+</div>
+
+  <button>
+    Create element
+  </button>
+</form>

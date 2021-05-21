@@ -73,14 +73,117 @@
 
 <hr>
 
-
 <div>
-  <div>
-    <h2>
-      Edit project
-    </h2>
+  <h2> Rooms </h2>
+</div>
 
-    <form action="/modify_project/<%= @the_project.id %>"  method="post" >
+      <%# @the_project.spaces.each do |a_room| %>
+      
+
+<hr>
+
+<! modal >
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+<i class="fas fa-plus-circle"></i> New Room
+</button>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Add new room</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body"> 
+
+      <! body >
+
+      <form action="/insert_room" method="post">
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name">
+      </div>
+
+      <div>
+        <input type="hidden" id="project_id_box" name="query_project_id" value="<%= @the_project.id %>">
+      </div>
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <input type="text" id="description_box" name="query_description">
+      </div>
+
+      <button>
+        Create room
+      </button>
+    </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<! modal >
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+  <% @the_project.spaces.each do |a_room| %>
+    <% if @the_project.spaces.first == a_room %>
+      <% active_class = "active"%>
+    <% else%>
+      <% active_class ="" %>
+    <% end %>
+    <button class="nav-link <%= active_class %>" id="<%= a_room.name %>_<%= a_room.id%>" data-bs-toggle="tab" data-bs-target="#Room<%= a_room.id %>" type="button" role="tab" aria-controls="Room<%= a_room.id %>" aria-selected="true"><%= a_room.name %></button>
+  <% end %>
+
+  </div>
+
+</nav>
+<div class="tab-content" id="nav-tabContent">
+
+ <% @the_project.spaces.each do |a_room| %>
+  <% if @the_project.spaces.first == a_room %>
+    <% active_class = "show active"%>
+  <% else %>
+    <% active_class = "" %>
+  <% end %>
+  <div class="tab-pane fade <%= active_class %>" id="Room<%= a_room.id %>" role="tabpanel" aria-labelledby="<%= a_room.name %>_<%= a_room.id%>">
+  
+  <%# a_room.elements.each do |an_element|%>
+  <%# end %>
+
+  <div>
+    <%= a_room.description %>
+  </div>
+
+  <div>
+    <%#= an_element.name %>
+  </div>
+
+  <div>
+    <a href="/rooms/<%= a_room.id %>">
+      Show details
+    </a>
+  </div>
+
+  <div>
+    <a href="/delete_room/<%=a_room.id%>">
+      Delete Room
+    </a>
+  </div>
+  </div>
+<% end %>
+
+</div>
+
+ <form action="/modify_project/<%= @the_project.id %>"  method="post" >
       <div>
         <label for="project_name_box">
           Project name
@@ -114,106 +217,8 @@
       </div>
 
       <button>
-        Update project
+        Update Project
       </button>
     </form>
-  </div>
-</div>
-
-<hr>
-
-<div>
-  <h2> Rooms </h2>
-</div>
-
-      <%# @the_project.spaces.each do |a_room| %>
-        <%# a_room.elements.each do |an_element|%>
-          <%#= an_element.name %>
-        <%# end %>
-
-<hr>
-
-<nav>
-  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-
-  <% @the_project.spaces.each do |a_room| %>
-    <% if @the_project.spaces.first == a_room %>
-      <% active_class = "active"%>
-    <% else%>
-      <% active_class ="" %>
-    <% end %>
-    <button class="nav-link <%= active_class %>" id="<%= a_room.name %>_<%= a_room.id%>" data-bs-toggle="tab" data-bs-target="#Room<%= a_room.id %>" type="button" role="tab" aria-controls="Room<%= a_room.id %>" aria-selected="true"><%= a_room.name %></button>
-  <% end %>
-  </div>
-
-</nav>
-<div class="tab-content" id="nav-tabContent">
-
- <% @the_project.spaces.each do |a_room| %>
-  <% if @the_project.spaces.first == a_room %>
-    <% active_class = "show active"%>
-  <% else %>
-    <% active_class = "" %>
-  <% end %>
-  <div class="tab-pane fade <%= active_class %>" id="Room<%= a_room.id %>" role="tabpanel" aria-labelledby="<%= a_room.name %>_<%= a_room.id%>">
-  <div>
-    <%= a_room.description %>
-  </div>
-
-  <div>
-    <a href="/rooms/<%= a_room.id %>">
-      Show details
-    </a>
-  </div>
-
-  <div>
-    <a href="/delete_room/<%=a_room.id%>">
-      Delete Room
-    </a>
-  </div>
-  </div>
-<% end %>
-</div>
-
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-<i class="fas fa-plus-circle"></i> New Room
-</button>
-
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Add new room</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-
-      <form action="/insert_room" method="post">
-      <div>
-        <label for="name_box">
-          Name
-        </label>
-
-        <input type="text" id="name_box" name="query_name">
-      </div>
-
-      <div>
-        <input type="hidden" id="project_id_box" name="query_project_id" value="<%= @the_project.id %>">
-      </div>
-
-      <div>
-        <label for="description_box">
-          Description
-        </label>
-
-        <input type="text" id="description_box" name="query_description">
-      </div>
-
-      <button>
-        Create room
-      </button>
-    </form>
-      </div>
-    </div>
   </div>
 </div>

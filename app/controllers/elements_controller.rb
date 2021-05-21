@@ -20,7 +20,15 @@ class ElementsController < ApplicationController
   def create
     the_element = Element.new
     the_element.room_id = params.fetch("query_room_id")
-    the_element.name = params.fetch("query_name")
+    # the_elements = params.fetch("query_element").split
+
+    # the_elements.each do |an_element|
+    #   the_element_an_element.id
+
+    # the_element.name = an_element.name
+    # end
+    
+    the_element.name = params.fetch("query_element")
     # the_element.saves_count = params.fetch("query_saves_count")
 
     if the_element.valid?
