@@ -18,8 +18,8 @@ class ElementsController < ApplicationController
   end
 
   def create
-    the_element = Element.new
-    the_element.room_id = params.fetch("query_room_id")
+    # the_element = Element.new
+    # the_element.room_id = params.fetch("query_room_id")
     # the_elements = params.fetch("query_element").split
 
     # the_elements.each do |an_element|
@@ -28,15 +28,25 @@ class ElementsController < ApplicationController
     # the_element.name = an_element.name
     # end
     
-    the_element.name = params.fetch("query_element")
+    element_names = params.fetch("query_elements")
+
+    element_names.each do |element_name|
+      e = Element.new
+      e.name = element_name
+      e.room_id = params.fetch("query_room_id")
+      e.save
+    end
+
+    redirect_to("/rooms/#{params.fetch("query_room_id")}", { :notice => "Elements created successfully." })
+
     # the_element.saves_count = params.fetch("query_saves_count")
 
-    if the_element.valid?
-      the_element.save
-      redirect_to("/rooms/#{the_element.room_id}", { :notice => "Element created successfully." })
-    else
-      redirect_to("/rooms/#{the_element.room_id}", { :notice => "Element failed to create successfully." })
-    end
+    # if the_element.valid?
+    #   the_element.save
+    #   redirect_to("/rooms/#{the_element.room_id}", { :notice => "Element created successfully." })
+    # else
+    #   redirect_to("/rooms/#{the_element.room_id}", { :notice => "Element failed to create successfully." })
+    # end
   end
 
   def update

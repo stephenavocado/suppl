@@ -10,7 +10,6 @@
 
 <% @list_of_projects.each do |a_project| %>
   <%if a_project.user_id == session.fetch(:user_id)%>
-
   <div class="card mw-100">
     <div class="card-body">
       <h5 class="card-title"><%= a_project.project_name %></h5>

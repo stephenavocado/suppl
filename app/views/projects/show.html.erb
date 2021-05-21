@@ -44,7 +44,7 @@
         Photo
       </dt>
       <dd>
-        <img src="<%= @the_project.photo %>" width="100" height="100">
+        <img src="<%= @the_project.photo %>" width="200" height="200" class="rounded">
       </dd>
 
       <dt>
@@ -179,6 +179,11 @@
     </a>
   </div>
   </div>
+
+  <% a_room.elements.each do |an_element| %>
+    <%= render "elements/element", { :the_element => an_element } %>
+  <% end %>
+
 <% end %>
 
 </div>
@@ -222,3 +227,4 @@
     </form>
   </div>
 </div>
+

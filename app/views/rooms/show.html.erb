@@ -172,15 +172,15 @@
 </div>
 
 <form action="/insert_element" method="post">
-
+<input type="hidden" id="room_id_box" name="query_room_id" value="<%= @the_room.id %>">
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="Flooring" id="flooring_check" name="query_flooring" checked>
+  <input class="form-check-input" type="checkbox" value="Flooring" id="flooring_check" name="query_elements[]" value="flooring" checked>
   <label class="form-check-label" for="flooring_check">
     Flooring
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="Lighting" id="lighting_check" name="query_lighting">
+  <input class="form-check-input" type="checkbox" value="Lighting" id="lighting_check" name="query_elements[]" value="lighting">
   <label class="form-check-label" for="lighting_check">
     Lighting
   </label>
