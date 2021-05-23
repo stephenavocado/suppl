@@ -43,19 +43,58 @@
         <a class="navbar-brand" href="/">Suppl</a>
    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       </ul>
       <% if request.path != "/" %>
       <a class="btn btn-outline-info" href="/"><i class="fas fa-igloo"></i></a>
       <% end %>
 
       <% if session.fetch(:user_id) == nil %>
-      <a class="btn btn-success" href="/user_sign_in">Sign In</a>
-      <a class="btn btn-warning" href="/user_sign_up">Sign Up</a>
+
+      <!-- Button trigger modal -->
+      <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <i class="fas fa-sign-in-alt"></i>
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <form action="/user_verify_credentials" method="post">
+              <div class="row mb-3">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail3" name="query_email">
+              </div>
+            </div>
+  
+            <div class="row mb-3">
+              <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" id="inputPassword3" name="query_password">
+                </div>
+            </div>
+
+            <hr>
+            <button type="submit" class="btn btn-outline-dark">Sign in</button>
+            </form>
+
+            <p>
+              Or, <a href="/user_sign_up">Sign up</a> instead.
+            </p>
+            
+          </div>
+        </div>
+      </div>
+
       <% end %>
 
       <% if session.fetch(:user_id) != nil %>
-      <a class="btn btn-danger" href="/user_sign_out">Sign Out</a>
       
       <a href="/projects" class="btn btn-outline-dark" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Projects">
       <i class="fas fa-building"></i>
@@ -70,6 +109,12 @@
         <button class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i></button>
       </form>
       <% end %>
+
+      <% if session.fetch(:user_id) != nil %>
+      <a class="btn btn-danger" href="/user_sign_out"><i class="fas fa-sign-out-alt"></i></a>
+      <% end %>
+
+
     </div>
   </div>
 </nav>
