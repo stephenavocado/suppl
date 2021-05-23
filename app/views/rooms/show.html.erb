@@ -147,30 +147,6 @@
       Add a new element
     </h2>
 
-    <form action="/insert_element" method="post">
-      <div>
-        <input type="hidden" id="room_id_box" name="query_room_id" value="<%= @the_room.id %>">
-      </div>
-
-      <div>
-        
-      <label for="element_select">
-        Select Elements
-      </label>
-        <select id="element_select" name="query_element">
-          <option value="Lighting">Lighting</option>
-          <option value="Wall Covering">Wall Covering</option>
-          <option value="Countertops">Countertop</option>
-        </select>
-      </div>
-
-      <button>
-        Create element
-      </button>
-    </form>
-  </div>
-</div>
-
 <form action="/insert_element" method="post">
 <input type="hidden" id="room_id_box" name="query_room_id" value="<%= @the_room.id %>">
 <div class="form-check">

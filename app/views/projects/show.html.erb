@@ -65,25 +65,22 @@
 <hr>
 
 <div>
-  <h2> Rooms </h2>
-</div>
-
-      <%# @the_project.spaces.each do |a_room| %>
-      
+  <h2> Spaces </h2>
+</div>   
 
 <hr>
 
 <! modal >
 
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-<i class="fas fa-plus-circle"></i> New Room
+<i class="fas fa-plus-circle"></i> New Space
 </button>
 
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Add new room</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Create new space</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body"> 
@@ -111,10 +108,10 @@
         <input type="text" id="description_box" name="query_description">
       </div>
 
-      <button>
-        Create room
-      </button>
-    </form>
+          <button>
+            Create room
+          </button>
+      </form>
       </div>
     </div>
   </div>
@@ -146,16 +143,9 @@
     <% active_class = "" %>
   <% end %>
   <div class="tab-pane fade <%= active_class %>" id="Room<%= a_room.id %>" role="tabpanel" aria-labelledby="<%= a_room.name %>_<%= a_room.id%>">
-  
-  <%# a_room.elements.each do |an_element|%>
-  <%# end %>
 
   <div>
     <%= a_room.description %>
-  </div>
-
-  <div>
-    <%#= an_element.name %>
   </div>
 
   <div>
@@ -165,7 +155,7 @@
   </div>
 
   <div>
-    <a href="/delete_room/<%=a_room.id%>">
+    <a href="/delete_room/<%= a_room.id %>">
       Delete Room
     </a>
   </div>

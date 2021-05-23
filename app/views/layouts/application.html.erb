@@ -22,13 +22,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    
+    <style>
+      .button-circle {
+          width: 30 px;
+          height: 30 px;
+          padding: 6 px 0 px;
+          border-radius: 15 px;
+          font-size: 8 px; 
+          text-align: center;
+          color: red
+      }
+    </style>
 
   </head>
 
   <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">Suppl</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Suppl</a>
    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
@@ -71,6 +83,7 @@
 <% end %>
 
     <div class="container pt-5">
+
       <%= yield %>
     </div>
   </body>
