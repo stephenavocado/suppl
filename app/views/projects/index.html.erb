@@ -36,39 +36,36 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="/insert_project" method="post">
-      <div>
-        <label for="project_name_box">
-          Project name
-        </label>
 
-        <input type="text" id="project_name_box" name="query_project_name">
-      </div>
+      <form action="/insert_project" method="post">
+        <div class="row mb-3">
+          <label for="project_name" class="col-sm-2 col-form-label">Project Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="project_name" name="query_project_name">
+          </div>
+        </div>
 
-      <div>
-        <input type="hidden" id="user_id_box" name="query_user_id" value="<%= session.fetch(:user_id) %>">
-      </div>
+        <div>
+          <input type="hidden" id="user_id_box" name="query_user_id" value="<%= session.fetch(:user_id) %>">
+        </div>
+  
+        <div class="row mb-3">
+          <label for="description" class="col-sm-2 col-form-label">Description</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="description" name="query_description">
+          </div>
+        </div>
 
-      <div>
-        <label for="description_box">
-          Description
-        </label>
+        <div class="row mb-3">
+          <label for="photo" class="col-sm-2 col-form-label">Photo</label>
+          <div class="col-sm-10">
+            <input type="file" class="form-control" id="photo" name="query_photo">
+          </div>
+        </div>
 
-        <input type="text" id="description_box" name="query_description">
-      </div>
+  <button type="submit" class="btn btn-primary">Create Project</button>
+  </form>
 
-      <div>
-        <label for="photo">
-          Project Photo
-        </label>
-
-        <input type="file" id="photo" name="photo_upload">
-      </div>
-
-      <button>
-        Create project
-      </button>
-    </form>
       </div>
     </div>
   </div>
