@@ -56,7 +56,7 @@
   
       <ul class="dropdown-menu dropdown-menu-dark class dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton2">
         <% if session.fetch(:user_id) == nil %>
-        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal"><strong>Log In</strong></a></li>
+        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#signin"><strong>Log In</strong></a></li>
         <li><a class="dropdown-item" href="#">Sign Up</a></li>
         <% end %>
 
@@ -69,12 +69,12 @@
       </ul>
       </div>
 
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <!-- Sign In Modal -->
+      <div class="modal fade" id="signin" tabindex="-1" aria-labelledby="sign_in" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+              <h5 class="modal-title" id="sign_in">Sign In</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
