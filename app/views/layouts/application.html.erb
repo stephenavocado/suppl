@@ -51,9 +51,26 @@
 
       <% if session.fetch(:user_id) == nil %>
 
+      <div class="dropdown">
+        <button class="btn" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="far fa-user-circle fa-2x"></i>
+        </button>
+  
+      <ul class="dropdown-menu dropdown-menu-dark class dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton2">
+        <li><a class="dropdown-item active" href="#">Log In</a></li>
+        <li><a class="dropdown-item" href="#">Sign Up</a></li>
+
+        <% if session.fetch(:user_id) != nil %>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Log out</a></li>
+        <% end %>
+      </ul>
+      </div>
+
       <!-- Button trigger modal -->
       <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        <i class="fas fa-sign-in-alt"></i>
+        <i class="far fa-user-circle fa-2x"></i>
       </button>
 
       <!-- Modal -->

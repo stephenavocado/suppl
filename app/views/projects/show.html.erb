@@ -5,29 +5,69 @@
       <a href="/delete_project/<%= @the_project.id %>">
     Delete project
   </a>
+  
+<! Update project modal >
 
-  <button type="button" class="btn btn-primary">
+<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editproject">
+<i class="fas fa-edit"></i>
+</button>
 
-  <i class="fas fa-edit"></i>
+<div class="modal fade" id="editproject" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Update Project</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
 
-  </button>
+      <form action="/modify_project/<%= @the_project.id %>"  method="post">
+        <div class="row mb-3">
+          <label for="project_name" class="col-sm-2 col-form-label">Project Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="project_name" name="query_project_name" value="<%= @the_project.project_name %>">
+          </div>
+        </div>
+
+        <div>
+          <input type="hidden" id="user_id_box" name="query_user_id" value="<%= session.fetch(:user_id) %>">
+        </div>
+  
+        <div class="row mb-3">
+          <label for="description" class="col-sm-2 col-form-label">Description</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="description" name="query_description" value="<%= @the_project.description %>">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="photo" class="col-sm-2 col-form-label">Photo</label>
+          <div class="col-sm-10">
+            <input type="file" class="form-control" id="photo" name="query_photo">
+          </div>
+        </div>
+
+      <button type="submit" class="btn btn-primary">Update Project</button>
+      </form>
+
+      </div>
+    </div>
+  </div>
+</div>
     
     
     </li>
   </ol>
 </nav>
 
-<div>
-  <h2> Spaces </h2>
-</div>   
+<div class="row">
+<div class="col-md-2">
+  <h2> Spaces </h2> 
+  
+  <! modal >
 
-<hr>
-
-<! modal >
-
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-<i class="fas fa-plus-circle"></i> New Space
-</button>
+<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+<i class="fas fa-plus-circle"></i></button>
 
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -69,8 +109,13 @@
     </div>
   </div>
 </div>
+</div>
 
 <! modal >
+
+</div>   
+
+<hr>
 
 <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -155,51 +200,3 @@
 
 <hr>
 
-<! Edit project modal >
-
-<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editproject">
-<i class="fas fa-edit"></i>
-</button>
-
-<div class="modal fade" id="editproject" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Add new project</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-
-      <form action="/modify_project/<%= @the_project.id %>"  method="post">
-        <div class="row mb-3">
-          <label for="project_name" class="col-sm-2 col-form-label">Project Name</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="project_name" name="query_project_name" value="<%= @the_project.project_name %>">
-          </div>
-        </div>
-
-        <div>
-          <input type="hidden" id="user_id_box" name="query_user_id" value="<%= session.fetch(:user_id) %>">
-        </div>
-  
-        <div class="row mb-3">
-          <label for="description" class="col-sm-2 col-form-label">Description</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="description" name="query_description" value="<%= @the_project.description %>">
-          </div>
-        </div>
-
-        <div class="row mb-3">
-          <label for="photo" class="col-sm-2 col-form-label">Photo</label>
-          <div class="col-sm-10">
-            <input type="file" class="form-control" id="photo" name="query_photo">
-          </div>
-        </div>
-
-      <button type="submit" class="btn btn-primary">Update Project</button>
-      </form>
-
-      </div>
-    </div>
-  </div>
-</div>
