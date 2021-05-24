@@ -157,11 +157,12 @@
       Delete Room
     </a>
   </div>
-  </div>
 
-  <% a_room.elements.each do |an_element| %>
+ <% a_room.elements.each do |an_element| %>
     <%= render "elements/element", { :the_element => an_element } %>
   <% end %>
+
+</div>
 
 <% end %>
 </div>
