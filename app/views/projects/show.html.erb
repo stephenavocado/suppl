@@ -163,48 +163,9 @@
   <% end %>
 
 <% end %>
-
 </div>
 
- <form action="/modify_project/<%= @the_project.id %>"  method="post" >
-      <div>
-        <label for="project_name_box">
-          Project name
-        </label>
-
-        <input type="text" id="project_name_box" name="query_project_name" value="<%= @the_project.project_name %>">
-      </div>
-
-      <div>
-        <label for="user_id_box">
-          User
-        </label>
-
-        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_project.user_id %>">
-      </div>
-
-      <div>
-        <label for="description_box">
-          Description
-        </label>
-
-        <input type="text" id="description_box" name="query_description" value="<%= @the_project.description %>">
-      </div>
-
-      <div>
-        <label for="photo_box">
-          Photo
-        </label>
-
-        <input type="text" id="photo_box" name="query_photo" value="<%= @the_project.photo %>">
-      </div>
-
-      <button>
-        Update Project
-      </button>
-    </form>
-  </div>
-</div>
+<! off canvas >
 
 <button class="btn btn-outline-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fas fa-swatchbook"></i></button>
 
@@ -238,7 +199,7 @@
 
 <hr>
 
-<! Modal >
+<! Edit project modal >
 
 <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editproject">
 <i class="fas fa-edit"></i>
@@ -253,11 +214,11 @@
       </div>
       <div class="modal-body">
 
-      <form action="/insert_project" method="post">
+      <form action="/modify_project/<%= @the_project.id %>"  method="post">
         <div class="row mb-3">
           <label for="project_name" class="col-sm-2 col-form-label">Project Name</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="project_name" name="query_project_name">
+            <input type="text" class="form-control" id="project_name" name="query_project_name" value="<%= @the_project.project_name %>">
           </div>
         </div>
 
@@ -268,7 +229,7 @@
         <div class="row mb-3">
           <label for="description" class="col-sm-2 col-form-label">Description</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="description" name="query_description">
+            <input type="text" class="form-control" id="description" name="query_description" value="<%= @the_project.description %>">
           </div>
         </div>
 
@@ -279,7 +240,7 @@
           </div>
         </div>
 
-      <button type="submit" class="btn btn-primary">Create Project</button>
+      <button type="submit" class="btn btn-primary">Update Project</button>
       </form>
 
       </div>
