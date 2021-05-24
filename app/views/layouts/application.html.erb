@@ -45,11 +45,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       </ul>
-      <% if request.path != "/" %>
-      <a class="btn btn-outline-dark" href="/"><i class="fas fa-home"></i></a>
+      <% if session.fetch(:user_id) != nil %>
+      <a><strong>@<%= session.fetch(:user_id) %></strong></a>
       <% end %>
-
-      <% if session.fetch(:user_id) == nil %>
 
       <div class="dropdown">
         <button class="btn" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
@@ -57,13 +55,16 @@
         </button>
   
       <ul class="dropdown-menu dropdown-menu-dark class dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton2">
+        <% if session.fetch(:user_id) == nil %>
         <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal"><strong>Log In</strong></a></li>
         <li><a class="dropdown-item" href="#">Sign Up</a></li>
+        <% end %>
 
         <% if session.fetch(:user_id) != nil %>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li><a class="dropdown-item" href="/projects"><strong>Projects</strong></a></li>
+        <li><a class="dropdown-item" href="/palettes"><strong>Palettes</strong></a></li>
         <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Log out</a></li>
+        <li><a class="dropdown-item" href="/user_sign_out">Log out</a></li>
         <% end %>
       </ul>
       </div>
@@ -104,28 +105,12 @@
         </div>
       </div>
 
-      <% end %>
-
-      <% if session.fetch(:user_id) != nil %>
-      
-      <a href="/projects" class="btn btn-outline-dark" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Projects">
-      <i class="fas fa-building"></i>
-      </button></a>
-      
-      
-      <a class="btn btn-outline-dark" href="/palettes"><i class="fas fa-swatchbook"></i></a>
-    
-      <% end %>
       
       <% if request.path != "/" %>
       <form class="d-flex">
         <input class="form-control me-2" type="search" name="query_search" placeholder="Suppl away..." aria-label="Search">
         <button class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i></button>
       </form>
-      <% end %>
-
-      <% if session.fetch(:user_id) != nil %>
-      <a class="btn" href="/user_sign_out"><i class="fas fa-sign-out-alt"></i></a>
       <% end %>
 
 
