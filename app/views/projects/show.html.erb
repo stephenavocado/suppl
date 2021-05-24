@@ -1,7 +1,7 @@
 <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="/projects">Projects</a></li>
-    <li class="breadcrumb-item active" aria-current="page"><%= @the_project.project_name %></li>
+    <li class="breadcrumb-item active" aria-current="page"><strong><%= @the_project.project_name %></strong></li>
   </ol>
 </nav>
 
@@ -233,5 +233,56 @@
   </div>
   <div class="offcanvas-body">
     <p>Try scrolling the rest of the page to see this option in action.</p>
+  </div>
+</div>
+
+<hr>
+
+<! Modal >
+
+<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editproject">
+<i class="fas fa-edit"></i>
+</button>
+
+<div class="modal fade" id="editproject" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Add new project</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+      <form action="/insert_project" method="post">
+        <div class="row mb-3">
+          <label for="project_name" class="col-sm-2 col-form-label">Project Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="project_name" name="query_project_name">
+          </div>
+        </div>
+
+        <div>
+          <input type="hidden" id="user_id_box" name="query_user_id" value="<%= session.fetch(:user_id) %>">
+        </div>
+  
+        <div class="row mb-3">
+          <label for="description" class="col-sm-2 col-form-label">Description</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="description" name="query_description">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="photo" class="col-sm-2 col-form-label">Photo</label>
+          <div class="col-sm-10">
+            <input type="file" class="form-control" id="photo" name="query_photo">
+          </div>
+        </div>
+
+      <button type="submit" class="btn btn-primary">Create Project</button>
+      </form>
+
+      </div>
+    </div>
   </div>
 </div>
