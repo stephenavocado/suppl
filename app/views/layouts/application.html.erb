@@ -46,7 +46,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       </ul>
       <% if session.fetch(:user_id) != nil %>
-      <a><strong>@<%= session.fetch(:user_id) %></strong></a>
+      <a><strong>@<%= @current_user.username %></strong></a>
       <% end %>
 
       <div class="dropdown">

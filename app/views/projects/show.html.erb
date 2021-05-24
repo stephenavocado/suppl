@@ -143,7 +143,7 @@
   <div class="tab-pane fade <%= active_class %>" id="Room<%= a_room.id %>" role="tabpanel" aria-labelledby="<%= a_room.name %>_<%= a_room.id%>">
 
   <div>
-    <%= a_room.description %>
+    Decription: <%= a_room.description %>
   </div>
 
   <div>
@@ -158,9 +158,11 @@
     </a>
   </div>
 
- <% a_room.elements.each do |an_element| %>
-    <%= render "elements/element", { :the_element => an_element } %>
+  <div class="row">
+  <% a_room.elements.each do |an_element| %>
+    <div class="col-4"><%= render "elements/element", { :the_element => an_element } %></div>
   <% end %>
+  </div> 
 
 </div>
 
