@@ -46,7 +46,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       </ul>
       <% if request.path != "/" %>
-      <a class="btn btn-outline-info" href="/"><i class="fas fa-igloo"></i></a>
+      <a class="btn btn-outline-dark" href="/"><i class="fas fa-home"></i></a>
       <% end %>
 
       <% if session.fetch(:user_id) == nil %>
@@ -80,12 +80,13 @@
                 </div>
             </div>
 
-            <hr>
             <button type="submit" class="btn btn-outline-dark">Sign in</button>
             </form>
 
+            <hr>
+
             <p>
-              Or, <a href="/user_sign_up">Sign up</a> instead.
+              Or, <a href="/user_sign_up"><strong>Sign up</strong></a> instead.
             </p>
             
           </div>

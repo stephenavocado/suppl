@@ -1,5 +1,7 @@
 <h1>Sign up</h1>
 
+<hr>
+
 <form action="/insert_user" method="post">
 
   <div class="row mb-3">
@@ -16,33 +18,31 @@
     <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="query_username">
   </div>
 
-  <div>
-    <label for="email_box">Email</label>
-    <input id="email_box" name="query_email" placeholder="Choose a email..." type="text">
-  </div>
-                 
-  <div>
-    <label for="user_type">User type</label>
-    <select id="user_type" name="query_user_type">
-      <option value="designer">Designer</option>
-      <option value="supplier">Supplier</option>
-      <option value="owner">Owner</option>
-    </select>
-  </div>
-         
-  <div>
-    <label for="password_box">Password</label>
-    <input id="password_box" name="query_password" placeholder="Choose a password..." type="password">
+  <div class="input-group mb-3">
+    <input type="email" class="form-control" id="email_box" name="query_email" placeholder="Choose a email..." type="text">
   </div>
 
-  <div>
-    <label for="password_confirmation_box">Password Confirmation</label>
-    <input id="password_confirmation_box" name="query_password_confirmation" placeholder="Confirm your password..." type="password">
+  <div class="row mb-3">
+  <div class="col">
+    <input type="text" class="form-control" placeholder="Password" aria-label="password" name="query_password">
   </div>
 
-  <button>
-    Sign up
-  </button>
+  <div class="col">
+    <input type="text" class="form-control" placeholder="Confirm Password" aria-label="confirm_password" name="query_password_confirmation">
+  </div>
+  </div>
+
+  <div class="form-floating mb-3">
+  <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+    <option selected>Select User Type</option>
+    <option value="designer">Designer</option>
+    <option value="supplier">Supplier</option>
+    <option value="owner">Owner</option>
+  </select>
+  <label for="floatingSelect">User Type</label>
+</div>
+
+  <button type="submit" class="btn btn-outline-dark">Sign up</button>
 </form>
 
 <hr>
