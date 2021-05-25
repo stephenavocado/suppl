@@ -1,0 +1,101 @@
+<div>
+  <div>
+    <h1>
+      Manufacturer #<%= @the_manufacturer.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/manufacturers">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_manufacturer/<%= @the_manufacturer.id %>">
+          Delete manufacturer
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_manufacturer.name %>
+      </dd>
+
+      <dt>
+        Description
+      </dt>
+      <dd>
+        <%= @the_manufacturer.description %>
+      </dd>
+
+      <dt>
+        Materials count
+      </dt>
+      <dd>
+        <%= @the_manufacturer.materials_count %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_manufacturer.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_manufacturer.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit manufacturer
+    </h2>
+
+    <form action="/modify_manufacturer/<%= @the_manufacturer.id %>"  method="post" >
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_manufacturer.name %>">
+      </div>
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <input type="text" id="description_box" name="query_description" value="<%= @the_manufacturer.description %>">
+      </div>
+
+      <div>
+        <label for="materials_count_box">
+          Materials count
+        </label>
+
+        <input type="text" id="materials_count_box" name="query_materials_count" value="<%= @the_manufacturer.materials_count %>">
+      </div>
+
+      <button>
+        Update manufacturer
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

@@ -1,0 +1,401 @@
+<div>
+  <div>
+    <h1>
+      Material #<%= @the_material.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/materials">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_material/<%= @the_material.id %>">
+          Delete material
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Photo ref
+      </dt>
+      <dd>
+        <%= @the_material.photo_ref %>
+      </dd>
+
+      <dt>
+        Manufacturer
+      </dt>
+      <dd>
+        <%= @the_material.manufacturer_id %>
+      </dd>
+
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_material.name %>
+      </dd>
+
+      <dt>
+        Residential use
+      </dt>
+      <dd>
+        <%= @the_material.residential_use %>
+      </dd>
+
+      <dt>
+        Commercial use
+      </dt>
+      <dd>
+        <%= @the_material.commercial_use %>
+      </dd>
+
+      <dt>
+        Materials
+      </dt>
+      <dd>
+        <%= @the_material.materials %>
+      </dd>
+
+      <dt>
+        Price range
+      </dt>
+      <dd>
+        <%= @the_material.price_range %>
+      </dd>
+
+      <dt>
+        Description
+      </dt>
+      <dd>
+        <%= @the_material.description %>
+      </dd>
+
+      <dt>
+        Indoor outdoor
+      </dt>
+      <dd>
+        <%= @the_material.indoor_outdoor %>
+      </dd>
+
+      <dt>
+        Application
+      </dt>
+      <dd>
+        <%= @the_material.application %>
+      </dd>
+
+      <dt>
+        Manufacturer note
+      </dt>
+      <dd>
+        <%= @the_material.manufacturer_note %>
+      </dd>
+
+      <dt>
+        Flammability
+      </dt>
+      <dd>
+        <%= @the_material.flammability %>
+      </dd>
+
+      <dt>
+        Hardness
+      </dt>
+      <dd>
+        <%= @the_material.hardness %>
+      </dd>
+
+      <dt>
+        Availability
+      </dt>
+      <dd>
+        <%= @the_material.availability %>
+      </dd>
+
+      <dt>
+        Lead time
+      </dt>
+      <dd>
+        <%= @the_material.lead_time %>
+      </dd>
+
+      <dt>
+        Min units
+      </dt>
+      <dd>
+        <%= @the_material.min_units %>
+      </dd>
+
+      <dt>
+        Country of origin
+      </dt>
+      <dd>
+        <%= @the_material.country_of_origin %>
+      </dd>
+
+      <dt>
+        Content
+      </dt>
+      <dd>
+        <%= @the_material.content %>
+      </dd>
+
+      <dt>
+        Finish
+      </dt>
+      <dd>
+        <%= @the_material.finish %>
+      </dd>
+
+      <dt>
+        Construction
+      </dt>
+      <dd>
+        <%= @the_material.construction %>
+      </dd>
+
+      <dt>
+        Wood grade
+      </dt>
+      <dd>
+        <%= @the_material.wood_grade %>
+      </dd>
+
+      <dt>
+        Wood figuring
+      </dt>
+      <dd>
+        <%= @the_material.wood_figuring %>
+      </dd>
+
+      <dt>
+        Saves count
+      </dt>
+      <dd>
+        <%= @the_material.saves_count %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_material.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_material.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit material
+    </h2>
+
+    <form action="/modify_material/<%= @the_material.id %>"  method="post" >
+      <div>
+        <label for="photo_ref_box">
+          Photo ref
+        </label>
+
+        <input type="text" id="photo_ref_box" name="query_photo_ref" value="<%= @the_material.photo_ref %>">
+      </div>
+
+      <div>
+        <label for="manufacturer_id_box">
+          Manufacturer
+        </label>
+
+        <input type="text" id="manufacturer_id_box" name="query_manufacturer_id" value="<%= @the_material.manufacturer_id %>">
+      </div>
+
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_material.name %>">
+      </div>
+
+      <div>
+        <label for="residential_use_box">
+          Residential use
+        </label>
+
+        <input type="text" id="residential_use_box" name="query_residential_use" value="<%= @the_material.residential_use %>">
+      </div>
+
+      <div>
+        <label for="commercial_use_box">
+          Commercial use
+        </label>
+
+        <input type="text" id="commercial_use_box" name="query_commercial_use" value="<%= @the_material.commercial_use %>">
+      </div>
+
+      <div>
+        <label for="materials_box">
+          Materials
+        </label>
+
+        <input type="text" id="materials_box" name="query_materials" value="<%= @the_material.materials %>">
+      </div>
+
+      <div>
+        <label for="price_range_box">
+          Price range
+        </label>
+
+        <input type="text" id="price_range_box" name="query_price_range" value="<%= @the_material.price_range %>">
+      </div>
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <input type="text" id="description_box" name="query_description" value="<%= @the_material.description %>">
+      </div>
+
+      <div>
+        <label for="indoor_outdoor_box">
+          Indoor outdoor
+        </label>
+
+        <input type="text" id="indoor_outdoor_box" name="query_indoor_outdoor" value="<%= @the_material.indoor_outdoor %>">
+      </div>
+
+      <div>
+        <label for="application_box">
+          Application
+        </label>
+
+        <input type="text" id="application_box" name="query_application" value="<%= @the_material.application %>">
+      </div>
+
+      <div>
+        <label for="manufacturer_note_box">
+          Manufacturer note
+        </label>
+
+        <input type="text" id="manufacturer_note_box" name="query_manufacturer_note" value="<%= @the_material.manufacturer_note %>">
+      </div>
+
+      <div>
+        <label for="flammability_box">
+          Flammability
+        </label>
+
+        <input type="text" id="flammability_box" name="query_flammability" value="<%= @the_material.flammability %>">
+      </div>
+
+      <div>
+        <label for="hardness_box">
+          Hardness
+        </label>
+
+        <input type="text" id="hardness_box" name="query_hardness" value="<%= @the_material.hardness %>">
+      </div>
+
+      <div>
+        <label for="availability_box">
+          Availability
+        </label>
+
+        <input type="text" id="availability_box" name="query_availability" value="<%= @the_material.availability %>">
+      </div>
+
+      <div>
+        <label for="lead_time_box">
+          Lead time
+        </label>
+
+        <input type="text" id="lead_time_box" name="query_lead_time" value="<%= @the_material.lead_time %>">
+      </div>
+
+      <div>
+        <label for="min_units_box">
+          Min units
+        </label>
+
+        <input type="text" id="min_units_box" name="query_min_units" value="<%= @the_material.min_units %>">
+      </div>
+
+      <div>
+        <label for="country_of_origin_box">
+          Country of origin
+        </label>
+
+        <input type="text" id="country_of_origin_box" name="query_country_of_origin" value="<%= @the_material.country_of_origin %>">
+      </div>
+
+      <div>
+        <label for="content_box">
+          Content
+        </label>
+
+        <input type="text" id="content_box" name="query_content" value="<%= @the_material.content %>">
+      </div>
+
+      <div>
+        <label for="finish_box">
+          Finish
+        </label>
+
+        <input type="text" id="finish_box" name="query_finish" value="<%= @the_material.finish %>">
+      </div>
+
+      <div>
+        <label for="construction_box">
+          Construction
+        </label>
+
+        <input type="text" id="construction_box" name="query_construction" value="<%= @the_material.construction %>">
+      </div>
+
+      <div>
+        <label for="wood_grade_box">
+          Wood grade
+        </label>
+
+        <input type="text" id="wood_grade_box" name="query_wood_grade" value="<%= @the_material.wood_grade %>">
+      </div>
+
+      <div>
+        <label for="wood_figuring_box">
+          Wood figuring
+        </label>
+
+        <input type="text" id="wood_figuring_box" name="query_wood_figuring" value="<%= @the_material.wood_figuring %>">
+      </div>
+
+      <div>
+        <label for="saves_count_box">
+          Saves count
+        </label>
+
+        <input type="text" id="saves_count_box" name="query_saves_count" value="<%= @the_material.saves_count %>">
+      </div>
+
+      <button>
+        Update material
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

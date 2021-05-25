@@ -1,0 +1,438 @@
+<div>
+  <div>
+    <h1>
+      List of all materials
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new material
+    </h2>
+
+    <form action="/insert_material" method="post">
+      <div>
+        <label for="photo_ref_box">
+          Photo ref
+        </label>
+
+        <input type="text" id="photo_ref_box" name="query_photo_ref">
+      </div>
+
+      <div>
+        <label for="manufacturer_id_box">
+          Manufacturer
+        </label>
+
+        <input type="text" id="manufacturer_id_box" name="query_manufacturer_id">
+      </div>
+
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name">
+      </div>
+
+      <div>
+        <label for="residential_use_box">
+          Residential use
+        </label>
+
+        <input type="text" id="residential_use_box" name="query_residential_use">
+      </div>
+
+      <div>
+        <label for="commercial_use_box">
+          Commercial use
+        </label>
+
+        <input type="text" id="commercial_use_box" name="query_commercial_use">
+      </div>
+
+      <div>
+        <label for="materials_box">
+          Materials
+        </label>
+
+        <input type="text" id="materials_box" name="query_materials">
+      </div>
+
+      <div>
+        <label for="price_range_box">
+          Price range
+        </label>
+
+        <input type="text" id="price_range_box" name="query_price_range">
+      </div>
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <input type="text" id="description_box" name="query_description">
+      </div>
+
+      <div>
+        <label for="indoor_outdoor_box">
+          Indoor outdoor
+        </label>
+
+        <input type="text" id="indoor_outdoor_box" name="query_indoor_outdoor">
+      </div>
+
+      <div>
+        <label for="application_box">
+          Application
+        </label>
+
+        <input type="text" id="application_box" name="query_application">
+      </div>
+
+      <div>
+        <label for="manufacturer_note_box">
+          Manufacturer note
+        </label>
+
+        <input type="text" id="manufacturer_note_box" name="query_manufacturer_note">
+      </div>
+
+      <div>
+        <label for="flammability_box">
+          Flammability
+        </label>
+
+        <input type="text" id="flammability_box" name="query_flammability">
+      </div>
+
+      <div>
+        <label for="hardness_box">
+          Hardness
+        </label>
+
+        <input type="text" id="hardness_box" name="query_hardness">
+      </div>
+
+      <div>
+        <label for="availability_box">
+          Availability
+        </label>
+
+        <input type="text" id="availability_box" name="query_availability">
+      </div>
+
+      <div>
+        <label for="lead_time_box">
+          Lead time
+        </label>
+
+        <input type="text" id="lead_time_box" name="query_lead_time">
+      </div>
+
+      <div>
+        <label for="min_units_box">
+          Min units
+        </label>
+
+        <input type="text" id="min_units_box" name="query_min_units">
+      </div>
+
+      <div>
+        <label for="country_of_origin_box">
+          Country of origin
+        </label>
+
+        <input type="text" id="country_of_origin_box" name="query_country_of_origin">
+      </div>
+
+      <div>
+        <label for="content_box">
+          Content
+        </label>
+
+        <input type="text" id="content_box" name="query_content">
+      </div>
+
+      <div>
+        <label for="finish_box">
+          Finish
+        </label>
+
+        <input type="text" id="finish_box" name="query_finish">
+      </div>
+
+      <div>
+        <label for="construction_box">
+          Construction
+        </label>
+
+        <input type="text" id="construction_box" name="query_construction">
+      </div>
+
+      <div>
+        <label for="wood_grade_box">
+          Wood grade
+        </label>
+
+        <input type="text" id="wood_grade_box" name="query_wood_grade">
+      </div>
+
+      <div>
+        <label for="wood_figuring_box">
+          Wood figuring
+        </label>
+
+        <input type="text" id="wood_figuring_box" name="query_wood_figuring">
+      </div>
+
+      <div>
+        <label for="saves_count_box">
+          Saves count
+        </label>
+
+        <input type="text" id="saves_count_box" name="query_saves_count">
+      </div>
+
+      <button>
+        Create material
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Photo ref
+        </th>
+
+        <th>
+          Manufacturer
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Residential use
+        </th>
+
+        <th>
+          Commercial use
+        </th>
+
+        <th>
+          Materials
+        </th>
+
+        <th>
+          Price range
+        </th>
+
+        <th>
+          Description
+        </th>
+
+        <th>
+          Indoor outdoor
+        </th>
+
+        <th>
+          Application
+        </th>
+
+        <th>
+          Manufacturer note
+        </th>
+
+        <th>
+          Flammability
+        </th>
+
+        <th>
+          Hardness
+        </th>
+
+        <th>
+          Availability
+        </th>
+
+        <th>
+          Lead time
+        </th>
+
+        <th>
+          Min units
+        </th>
+
+        <th>
+          Country of origin
+        </th>
+
+        <th>
+          Content
+        </th>
+
+        <th>
+          Finish
+        </th>
+
+        <th>
+          Construction
+        </th>
+
+        <th>
+          Wood grade
+        </th>
+
+        <th>
+          Wood figuring
+        </th>
+
+        <th>
+          Saves count
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_materials.each do |a_material| %>
+      <tr>
+        <td>
+          <%= a_material.id %>
+        </td>
+
+        <td>
+          <%= a_material.photo_ref %>
+        </td>
+
+        <td>
+          <%= a_material.manufacturer_id %>
+        </td>
+
+        <td>
+          <%= a_material.name %>
+        </td>
+
+        <td>
+          <%= a_material.residential_use %>
+        </td>
+
+        <td>
+          <%= a_material.commercial_use %>
+        </td>
+
+        <td>
+          <%= a_material.materials %>
+        </td>
+
+        <td>
+          <%= a_material.price_range %>
+        </td>
+
+        <td>
+          <%= a_material.description %>
+        </td>
+
+        <td>
+          <%= a_material.indoor_outdoor %>
+        </td>
+
+        <td>
+          <%= a_material.application %>
+        </td>
+
+        <td>
+          <%= a_material.manufacturer_note %>
+        </td>
+
+        <td>
+          <%= a_material.flammability %>
+        </td>
+
+        <td>
+          <%= a_material.hardness %>
+        </td>
+
+        <td>
+          <%= a_material.availability %>
+        </td>
+
+        <td>
+          <%= a_material.lead_time %>
+        </td>
+
+        <td>
+          <%= a_material.min_units %>
+        </td>
+
+        <td>
+          <%= a_material.country_of_origin %>
+        </td>
+
+        <td>
+          <%= a_material.content %>
+        </td>
+
+        <td>
+          <%= a_material.finish %>
+        </td>
+
+        <td>
+          <%= a_material.construction %>
+        </td>
+
+        <td>
+          <%= a_material.wood_grade %>
+        </td>
+
+        <td>
+          <%= a_material.wood_figuring %>
+        </td>
+
+        <td>
+          <%= a_material.saves_count %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_material.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_material.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/materials/<%= a_material.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

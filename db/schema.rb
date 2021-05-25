@@ -10,11 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_20_202538) do
+ActiveRecord::Schema.define(version: 2021_05_25_182146) do
 
   create_table "elements", force: :cascade do |t|
     t.integer "room_id"
     t.string "name"
+    t.integer "saves_count"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "manufacturers", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "materials_count"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "materials", force: :cascade do |t|
+    t.string "photo_ref"
+    t.integer "manufacturer_id"
+    t.string "name"
+    t.string "residential_use"
+    t.string "commercial_use"
+    t.string "materials"
+    t.string "price_range"
+    t.string "description"
+    t.string "indoor_outdoor"
+    t.string "application"
+    t.string "manufacturer_note"
+    t.string "flammability"
+    t.string "hardness"
+    t.string "availability"
+    t.string "lead_time"
+    t.string "min_units"
+    t.string "country_of_origin"
+    t.string "content"
+    t.string "finish"
+    t.string "construction"
+    t.string "wood_grade"
+    t.string "wood_figuring"
     t.integer "saves_count"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
