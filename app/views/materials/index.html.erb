@@ -47,39 +47,11 @@
         </th>
 
         <th>
-          Materials
-        </th>
-
-        <th>
           Price range
         </th>
 
         <th>
-          Description
-        </th>
-
-        <th>
           Indoor outdoor
-        </th>
-
-        <th>
-          Application
-        </th>
-
-        <th>
-          Manufacturer note
-        </th>
-
-        <th>
-          Flammability
-        </th>
-
-        <th>
-          Hardness
-        </th>
-
-        <th>
-          Availability
         </th>
 
         <th>
@@ -91,52 +63,12 @@
         </th>
 
         <th>
-          Country of origin
-        </th>
-
-        <th>
-          Content
-        </th>
-
-        <th>
-          Finish
-        </th>
-
-        <th>
-          Construction
-        </th>
-
-        <th>
-          Wood grade
-        </th>
-
-        <th>
-          Wood figuring
-        </th>
-
-        <th>
-          Saves count
-        </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
         </th>
       </tr>
 
       <% @list_of_materials.each do |a_material| %>
       <tr>
-        <td>
-          <%= a_material.id %>
-        </td>
-
-        <td>
+         <td>
           <img src="<%= a_material.photo_ref%>">
         </td>
 
@@ -157,39 +89,11 @@
         </td>
 
         <td>
-          <%= a_material.materials %>
-        </td>
-
-        <td>
           <%= a_material.price_range %>
         </td>
 
         <td>
-          <%= a_material.description %>
-        </td>
-
-        <td>
           <%= a_material.indoor_outdoor %>
-        </td>
-
-        <td>
-          <%= a_material.application %>
-        </td>
-
-        <td>
-          <%= a_material.manufacturer_note %>
-        </td>
-
-        <td>
-          <%= a_material.flammability %>
-        </td>
-
-        <td>
-          <%= a_material.hardness %>
-        </td>
-
-        <td>
-          <%= a_material.availability %>
         </td>
 
         <td>
@@ -198,41 +102,6 @@
 
         <td>
           <%= a_material.min_units %>
-        </td>
-
-        <td>
-          <%= a_material.country_of_origin %>
-        </td>
-
-        <td>
-          <%= a_material.content %>
-        </td>
-
-        <td>
-          <%= a_material.finish %>
-        </td>
-
-        <td>
-          <%= a_material.construction %>
-        </td>
-
-        <td>
-          <%= a_material.wood_grade %>
-        </td>
-
-        <td>
-          <%= a_material.wood_figuring %>
-        </td>
-
-        <td>
-          <%= a_material.saves_count %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(a_material.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_material.updated_at) %> ago
         </td>
 
         <td>
