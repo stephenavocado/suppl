@@ -28,6 +28,17 @@
        border: thin red dashed
      }
 
+    .btn-circle {
+      width: 30px;
+      height: 30px;
+      padding: 6px 0px;
+      border-radius: 15px;
+      font-size: 8px; 
+      text-align: center;
+      color: none;
+      border-color: none;
+      }
+
     .home{
      border-radius: 10px;
      background-color: rgb(247, 247, 248);
@@ -94,10 +105,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active nav-btn" aria-current="page" href="/projects">Projects</a>
+            <a class="nav-link active nav-btn text-muted" aria-current="page" href="/materials"><strong>Materials</strong></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/palettes">Palettes</a>
+            <a class="nav-link active nav-btn text-muted" aria-current="page" href="/projects"><strong>Projects</strong></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active nav-btn text-muted" aria-current="page" href="/palettes"><strong>Palettes</strong></a>
           </li>
         </ul>
 
@@ -120,16 +134,6 @@
     </div>
   </nav>
 <% end %>
-
-<!-- Sign In Modal -->
-<div>
-<%= render "user_authentication/sign_in_modal" %>
-</div>
-
-<!-- Sign Up Modal -->
-<div>
-<%= render "user_authentication/sign_up_modal" %>
-</div>
 
 <% if notice != nil %>
 <div class="alert alert-success alert-dismissible fade show" role="alert">

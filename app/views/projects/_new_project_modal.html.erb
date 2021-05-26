@@ -1,0 +1,39 @@
+<div class="modal fade" id="addnewproject" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addnewProject" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addnewProject"><strong>Add new project</strong></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+      <form action="/insert_project" method="post">
+
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="project_name" placeholder="..." name="query_project_name">
+          <label for="project_name">Project Name</label>
+        </div>
+
+        <div>
+          <input type="hidden" id="user_id_box" name="query_user_id" value="<%= session.fetch(:user_id) %>">
+        </div>
+
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="description" placeholder="..." name="query_description">
+          <label for="description">Description</label>
+        </div>
+
+        <div class="row mb-3">
+          <label for="photo" class="col-sm-2 col-form-label">Photo</label>
+          <div class="col-sm-10">
+            <input type="file" class="form-control" id="photo" name="query_photo">
+          </div>
+        </div>
+
+      <button type="submit" class="btn btn-outline-dark">Create Project</button>
+      </form>
+
+      </div>
+    </div>
+  </div>
+</div>
