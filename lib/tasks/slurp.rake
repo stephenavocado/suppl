@@ -18,7 +18,7 @@ namespace :slurp do
         m.description = row["description"]
         m.indoor_outdoor = row["indoor_outdoor"]
         m.application = row["application"]
-        m.manufacturer_notes = row["manufacturer_notes"]
+        m.manufacturer_note = row["manufacturer_note"]
         m.flammability = row["flammability"]
         m.hardness = row["hardness"]
         m.environmental_note = row["environmental_note"]
@@ -31,7 +31,7 @@ namespace :slurp do
         m.construction = row["contruction"]
         m.wood_grade = row["wood_grade"]
         m.wood_figuring = row["wood_figuring"]
-
+        m.save
         puts "#{m.name} saved!"
       end
 
