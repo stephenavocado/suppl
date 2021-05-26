@@ -1,0 +1,33 @@
+ .button-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    font-size: 8px; 
+    text-align: center;
+    color: red
+    }
+
+  body{ 
+    font-family
+  }
+
+  .centered{
+    text-align: center;
+  }
+
+  .row{
+    display: flex; 
+    justify-content: space-between;
+  }
+
+  .material-card {
+    color: teal;
+    border: 1px teal solid;
+    padding: 5px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+  }
