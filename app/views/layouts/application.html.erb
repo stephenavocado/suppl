@@ -34,6 +34,10 @@
      border: none;
     }
 
+    .material{
+      border-radius: 10px;
+    }
+
     .overlay {
       position: absolute;
       top: 0;
@@ -64,6 +68,17 @@
       transition: .4s;
       opacity: 1;
      }
+
+    .nav-btn {
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .nav-btn:hover {
+      border-radius: 10px;
+      background-color: rgb(219, 255, 205);
+    }
+
     </style>
 
   </head>
@@ -77,11 +92,14 @@
       <a class="navbar-brand" href="/"><strong>Suppl</strong></a>
    
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-        
-        <% if session.fetch(:user_id) != nil %>
-        <a><strong>@<%= @current_user.username %></strong></a>
-        <% end %>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active nav-btn" aria-current="page" href="/projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/palettes">Palettes</a>
+          </li>
+        </ul>
 
         <div class="dropdown">
           <button class="btn" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
@@ -89,24 +107,14 @@
           </button>
     
             <ul class="dropdown-menu dropdown-menu-dark class dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton2">
-              <% if session.fetch(:user_id) == nil %>
-              <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#signin"><strong>Log In</strong></a></li>
-              <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#signup">Sign Up</a></li>
-              <% end %>
-
               <% if session.fetch(:user_id) != nil %>
-              <li><a class="dropdown-item" href="/projects"><strong>Projects</strong></a></li>
-              <li><a class="dropdown-item" href="/palettes"><strong>Palettes</strong></a></li>
+              <li><div class="text-center"><strong>@<%= @current_user.username %></strong></div></li>
               <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/palettes"><strong>Account</strong></a></li>
               <li><a class="dropdown-item" href="/user_sign_out">Log out</a></li>
               <% end %>
             </ul>
         </div>
-    
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" name="query_search" placeholder="Suppl away..." aria-label="Search">
-          <button class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i></button>
-        </form>
 
       </div>
     </div>
