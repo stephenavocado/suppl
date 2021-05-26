@@ -1,8 +1,8 @@
 class MaterialsController < ApplicationController
   def index
-    matching_materials = Material.all
+    @q = Material.ransack(params[:q])
 
-    @list_of_materials = matching_materials.order({ :created_at => :desc })
+    @list_of_materials = @q.result.order({ :created_at => :desc })
 
     render({ :template => "materials/index.html.erb" })
   end

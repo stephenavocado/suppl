@@ -1,3 +1,27 @@
+<% search_form_for @q do |f| %>
+  <p>Narrow results:</p>
+
+  <div>
+    <%= f.label :title_cont, "Title containing" %>
+    <%= f.text_field :title_cont, :placeholder => "Enter a few characters" %>
+  </div>
+
+  <div>
+    <%= f.label :year_gteq, "Released after" %>
+    <%= f.text_field :year_gteq, :placeholder => "Year greater than or equal to" %>
+  </div>
+
+  <div>
+    <%= f.label :year_lteq, "Released before" %>
+    <%= f.text_field :year_lteq, :placeholder => "Year less than or equal to" %>
+  </div>
+
+  <%= f.submit :class => "btn btn-primary btn-block" %>
+  
+  <a href="/movies">Clear filters</a>
+<% end %>
+
+
 <div>
   <div>
     <h1>
