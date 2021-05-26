@@ -1,0 +1,118 @@
+<div>
+  <div>
+    <h1>
+      List of all project saves
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new project safe
+    </h2>
+
+    <form action="/insert_project_safe" method="post">
+      <div>
+        <label for="element_id_box">
+          Element
+        </label>
+
+        <input type="text" id="element_id_box" name="query_element_id">
+      </div>
+
+      <div>
+        <label for="material_id_box">
+          Material
+        </label>
+
+        <input type="text" id="material_id_box" name="query_material_id">
+      </div>
+
+      <div>
+        <label for="approval_requests_count_box">
+          Approval requests count
+        </label>
+
+        <input type="text" id="approval_requests_count_box" name="query_approval_requests_count">
+      </div>
+
+      <button>
+        Create project safe
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Element
+        </th>
+
+        <th>
+          Material
+        </th>
+
+        <th>
+          Approval requests count
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_project_saves.each do |a_project_safe| %>
+      <tr>
+        <td>
+          <%= a_project_safe.id %>
+        </td>
+
+        <td>
+          <%= a_project_safe.element_id %>
+        </td>
+
+        <td>
+          <%= a_project_safe.material_id %>
+        </td>
+
+        <td>
+          <%= a_project_safe.approval_requests_count %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_project_safe.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_project_safe.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/project_saves/<%= a_project_safe.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

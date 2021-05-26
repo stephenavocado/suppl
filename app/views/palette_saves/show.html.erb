@@ -1,0 +1,86 @@
+<div>
+  <div>
+    <h1>
+      Palette safe #<%= @the_palette_safe.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/palette_saves">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_palette_safe/<%= @the_palette_safe.id %>">
+          Delete palette safe
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Material
+      </dt>
+      <dd>
+        <%= @the_palette_safe.material_id %>
+      </dd>
+
+      <dt>
+        Palette
+      </dt>
+      <dd>
+        <%= @the_palette_safe.palette_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_palette_safe.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_palette_safe.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit palette safe
+    </h2>
+
+    <form action="/modify_palette_safe/<%= @the_palette_safe.id %>"  method="post" >
+      <div>
+        <label for="material_id_box">
+          Material
+        </label>
+
+        <input type="text" id="material_id_box" name="query_material_id" value="<%= @the_palette_safe.material_id %>">
+      </div>
+
+      <div>
+        <label for="palette_id_box">
+          Palette
+        </label>
+
+        <input type="text" id="palette_id_box" name="query_palette_id" value="<%= @the_palette_safe.palette_id %>">
+      </div>
+
+      <button>
+        Update palette safe
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

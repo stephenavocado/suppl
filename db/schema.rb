@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_26_162822) do
+ActiveRecord::Schema.define(version: 2021_05_26_164527) do
 
   create_table "elements", force: :cascade do |t|
     t.integer "room_id"
@@ -67,6 +67,13 @@ ActiveRecord::Schema.define(version: 2021_05_26_162822) do
     t.string "environmental_note"
   end
 
+  create_table "palette_saves", force: :cascade do |t|
+    t.integer "material_id"
+    t.integer "palette_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "palettes", force: :cascade do |t|
     t.integer "material_id"
     t.integer "user_id"
@@ -76,6 +83,14 @@ ActiveRecord::Schema.define(version: 2021_05_26_162822) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "palette_name"
+  end
+
+  create_table "project_saves", force: :cascade do |t|
+    t.integer "element_id"
+    t.integer "material_id"
+    t.integer "approval_requests_count"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "projects", force: :cascade do |t|

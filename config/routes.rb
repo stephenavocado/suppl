@@ -1,5 +1,43 @@
 Rails.application.routes.draw do
 
+  # Routes for the Palette safe resource:
+
+  # CREATE
+  post("/insert_palette_safe", { :controller => "palette_saves", :action => "create" })
+          
+  # READ
+  get("/palette_saves", { :controller => "palette_saves", :action => "index" })
+  
+  get("/palette_saves/:path_id", { :controller => "palette_saves", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_palette_safe/:path_id", { :controller => "palette_saves", :action => "update" })
+  
+  # DELETE
+  get("/delete_palette_safe/:path_id", { :controller => "palette_saves", :action => "destroy" })
+
+  #------------------------------
+
+  # Routes for the Project safe resource:
+
+  # CREATE
+  post("/insert_project_safe", { :controller => "project_saves", :action => "create" })
+          
+  # READ
+  get("/project_saves", { :controller => "project_saves", :action => "index" })
+  
+  get("/project_saves/:path_id", { :controller => "project_saves", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_project_safe/:path_id", { :controller => "project_saves", :action => "update" })
+  
+  # DELETE
+  get("/delete_project_safe/:path_id", { :controller => "project_saves", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the Invitation resource:
 
   # CREATE
