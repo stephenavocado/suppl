@@ -1,5 +1,24 @@
 Rails.application.routes.draw do
 
+  # Routes for the Invitation resource:
+
+  # CREATE
+  post("/insert_invitation", { :controller => "invitations", :action => "create" })
+          
+  # READ
+  get("/invitations", { :controller => "invitations", :action => "index" })
+  
+  get("/invitations/:path_id", { :controller => "invitations", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_invitation/:path_id", { :controller => "invitations", :action => "update" })
+  
+  # DELETE
+  get("/delete_invitation/:path_id", { :controller => "invitations", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the Manufacturer resource:
 
   # CREATE

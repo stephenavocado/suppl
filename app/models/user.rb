@@ -22,4 +22,9 @@ class User < ApplicationRecord
   validates :username,  :presence => true, :uniqueness => { :case_sensitive => false }
 
   has_secure_password
+
+  has_many(:invitations_sent, { :class_name => "Invitation", :foreign_key => "sender_id", :dependent => :destroy })
+  has_many(:invitation_requests, { :class_name => "Invitation", :foreign_key => "recipient_id", :dependent => :destroy })
+  has_many(:pallets, { :class_name => "Palette", :foreign_key => "user_id", :dependent => :destroy })
+  has_many(:projects, { :class_name => "Project", :foreign_key => "user_id", :dependent => :destroy })
 end
