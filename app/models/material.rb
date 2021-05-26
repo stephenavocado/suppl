@@ -23,6 +23,7 @@
 #  price_range       :string
 #  residential_use   :string
 #  saves_count       :integer
+#  type              :string
 #  wood_figuring     :string
 #  wood_grade        :string
 #  created_at        :datetime         not null

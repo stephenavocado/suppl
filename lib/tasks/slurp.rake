@@ -5,7 +5,7 @@ namespace :slurp do
     require "csv"
 
     csv_text = File.read(Rails.root.join("lib", "csvs", "wood_flooring_sample_data.csv"))
-    csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
+    csv = CSV.parse(csv_text.scrub, :headers => true, :encoding => "ISO-8859-1")
       csv.each do |row|
         m = Material.new
         m.photo_ref = row["photo_ref"]
