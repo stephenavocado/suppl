@@ -1,0 +1,39 @@
+<div class="modal fade" id="addnewspace" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addnewspaceLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addnewspaceLabel">Create new space</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body"> 
+
+      <form action="/insert_room" method="post">
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name">
+      </div>
+
+      <div>
+        <input type="hidden" id="project_id_box" name="query_project_id" value="<%= @the_project.id %>">
+      </div>
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <input type="text" id="description_box" name="query_description">
+      </div>
+
+          <button>
+            Create room
+          </button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
