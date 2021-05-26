@@ -71,117 +71,18 @@
       </ul>
       </div>
 
-      <!-- Sign In Modal -->
-      <div class="modal fade" id="signin" tabindex="-1" aria-labelledby="sign_in" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="sign_in">Log In</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
+<!-- Sign In Modal -->
+<%= render "user_authentication/sign_in_modal" %>
 
-            <form action="/user_verify_credentials" method="post">
-
-            <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="floatingInput" placeholder="Email" name="query_email">
-              <label for="floatingInput">Email</label>
-            </div>
-
-            <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="query_password">
-              <label for="floatingPassword">Password</label>
-            </div>
-
-            <div>
-            <button type="submit" class="btn btn-outline-dark">Sign in</button>
-            </div>
-            </form>
-
-            <hr>
-
-            <p>
-              Or, <a href="/user_sign_up"><strong>Sign up</strong></a> instead.
-            </p>
-            
-          </div>
-        </div>
-      </div>
-
-       <!-- Sign Up Modal -->
-      <div class="modal fade" id="signup" tabindex="-1" aria-labelledby="sign_up" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="sign_up">Sign Up</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-
-
-          <form action="/insert_user" method="post">
-
-  <div class="row mb-3">
-    <div class="col">
-      <input type="text" class="form-control" placeholder="First name" aria-label="First name" name="query_first_name">
-    </div>
-    
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" name="query_last_name">
-    </div>
-  </div>
-
-  <div class="input-group mb-3">
-    <span class="input-group-text" id="basic-addon1">@</span>
-    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="query_username">
-  </div>
-
-  <div class="input-group mb-3">
-    <input type="email" class="form-control" id="email_box" name="query_email" placeholder="Choose a email..." type="text">
-  </div>
-
-  <div class="row mb-3">
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Password" aria-label="password" name="query_password">
-    </div>
-
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Confirm Password" aria-label="confirm_password" name="query_password_confirmation">
-    </div>
-  </div>
-
-  <div class="form-floating mb-3">
-    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-      <option selected>Select User Type</option>
-      <option value="designer">Designer</option>
-      <option value="supplier">Supplier</option>
-      <option value="owner">Owner</option>
-    </select>
-    <label for="floatingSelect">User Type</label>
-  </div>
-
-  <button type="submit" class="btn btn-outline-dark">Sign up</button>
+<!-- Sign Up Modal -->
+<%= render "user_authentication/sign_up_modal" %>
+   
+<% if request.path != "/" %>
+<form class="d-flex">
+  <input class="form-control me-2" type="search" name="query_search" placeholder="Suppl away..." aria-label="Search">
+  <button class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i></button>
 </form>
-
-<hr>
-
-<p>
-  Or, <a href="/user_sign_in">Sign in</a> instead.
-</p>
-            
-          </div>
-        </div>
-      </div>
-
-     
-
-      
-      <% if request.path != "/" %>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" name="query_search" placeholder="Suppl away..." aria-label="Search">
-        <button class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i></button>
-      </form>
-      <% end %>
+<% end %>
 
 
     </div>
