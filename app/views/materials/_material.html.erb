@@ -1,12 +1,12 @@
 <div class="container-fluid mb-2">
- <div class="row">
-  <div class="col">
-<div class="card">
-  <img src="<%= the_material.photo_ref%>" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted"><%= the_material.name %></h6>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <a href="/materials/<%= the_material.id %>"><img src="<%= the_material.photo_ref%>" class="card-img-top" alt="..."></a>
+          <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted"><%= the_material.name %></h6>
+          </div>
+      </div>
+    </div>
   </div>
-</div>
-</div>
-</div>
 </div>
