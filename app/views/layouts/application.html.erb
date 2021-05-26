@@ -70,21 +70,17 @@
         <% end %>
       </ul>
       </div>
-
-<!-- Sign In Modal -->
-<%= render "user_authentication/sign_in_modal" %>
-
-<!-- Sign Up Modal -->
-<%= render "user_authentication/sign_up_modal" %>
    
-<% if request.path != "/" %>
 <form class="d-flex">
   <input class="form-control me-2" type="search" name="query_search" placeholder="Suppl away..." aria-label="Search">
   <button class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i></button>
 </form>
-<% end %>
 
+<!-- Sign In Modal -->
+<%= render "user_authentication/_sign_in_modal" %>
 
+<!-- Sign Up Modal -->
+<%= render "user_authentication/sign_up_modal" %>
     </div>
   </div>
 </nav>
