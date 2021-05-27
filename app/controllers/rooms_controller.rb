@@ -26,9 +26,28 @@ class RoomsController < ApplicationController
 
     if the_room.valid?
       the_room.save
-      redirect_to("/projects/#{the_room.project_id}", { :notice => "Room created successfully." })
+      redirect_to("/projects/#{the_room.project_id}", { :notice => "Space created successfully." })
     else
-      redirect_to("/projects/#{the_room.project_id}", { :notice => "Room failed to create successfully." })
+      redirect_to("/projects/#{the_room.project_id}", { :notice => "Space failed to create successfully." })
+    end
+  end
+
+  def create_space_and_elements
+      
+    the_room = Room.new
+    the_room.name = params.fetch("query_name")
+    the_room.project_id = params.fetch("query_project_id")
+    the_room.description = params.fetch("query_description")
+    the_room.save
+
+    element_names = params.fetch("query_elements")
+
+    element_names.each do |element_name|
+      e = Element.new
+      e.name = element_name
+      e.room_id = the_room.id
+      e.save
+
     end
   end
 

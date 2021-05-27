@@ -9,28 +9,27 @@
 
       <form action="/insert_room" method="post">
       <div>
-        <label for="name_box">
-          Name
-        </label>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="space_name" placeholder="..." name="query_name">
+          <label for="space_name">Name</label>
+        </div>
+        
+        <div>
+          <input type="hidden" id="project_id_box" name="query_project_id" value="<%= @the_project.id %>">
+        </div>
 
-        <input type="text" id="name_box" name="query_name">
-      </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="space_description" placeholder="..." name="query_description">
+          <label for="space_description">Description</label>
+        </div>
 
-      <div>
-        <input type="hidden" id="project_id_box" name="query_project_id" value="<%= @the_project.id %>">
-      </div>
-
-      <div>
-        <label for="description_box">
-          Description
-        </label>
-
-        <input type="text" id="description_box" name="query_description">
-      </div>
-
-          <button>
-            Create room
-          </button>
+        <div class="row text-end">
+        <div class="col">
+        <button class="btn btn-outline-dark btn-sm">
+            Create space
+        </button>
+        </div>
+        </div>
       </form>
       </div>
     </div>

@@ -14,6 +14,9 @@ class ProjectsController < ApplicationController
 
     @the_project = matching_projects.at(0)
 
+    matching_element_types = ElementType.all
+    @list_of_element_types = matching_element_types.order({ :created_at => :desc })
+
     render({ :template => "projects/show.html.erb" })
   end
 

@@ -1,0 +1,61 @@
+<div class="modal fade" id="create_space_modal" aria-hidden="true" aria-labelledby="create_space" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="create_space">Create Space</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <form action="/insert_room" method="post">
+
+      <div class="modal-body">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="space_name" placeholder="..." name="query_name">
+          <label for="space_name">Name</label>
+        </div>
+        
+        <div>
+          <input type="hidden" id="project_id_box" name="query_project_id" value="<%= @the_project.id %>">
+        </div>
+
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="space_description" placeholder="..." name="query_description">
+          <label for="space_description">Description</label>
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#toggle_to_elements" data-bs-toggle="modal" data-bs-dismiss="modal">Create Space</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="toggle_to_elements" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel2">Create Elements</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <form action="/insert_element" method="post">
+      <div class="modal-body">
+        <% @list_of_element_types.each do |a_type| %>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="element_check_box_<%=a_type.id%>" name="query_elements[]" value="<%= a_type.name %>" checked>
+          <label class="form-check-label" for="element_check_box_<%=a_type.id%>">
+            <%= a_type.name %>
+          </label>
+        </div>
+        <% end %>
+
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Create Elements</button>
+      </div>
+
+    </form>
+
+    </div>
+  </div>
+</div>

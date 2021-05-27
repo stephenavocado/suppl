@@ -11,32 +11,37 @@
 </div>
 
 <div class="col-md-2">
-<a href="/delete_project/<%= @the_project.id %>">
-    <i class="far fa-trash-alt text-danger"></i>
+<button class="btn btn-danger btn-sm"><a href="/delete_project/<%= @the_project.id %>" class="text-decoration-none">
+    <i class="far fa-trash-alt"></i>Delete Project
 </a>
+</button>
 </div>
 
 <div>
 
 <!-- Update project modal -->
 <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editproject">
-<i class="fas fa-edit"></i>
+<i class="fas fa-edit"></i> Edit Project
 </button>
 </div>
 
 <%= render "projects/edit_project_modal"%>
 
 <div class="row">
-<div class="col-md-2">
-  <h3> Spaces </h3> 
-  
-<!--Create New Space Modal-->
-<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addnewspace">
-<i class="fas fa-plus-circle"></i></button>
+  <div class="col">
+    <h3> Spaces </h3> 
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addnewspace">
+    <i class="fas fa-plus-circle"></i> New Space
+    </button>
+  </div>
+</div>
 
 <%= render "rooms/new_space_modal" %>
-
-</div>   
 
 <hr>
 
@@ -65,20 +70,22 @@
   <% end %>
   <div class="tab-pane fade <%= active_class %>" id="Room<%= a_room.id %>" role="tabpanel" aria-labelledby="<%= a_room.name %>_<%= a_room.id%>">
 
-  <div>
+  <div class="row fluid mt-2">
+  <div class="col">
     Decription: <%= a_room.description %>
   </div>
 
-  <div>
+  <div class="col">
     <a href="/rooms/<%= a_room.id %>">
-      Show details
+      <i class="fas fa-info-circle"></i>
     </a>
   </div>
 
-  <div>
+  <div class="col text-end">
     <a href="/delete_room/<%= a_room.id %>">
-      Delete Room
+      <i class="far fa-trash-alt text-danger"></i>
     </a>
+  </div>
   </div>
 
   <div class="row g-2">
@@ -100,3 +107,6 @@
 
 <hr>
 
+<a class="btn btn-primary" data-bs-toggle="modal" href="#create_space_modal" role="button">Create Space</a>
+
+<%= render "/rooms/new_space_and_elements_modal"%>

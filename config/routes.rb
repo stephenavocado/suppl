@@ -1,5 +1,24 @@
 Rails.application.routes.draw do
 
+  # Routes for the Element type resource:
+
+  # CREATE
+  post("/insert_element_type", { :controller => "element_types", :action => "create" })
+          
+  # READ
+  get("/element_types", { :controller => "element_types", :action => "index" })
+  
+  get("/element_types/:path_id", { :controller => "element_types", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_element_type/:path_id", { :controller => "element_types", :action => "update" })
+  
+  # DELETE
+  get("/delete_element_type/:path_id", { :controller => "element_types", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the Palette safe resource:
 
   # CREATE
@@ -137,6 +156,9 @@ Rails.application.routes.draw do
 
   # CREATE
   post("/insert_room", { :controller => "rooms", :action => "create" })
+
+  # CREATESPACE&ELEMENTS
+  post("/create_space_and_elements", { :controller => "rooms", :action => "create_space_and_elements" })
           
   # READ
   get("/rooms", { :controller => "rooms", :action => "index" })
