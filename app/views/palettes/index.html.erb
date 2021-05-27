@@ -4,18 +4,29 @@
   </h1>
 </div>
 
+
 <% @list_of_palettes.each do |a_palette| %>
   <%if a_palette.user_id == session.fetch(:user_id)%>
     <div class="card mw-100 mt-2">
       <div class="card-body">
-        <h5 class="card-title"><%= a_palette.palette_name %></h5>
+      <div class="row fluid">
+        <div class="col-md-2">
+          <h5 class="card-title"><%= a_palette.palette_name %></h5>
           <p class="card-text"><%= a_palette.description %></p>
           <a href="/palettes/<%= a_palette.id %>" class="btn btn-outline-dark">View Palette</a>
+        </div>
+
         <%@list_of_palette_saves.each do |a_save|%>
           <% if a_palette.id == a_save.palette_id %>
-            <img src="<%=a_save.material.photo_ref%>" class="rounded" width="200" height="200">
+        
+        
+        <div class ="col-md-2">  
+              <img src="<%=a_save.material.photo_ref%>" class="img-fluid rounded" width="200" height="200">
+            </div>
+            
           <%end%>
         <%end%>
+      </div>
       </div>
     </div>
   <% end %>
