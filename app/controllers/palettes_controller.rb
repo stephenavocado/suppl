@@ -37,11 +37,11 @@ class PalettesController < ApplicationController
     the_id = params.fetch("path_id")
     the_palette = Palette.where({ :id => the_id }).at(0)
 
-    the_palette.material_id = params.fetch("query_material_id")
+    # the_palette.material_id = params.fetch("query_material_id")
     the_palette.user_id = params.fetch("query_user_id")
-    the_palette.name = params.fetch("query_name")
+    the_palette.palette_name = params.fetch("query_name")
     the_palette.description = params.fetch("query_description")
-    the_palette.saves_count = params.fetch("query_saves_count")
+    # the_palette.saves_count = params.fetch("query_saves_count")
 
     if the_palette.valid?
       the_palette.save

@@ -1,0 +1,30 @@
+<div class="modal fade" id="editpalette" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editpaletteLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editpaletteLabel">Add new palette</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body"> 
+
+      <form action="/modify_palette/<%= @the_palette.id %>" method="post">
+        <div>
+          <input type="hidden" name="query_user_id" value="<%= session.fetch(:user_id) %>">
+        </div>
+
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="project_name" placeholder="..." value="<%= @the_palette.palette_name %>"name="query_name">
+          <label for="project_name">Palette Name</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="description" placeholder="..." value="<%= @the_palette.description %>" name="query_description">
+          <label for="description">Description</label>
+        </div>
+
+        <button type="submit" class="btn btn-outline-dark">Update palette</button>
+      </form>
+    </div>
+  </div>
+</div>

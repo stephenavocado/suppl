@@ -40,82 +40,9 @@
       </div>
     </div>
 
-    <dl>
-      <dt>
-        Created by
-      </dt>
-      <dd>
-        <%= @the_palette.user_id %>
-      </dd>
-
-      <dt>
-        Name
-      </dt>
-      <dd>
-        <%= @the_palette.name %>
-      </dd>
-
-      <dt>
-        Description
-      </dt>
-      <dd>
-        <%= @the_palette.description %>
-      </dd>
-
-      <dt>
-        Saves count
-      </dt>
-      <dd>
-        <%= @the_palette.saves_count %>
-      </dd>
-
-      <dt>
-        Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_palette.created_at) %> ago
-      </dd>
-
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_palette.updated_at) %> ago
-      </dd>
-    </dl>
-  </div>
-</div>
-
 <hr>
 
+<button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#editpalette">
+<i class="fas fa-plus-circle"></i> Edit</button>
 
-<div>
-  <div>
-    <h2>
-      Edit palette
-    </h2>
-
-      <div>
-        <label for="name_box">
-          Name
-        </label>
-
-        <input type="text" id="name_box" name="query_name" value="<%= @the_palette.name %>">
-      </div>
-
-      <div>
-        <label for="description_box">
-          Description
-        </label>
-
-        <input type="text" id="description_box" name="query_description" value="<%= @the_palette.description %>">
-      </div>
-
-      <button>
-        Update palette
-      </button>
-    </form>
-  </div>
-</div>
-
-<hr>
+<%= render "/palettes/edit_palette_modal" %>
