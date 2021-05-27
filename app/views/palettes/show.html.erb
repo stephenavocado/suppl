@@ -3,32 +3,30 @@
     <h1>
       <%= @the_palette.palette_name %>
     </h1>
+  </div>
+    
+  <div>
+    <a href="/palettes">Go back</a>
+  </div>
 
-    <div>
-      <div>
-        <a href="/palettes">
-          Go back
-        </a>
-      </div>
-
-      <div>
-        <a href="/delete_palette/<%= @the_palette.id %>">
-          Delete palette
-        </a>
-      </div>
-    </div>
+  <div>
+    <a href="/delete_palette/<%= @the_palette.id %>">Delete palette</a>
+  </div>
+</div>
 
 <hr>
 
 <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#editpalette">
 <i class="fas fa-plus-circle"></i> Update</button>
 
-<%= render "/palettes/edit_palette_modal" %>
-
 <hr>
 
 <div class="row g-2">
 <% @list_of_palette_saves.each do |a_save| %>
-  <div class="col-3"><%= render "palettes/show_palette_saves", { :the_save => a_save } %></div>
+  <% if @the_palette.id == a_save.palette_id %>
+    <div class="col-3"><%= render "palettes/show_palette_saves", { :the_save => a_save } %></div>
+  <% end %>
 <% end %>
 </div>
+
+<%= render "/palettes/edit_palette_modal" %>
