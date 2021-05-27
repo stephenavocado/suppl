@@ -12,7 +12,9 @@
           <p class="card-text"><%= a_palette.description %></p>
           <a href="/palettes/<%= a_palette.id %>" class="btn btn-outline-dark">View Palette</a>
         <%@list_of_palette_saves.each do |a_save|%>
-          <img src="/<%=a_save.id%>" class="rounded float-end">
+          <% if a_palette.id == a_save.palette_id %>
+            <img src="/<%=a_save.id%>" class="rounded float-end">
+          <%end%>
         <%end%>
       </div>
     </div>
