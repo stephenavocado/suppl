@@ -14,6 +14,10 @@ class ProjectsController < ApplicationController
 
     @the_project = matching_projects.at(0)
 
+    matching_palettes = Palette.all
+
+    @list_of_palettes = matching_palettes.order({ :created_at => :desc })
+
     matching_element_types = ElementType.all
     @list_of_element_types = matching_element_types.order({ :created_at => :desc })
 

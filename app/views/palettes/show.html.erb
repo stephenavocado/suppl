@@ -1,23 +1,33 @@
+<div class="row">
+  <div class="col-md-10">
+
+    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/palettes" class="text-decoration-none">Palettes</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><strong><%= @the_palette.palette_name %></strong>
+        </li>
+      </ol>
+    </nav>
+
+  </div>
+<div>
+
 <div>
   <div>
     <h1>
       <%= @the_palette.palette_name %>
     </h1>
   </div>
-    
-  <div>
-    <a href="/palettes">Go back</a>
-  </div>
 
   <div>
-    <a href="/delete_palette/<%= @the_palette.id %>">Delete palette</a>
+    <a href="/delete_palette/<%= @the_palette.id %>"><button class="btn btn-danger btn-sm">Delete palette</button></a>
   </div>
 </div>
 
 <hr>
 
 <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#editpalette">
-<i class="fas fa-plus-circle"></i> Update</button>
+<i class="far fa-edit"></i> Update</button>
 
 <hr>
 
