@@ -1,29 +1,7 @@
-<div class="row">
-  <div class="col-md-3">
-  </div>
-  <div class="col-md-6">
-    <div class="card">
-      <div class="card-body">
-    <h2 class="card-title"><%= @the_palette.palette_name %></h2>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="/delete_palette/<%= @the_palette.id %>" class="card-link">Delete Palette</a>
-    <a href="#" class="card-link">Edit Palette</a>
-  </div>
-</div>
-  </div>
-</div>
-
-
-
-
-
-
-
 <div>
   <div>
     <h1>
-      Palette #<%= @the_palette.id %> details
+      <%= @the_palette.palette_name %>
     </h1>
 
     <div>
@@ -46,3 +24,11 @@
 <i class="fas fa-plus-circle"></i> Update</button>
 
 <%= render "/palettes/edit_palette_modal" %>
+
+<hr>
+
+<div class="row g-2">
+<% @list_of_palette_saves.each do |a_save| %>
+  <div class="col-3"><%= render "palettes/show_palette_saves", { :the_save => a_save } %></div>
+<% end %>
+</div>

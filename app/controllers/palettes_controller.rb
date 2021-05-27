@@ -18,6 +18,10 @@ class PalettesController < ApplicationController
 
     @the_palette = matching_palettes.at(0)
 
+    matching_palette_saves = PaletteSafe.all
+
+    @list_of_palette_saves = matching_palette_saves.order({ :created_at => :desc })
+
     render({ :template => "palettes/show.html.erb" })
   end
 
