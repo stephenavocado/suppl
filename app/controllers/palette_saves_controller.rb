@@ -24,7 +24,7 @@ class PaletteSavesController < ApplicationController
 
     if the_palette_safe.valid?
       the_palette_safe.save
-      redirect_to("/materials", { :notice => "Palette safe created successfully." })
+      redirect_to("/materials", { :notice => "#{the_palette_safe.material.name} saved." })
     else
       redirect_to("/materials", { :notice => "Palette safe failed to create successfully." })
     end
@@ -48,9 +48,9 @@ class PaletteSavesController < ApplicationController
   def destroy
     the_id = params.fetch("path_id")
     the_palette_safe = PaletteSafe.where({ :id => the_id }).at(0)
-
+    the_palette = the_palette_safe.palette_id
     the_palette_safe.destroy
 
-    redirect_to("/palette_saves", { :notice => "Palette safe deleted successfully."} )
+    redirect_to("/palettes/#{the_palette}", { :notice => "Palette safe deleted successfully."} )
   end
 end
