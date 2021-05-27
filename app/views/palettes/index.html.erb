@@ -1,83 +1,20 @@
 <div>
-  <div>
-    <h1>
-      Your Palettes
-    </h1>
-  </div>
-
-<div>
-  <div>
-    <table>
-      <tr>
-        <th>
-          User
-        </th>
-
-        <th>
-          Name
-        </th>
-
-        <th>
-          Description
-        </th>
-
-        <th>
-          Saves count
-        </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
-        </th>
-      </tr>
-      <% @list_of_palettes.each do |a_palette| %>
-      <tr>
-        <td>
-          <%= a_palette.user.username %>
-        </td>
-
-        <td>
-          <%= a_palette.palette_name %>
-        </td>
-
-        <td>
-          <%= a_palette.description %>
-        </td>
-
-        <td>
-          <%= a_palette.saves_count %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(a_palette.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_palette.updated_at) %> ago
-        </td>
-
-        <td>
-          <a href="/palettes/<%= a_palette.id %>">
-            Show details
-          </a>
-        </td>
-
-        <td>
-          <a class="btn btn-danger" href="/delete_palette/<%= a_palette.id %>"> <i class="far fa-trash-alt"></i></a>
-        </td>
-      </tr>
-      <% end %>
-    </table>
-  </div>
+  <h1>
+    Your Palettes
+  </h1>
 </div>
 
-
-</div>
+<% @list_of_palettes.each do |a_palette| %>
+  <%if a_palette.user_id == session.fetch(:user_id)%>
+    <div class="card mw-100 mt-2">
+      <div class="card-body">
+        <h5 class="card-title"><%= a_palette.palette_name %></h5>
+         <p class="card-text"><%= a_palette.description %></p>
+          <a href="/palettes/<%= a_palette.id %>" class="btn btn-outline-dark">View Palette</a>
+      </div>
+    </div>
+  <% end %>
+<% end %>
 
 <hr>
 
