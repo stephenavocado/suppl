@@ -135,21 +135,21 @@
   </nav>
 <% end %>
 
-<% if notice != nil %>
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-  <%= notice %>
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-<% end %>
+<div class="container pt-5">
 
-<% if alert != nil %>
-<div class="alert alert-danger" role="alert"><%= alert %></div>
-<% end %>
-
-    <div class="container pt-5">
-
-      <%= yield %>
-
+  <% if notice != nil %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%= notice %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
+  <% end %>
+
+  <% if alert != nil %>
+    <div class="alert alert-danger" role="alert"><%= alert %></div>
+  <% end %>
+
+<%= yield %>
+
+</div>
   </body>
 </html>
