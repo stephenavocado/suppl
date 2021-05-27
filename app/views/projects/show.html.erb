@@ -10,18 +10,25 @@
     </nav>
 
   </div>
-<div>
-
-<!-- Update project modal -->
-<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editproject">
-<i class="fas fa-edit"></i> Edit Project
-</button>
-</div>
 
 <div class="row">
-<a href="/delete_project/<%= @the_project.id %>" class="text-decoration-none"><button class="btn btn-danger btn-sm">
+
+  <div class="col">
+    <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fas fa-swatchbook"></i></button>
+  </div>
+
+  <div class="col">
+  <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editproject">
+    <i class="fas fa-edit"></i> Edit Project
+  </button>
+  </div>
+
+  <div class="col">
+  <a href="/delete_project/<%= @the_project.id %>" class="text-decoration-none"><button class="btn btn-danger btn-sm">
     <i class="far fa-trash-alt"></i> Delete Project</button>
-</a>
+  </a>
+  </div>
+  
 </div>
 
 <%= render "projects/edit_project_modal"%>
@@ -94,14 +101,4 @@
 <% end %>
 </div>
 
-<! off canvas >
-
-<button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fas fa-swatchbook"></i></button>
-
 <%= render "/palettes/palette_off_canvas" %>
-
-<hr>
-
-<a class="btn btn-primary" data-bs-toggle="modal" href="#create_space_modal" role="button">Create Space</a>
-
-<%= render "/rooms/new_space_and_elements_modal"%>
