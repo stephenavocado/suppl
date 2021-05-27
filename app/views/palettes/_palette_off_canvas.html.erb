@@ -1,12 +1,13 @@
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Your Palettes</h5>
+    <hr>
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   
   <div class="offcanvas-body">
-    <% @list_of_palettes.each do |a_palette| %>
-    <p>Hello</p>
-    <%end%>
+
+    <%= render "/palettes/palette_accordian"%>
+
   </div>
 </div>
