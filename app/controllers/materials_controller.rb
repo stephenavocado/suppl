@@ -8,6 +8,10 @@ class MaterialsController < ApplicationController
   end
 
   def show
+     matching_palettes = Palette.all
+
+    @list_of_palettes = matching_palettes.order({ :created_at => :desc })
+
     the_id = params.fetch("path_id")
 
     matching_materials = Material.where({ :id => the_id })

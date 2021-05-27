@@ -2,7 +2,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="editpaletteLabel">Add new palette</h5>
+        <h5 class="modal-title" id="editpaletteLabel">Update palette</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
@@ -14,12 +14,12 @@
         </div>
 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="project_name" placeholder="..." value="<%= @the_palette.palette_name %>"name="query_name">
+          <input type="text" class="form-control" id="project_name" placeholder="..." value="<%=@the_palette.palette_name%>"name="query_name">
           <label for="project_name">Palette Name</label>
         </div>
 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="description" placeholder="..." value="<%= @the_palette.description %>" name="query_description">
+          <input type="text" class="form-control" id="description" placeholder="..." value="<%=@the_palette.description%>" name="query_description">
           <label for="description">Description</label>
         </div>
 

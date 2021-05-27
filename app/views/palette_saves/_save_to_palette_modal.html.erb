@@ -1,0 +1,32 @@
+<div class="modal fade" id="save_to_palette" tabindex="-1" aria-labelledby="save_to_paletteLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="save_to_paletteLabel"><strong>Save Material</strong></h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <form action="/insert_palette_safe" method="post">
+
+          <div>
+            <input type="hidden" name="query_material_id" value="<%=@the_material.id%>">
+          </div>
+
+          <div class="form-floating mb-3">
+            <select class="form-select" id="paletteSelect" aria-label="Floating label select example" name="query_palette_id">
+              <% @list_of_palettes.each do |a_palette| %>
+                <%if a_palette.user_id == session.fetch(:user_id)%>
+                  <option value="<%=a_palette.id%>"><%=a_palette.palette_name%></option>
+                <% end %>
+              <% end %>
+            </select>
+            <label for="paletteSelect">Select Palette</label>
+          </div>
+
+          <button type="submit" class="btn btn-outline-dark">Save to palette</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
