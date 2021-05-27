@@ -13,7 +13,7 @@
           <a href="/palettes/<%= a_palette.id %>" class="btn btn-outline-dark">View Palette</a>
         <%@list_of_palette_saves.each do |a_save|%>
           <% if a_palette.id == a_save.palette_id %>
-            <img src="/<%=a_save.id%>" class="rounded float-end">
+            <img src="<%=a_save.material.photo_ref%>" class="rounded" width="200" height="200">
           <%end%>
         <%end%>
       </div>
