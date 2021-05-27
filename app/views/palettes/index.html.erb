@@ -16,14 +16,15 @@
           <a href="/palettes/<%= a_palette.id %>" class="btn btn-outline-dark">View Palette</a>
         </div>
 
-        <%@list_of_palette_saves.each do |a_save|%>
+        <%@list_of_palette_saves.each_slice(4) do |lists|%>
+          <% lists.each do |a_save|%>
           <% if a_palette.id == a_save.palette_id %>
         
         
-        <div class ="col-md-2">  
+            <div class ="col-md-2">  
               <img src="<%=a_save.material.photo_ref%>" class="img-fluid rounded" width="200" height="200">
             </div>
-            
+            <%end%>
           <%end%>
         <%end%>
       </div>

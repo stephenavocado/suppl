@@ -32,5 +32,6 @@
 #  manufacturer_id    :integer
 #
 class Material < ApplicationRecord
+  belongs_to(:manufacturer, { :required => false, :class_name => "Manufacturer", :foreign_key => "manufacturer_id", :counter_cache => true })
   has_many(:palette_saves, { :class_name => "PaletteSafe", :foreign_key => "material_id", :dependent => :destroy })
 end

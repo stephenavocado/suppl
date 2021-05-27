@@ -10,4 +10,5 @@
 #  updated_at      :datetime         not null
 #
 class Manufacturer < ApplicationRecord
+  has_many(:materials, { :class_name => "Material", :foreign_key => "manufacturer_id", :dependent => :destroy })
 end
