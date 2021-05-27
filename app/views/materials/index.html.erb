@@ -12,7 +12,9 @@
     <div class="input-group mb-3">
       <%#= f.label :name_cont, "Material Name" %>
       <%= f.text_field :name_cont, :placeholder => "Suppl away...", :class => "form-control" %>
-      <%= f.submit :class => "btn btn-outline-dark" %>
+      <%= f.button(class: "btn btn-outline-dark") do %>
+      <i class="fas fa-search"></i>
+      <% end %>
     </div>
 
     <div>
