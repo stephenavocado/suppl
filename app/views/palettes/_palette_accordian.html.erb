@@ -10,7 +10,17 @@
     </h2>
 
     <div id="<%=a_palette.palette_name%>_<%=a_palette.id%>" class="accordion-collapse collapse" aria-labelledby="<%= a_palette.id%>_<%=a_palette.palette_name%>" data-bs-parent="#palettesaccordian">
-      <div class="accordion-body"><%= a_palette.description %></div>
+      <div class="accordion-body">
+      <div class="row fluid">
+        <%@list_of_palette_saves.each do |a_save|%>
+          <% if a_palette.id == a_save.palette_id %>
+            <div class="col-4 mt-2">
+            <img src="<%=a_save.material.photo_ref%>" class="img-fluid rounded" width="125" height="125">
+            </div>
+          <%end%>
+        <%end%>
+      </div>
+      </div>
     </div>
 
   </div>
