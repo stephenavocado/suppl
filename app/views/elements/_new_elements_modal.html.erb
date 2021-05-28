@@ -1,33 +1,34 @@
 <div class="modal fade" id="addelements" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addelementsLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
+
       <div class="modal-header">
         <h5 class="modal-title" id="addelementsLabel">Add Elements</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+
       <div class="modal-body"> 
 
-      <form action="/insert_element" method="post">
-        <input type="hidden" id="room_id_box" name="query_room_id" value="<%= the_room.id %>">
+        <form action="/insert_element" method="post">
+          <input type="hidden" id="room_id_box" name="query_room_id" value="<%= the_room.id %>">
 
-        <% @list_of_element_types.each do |a_type|%>
+          <% @list_of_element_types.each do |a_type|%>
 
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="<%=a_type.name%>" id="<%=a_type.name%>_check" name="query_elements[]" value="<%=a_type.name%>">
-            <label class="form-check-label" for="<%=a_type.name%>_check">
-              <%=a_type.name%>
-            </label>
-        </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="<%=a_type.name%>" id="<%=a_type.name%>_check" name="query_elements[]" value="<%=a_type.name%>">
+              <label class="form-check-label" for="<%=a_type.name%>_check">
+                <%=a_type.name%>
+              </label>
+          </div>
 
-        <%end%>
+          <%end%>
 
-        <div class="col mt-4">
-          <button class="btn btn-primary btn-sm">Create elements</button>
-        </div>
-      </form>
+          <div class="col mt-4">
+            <button class="btn btn-primary btn-sm">Create elements</button>
+          </div>
+        </form>
 
       </div>
     </div>
   </div>
-</div>
 </div>
