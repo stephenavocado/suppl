@@ -195,6 +195,9 @@ Rails.application.routes.draw do
 
   # Routes for the User account:
 
+  #SHOW USER DETAILS
+  get("/user/:user_id", { :controller => "user_authentication", :action => "show" }) 
+
   # SIGN UP FORM
   get("/user_sign_up", { :controller => "user_authentication", :action => "sign_up_form" })    
 
