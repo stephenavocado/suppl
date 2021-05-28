@@ -36,10 +36,16 @@ class ElementsController < ApplicationController
       e.room_id = params.fetch("query_room_id")
       e.save
 
-      redirect_to("/projects/#{e.room.project.id}", { :notice => "Elements created successfully." })
     end
 
-    
+    the_id = params.fetch("query_room_id")
+
+    matching_rooms = Room.where({ :id => the_id })
+
+    the_room = matching_rooms.at(0)
+
+    redirect_to("/projects/#{the_room.project.id}", { :notice => "Elements created successfully." })
+
 
     # the_element.saves_count = params.fetch("query_saves_count")
 
