@@ -73,6 +73,6 @@ class ElementsController < ApplicationController
 
     the_element.destroy
 
-    redirect_to("/rooms/#{the_element.room_id}", { :notice => "Element deleted successfully."} )
+    redirect_to("/projects/#{the_element.room.project.id}", { :notice => "Element deleted successfully."} )
   end
 end
