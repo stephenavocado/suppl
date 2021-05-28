@@ -75,4 +75,14 @@ class ProjectsController < ApplicationController
 
     redirect_to("/projects", { :notice => "Project deleted successfully."} )
   end
+
+  def select_space
+    @the_room = params.fetch("query_room")
+    # @the_material 
+    render()
+  end
+
+  def select_elements
+
+  end
 end

@@ -17,7 +17,7 @@
           <a href="/palettes/<%= a_palette.id %>" class="btn btn-outline-dark">View Palette</a>
         </div>
 
-        <%@list_of_palette_saves.limit(4).each do |a_save|%>
+        <%@list_of_palette_saves.limit(6).each do |a_save|%>
           <% if a_palette.id == a_save.palette_id %>
         
             <div class ="col-md-2">  

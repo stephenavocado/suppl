@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_27_025339) do
+ActiveRecord::Schema.define(version: 2021_05_28_214831) do
 
   create_table "element_types", force: :cascade do |t|
     t.string "name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2021_05_27_025339) do
     t.integer "saves_count"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "material_id"
   end
 
   create_table "invitations", force: :cascade do |t|

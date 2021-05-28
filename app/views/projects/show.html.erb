@@ -8,13 +8,16 @@
         </li>
       </ol>
     </nav>
+
   </div>
 
   <div class="col-md-8 text-end" role="toolbar" aria-label="Toolbar with button groups">
     <div class="btn-group me-1" role="group" aria-label="First group">
-      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editproject">
-      <i class="fas fa-edit"></i>
-      </button>
+      <a href="#editproject" data-bs-toggle="modal" data-bs-target="#editproject">
+        <button class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></button>
+      </a>
+
+      <%= render "projects/edit_project_modal"%>
     </div>
 
     <div class="btn-group me-1" role="group" aria-label="Second group">
@@ -26,11 +29,14 @@
 
 </div>
 
- <div class="col">
-    <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fas fa-swatchbook"></i></button>
-</div>
+<div class="row">
+  <div class="col">
+      <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fas fa-swatchbook"></i></button>
+  </div>
 
-<%= render "projects/edit_project_modal"%>
+  <%= render "/palettes/palette_off_canvas" %>
+
+</div>
 
 <div class="row">
   <div class="col-md-1 align-self-center">
@@ -119,4 +125,8 @@
   </div>
 </div>
 
-<%= render "/palettes/palette_off_canvas" %>
+<div>
+
+<%= render "/projects/add_material_modal" %>
+
+</div>

@@ -11,19 +11,17 @@
 
     <div id="<%=a_palette.palette_name%>_<%=a_palette.id%>" class="accordion-collapse collapse" aria-labelledby="<%= a_palette.id%>_<%=a_palette.palette_name%>" data-bs-parent="#palettesaccordian">
       <div class="accordion-body">
-      <div class="row fluid">
-        <%@list_of_palette_saves.each do |a_save|%>
-          <% if a_palette.id == a_save.palette_id %>
-            <div class="col-4 mt-2">
-            
-            <img src="<%=a_save.material.photo_ref%>" class="img-fluid rounded palette" width="125" height="125">
-
-            <%= render "/project_saves/add_save_to_project_modal" %>
-
-            </div>
-          <%end%>
-        <%end%>
-      </div>
+        <div class="row fluid">
+          <%@list_of_palette_saves.each do |a_save|%>
+            <% if a_palette.id == a_save.palette_id %>
+              <div class="col-4 mt-2">
+              
+                <img src="<%=a_save.material.photo_ref%>" class="img-fluid rounded palette" width="125" height="125">
+              
+              </div>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
 

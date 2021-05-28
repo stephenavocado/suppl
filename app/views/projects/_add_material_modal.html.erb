@@ -1,0 +1,33 @@
+<div class="modal fade" id="savetoelement" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addnewspaceLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addnewspaceLabel">Add Material</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body"> 
+
+      <form action="//insert_project_safe" method="post">
+      <div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="space_name" placeholder="..." name="query_material_id">
+          <label for="space_name">Material ID</label>
+        </div>
+        
+        <div>
+          <input type="hidden" id="project_id_box" name="query_element_id" value="<%= @the_project.id %>">
+        </div>
+
+        <div class="row text-end">
+        <div class="col">
+        <button class="btn btn-outline-dark btn-sm">
+            Add Material
+        </button>
+        </div>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

@@ -21,13 +21,13 @@ class ProjectSavesController < ApplicationController
     the_project_safe = ProjectSafe.new
     the_project_safe.element_id = params.fetch("query_element_id")
     the_project_safe.material_id = params.fetch("query_material_id")
-    the_project_safe.approval_requests_count = params.fetch("query_approval_requests_count")
+    # the_project_safe.approval_requests_count = params.fetch("query_approval_requests_count")
 
     if the_project_safe.valid?
       the_project_safe.save
-      redirect_to("/project_saves", { :notice => "Project safe created successfully." })
+      redirect_to("/projects", { :notice => "Project safe created successfully." })
     else
-      redirect_to("/project_saves", { :notice => "Project safe failed to create successfully." })
+      redirect_to("/projects", { :notice => "Project safe failed to create successfully." })
     end
   end
 
