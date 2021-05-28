@@ -13,8 +13,11 @@ class ProjectsController < ApplicationController
     matching_projects = Project.where({ :id => the_id })
     @the_project = matching_projects.at(0)
 
-    matching_element_types = ElementType.all
-    @list_of_element_types = matching_element_types.order({ :created_at => :desc })
+    matching_elements = Element.all
+    @list_of_elements = matching_elements.order({ :created_at => :desc })
+    
+    matching_rooms = Room.all
+    @list_of_rooms = matching_rooms.order({ :created_at => :desc })
 
     matching_palettes = Palette.all
     @list_of_palettes = matching_palettes.order({ :created_at => :desc })
@@ -24,9 +27,6 @@ class ProjectsController < ApplicationController
 
     matching_element_types = ElementType.all
     @list_of_element_types = matching_element_types.order({ :created_at => :desc })
-
-    matching_rooms = Room.all
-    @list_of_rooms = matching_rooms.order({ :created_at => :desc })
 
     render({ :template => "projects/show.html.erb" })
   end
