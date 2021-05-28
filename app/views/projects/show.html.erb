@@ -69,6 +69,7 @@
 <div class="tab-content" id="nav-tabContent">
 
  <% @the_project.spaces.each do |a_room| %>
+ <%= render "/elements/new_elements_modal", { :the_room => a_room } %>
   <% if @the_project.spaces.first == a_room %>
     <% active_class = "show active"%>
   <% else %>
@@ -88,6 +89,14 @@
     <a href="/delete_room/<%= a_room.id %>">
       <i class="far fa-trash-alt text-danger"></i>
     </a>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addelements">
+      <i class="fas fa-plus-circle"></i> Add Elements
+      </button>
+    </div>
   </div>
 
   <div class="row g-2">
