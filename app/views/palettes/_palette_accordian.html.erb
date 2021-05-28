@@ -15,7 +15,7 @@
         <%@list_of_palette_saves.each do |a_save|%>
           <% if a_palette.id == a_save.palette_id %>
             <div class="col-4 mt-2">
-            <img src="<%=a_save.material.photo_ref%>" class="img-fluid rounded" width="125" height="125">
+            <img src="<%=a_save.material.photo_ref%>" class="img-fluid rounded palette" width="125" height="125">
             </div>
           <%end%>
         <%end%>
