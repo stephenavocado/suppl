@@ -7,16 +7,20 @@
       </div>
       <div class="modal-body"> 
 
-      <form action="//insert_project_safe" method="post">
+      <form action="/insert_element" method="post">
       <div>
+
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="space_name" placeholder="..." name="query_material_id">
-          <label for="space_name">Material ID</label>
+          <input type="text" class="form-control" id="name" placeholder="..." name="query_name">
+          <label for="name">Name</label>
         </div>
-        
-        <div>
-          <input type="hidden" id="project_id_box" name="query_element_id" value="<%= @the_project.id %>">
+
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="material_id" placeholder="..." name="query_material_id">
+          <label for="material_id">Material ID</label>
         </div>
+
+        <input type="hidden" id="room_id_box" name="query_room_id" value="<%= the_room.id %>">
 
         <div class="row text-end">
         <div class="col">

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   
   # UPDATE
   
-  post("/modify_element_type/:path_id", { :controller => "element_types", :action => "update" })
+  post("/modify_element_type", { :controller => "element_types", :action => "update" })
   
   # DELETE
   get("/delete_element_type/:path_id", { :controller => "element_types", :action => "destroy" })
