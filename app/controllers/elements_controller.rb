@@ -43,8 +43,6 @@ class ElementsController < ApplicationController
       #e.save
     #end
 
-    # the_element.saves_count = params.fetch("query_saves_count")
-
   end
 
   def update
