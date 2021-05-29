@@ -13,24 +13,16 @@
 
   <div class="col-md-8 text-end" role="toolbar" aria-label="Toolbar with button groups">
     <div class="btn-group me-1" role="group" aria-label="First group">
-      <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-        <button class="btn btn-outline-dark btn-sm"><i class="fas fa-swatchbook"></i></button>
-      </a>
-      
-      <%= render "/palettes/palette_off_canvas" %>
-    </div>
-
-    <div class="btn-group me-1" role="group" aria-label="Second group">
       <a href="#editproject" data-bs-toggle="modal" data-bs-target="#editproject">
-        <button class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></button>
+        <button class="btn btn-outline-primary btn-sm">Edit Project <i class="fas fa-edit"></i></button>
       </a>
 
       <%= render "projects/edit_project_modal"%>
     </div>
 
-     <div class="btn-group me-1" role="group" aria-label="Third group">
-      <a href="/delete_project/<%= @the_project.id %>" class="text-decoration-none"><button class="btn btn-danger btn-sm">
-        <i class="far fa-trash-alt"></i></button>
+     <div class="btn-group me-1" role="group" aria-label="Second group">
+      <a href="/delete_project/<%= @the_project.id %>" class="text-decoration-none"><button class="btn btn-outline-danger btn-sm">
+        Delete Project <i class="far fa-trash-alt"></i></button>
       </a>
     </div>
   </div>
@@ -44,12 +36,22 @@
 
   <div class="col-md-2 align-self-center">
     <a href="#" data-bs-toggle="modal" data-bs-target="#addnewspace" style="color:black">
-    <i class="fas fa-plus-circle"></i>
+    <button class="btn btn-outline-dark btn-sm">Add Space <i class="fas fa-plus-circle"></i></button>
     </a>
   </div>
 </div>
 
 <%= render "rooms/new_space_modal" %>
+
+<div class="row mt-2 mb-4">
+  <div class="col"
+    <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+      <button class="btn btn-outline-dark btn-sm">View Palettes <i class="fas fa-swatchbook"></i></button>
+    </a>
+
+    <%= render "/palettes/palette_off_canvas" %>
+  </div>
+</div>
 
 <nav>
 
@@ -84,24 +86,19 @@
       <div class="row mt-3">
 
       <div class="col" role="toolbar" aria-label="Toolbar with button groups">
-        <div class="btn-group me-2" role="group" aria-label="First group">
-          <a href="/rooms/<%= a_room.id %>">
-            <i class="fas fa-info-circle text-dark"></i>
-          </a>
-        </div>
         <div class="btn-group me-2" role="group" aria-label="Second group">
           <a href="/rooms/<%= a_room.id %>">
-            <i class="fas fa-pen-square"></i>
+            <button class="btn btn-outline-primary btn-sm">Edit Space <i class="fas fa-pen-square"></i></button>
           </a>
         </div>
         <div class="btn-group me-2" role="group" aria-label="Third group">
           <a href="/delete_room/<%= a_room.id %>">
-            <i class="far fa-trash-alt text-danger"></i>
+            <button class="btn btn-outline-danger btn-sm">Delete Space <i class="far fa-trash-alt"></i></button>
           </a> 
         </div>
         <div class="btn-group me-2" role="group" aria-label="Fourth group">
           <a href="#savetoelement" style="color: blue" data-bs-toggle="modal" data-bs-target="#savetoelement">
-            <i class="fas fa-plus-circle"></i>
+            <button class="btn btn-outline-dark btn-sm">Add Material <i class="fas fa-plus-circle"></i></button>
           </a>
         </div>
       </div>
