@@ -5,7 +5,7 @@
         <a href="/elements/<%= the_element.id %>"><img src="<%= Material.where({ :id => the_element.material_id }).first.photo_ref%>" class="card-img-top" alt="..."></a>
           <div class="card-body">
             <h6 class="card-subtitle mb-2"><%= the_element.name %></h6>
-            <h6 class="card-subtitle mb-2 text-muted"><%= the_element.material.name %></h6>
+            <p class="small text-muted"><strong><%= the_element.material.name %></strong></p>
             <a href="/delete_element/<%= the_element.id %>" style="color: red"><i class="far fa-times-circle"></i></a>
           </div>
       </div>

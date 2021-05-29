@@ -15,8 +15,10 @@
           <%@list_of_palette_saves.each do |a_save|%>
             <% if a_palette.id == a_save.palette_id %>
               <div class="col-4 mt-2">
-              
+
+                <a href="/materials/<%=a_save.material.id%>">
                 <img src="<%=a_save.material.photo_ref%>" class="img-fluid rounded palette" width="125" height="125">
+                </a>
               
               </div>
             <% end %>
