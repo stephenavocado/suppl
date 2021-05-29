@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col">
       <div class="card material">
-        <a href="/elements/<%= the_element.id %>"><img src="<%= Material.where({ :id => the_element.material_id }).first.photo_ref%>" class="card-img-top" alt="..."></a>
+        <a href="/materials/<%= the_element.material.id %>"><img src="<%= Material.where({ :id => the_element.material_id }).first.photo_ref%>" class="card-img-top" alt="..."></a>
           <div class="card-body">
             <h6 class="card-subtitle mb-2"><%= the_element.name %></h6>
             <p class="small text-muted"><strong><%= the_element.material.name %></strong></p>
