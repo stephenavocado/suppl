@@ -86,20 +86,32 @@
 
       <div class="row mt-2">
 
-        <div class="col">
-        <%= a_room.description %>
+      <div class="col" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group me-2" role="group" aria-label="First group">
+          <a href="/rooms/<%= a_room.id %>">
+            <i class="fas fa-info-circle text-dark"></i>
+          </a>
         </div>
-
+        <div class="btn-group me-2" role="group" aria-label="Second group">
+          <a href="/rooms/<%= a_room.id %>">
+            <i class="fas fa-pen-square"></i>
+          </a>
+        </div>
+        <div class="btn-group" role="group" aria-label="Third group">
+          <a href="/delete_room/<%= a_room.id %>">
+            <i class="far fa-trash-alt text-danger"></i>
+          </a> 
+        </div>
+      </div>
       </div>
 
-      <div class="row">
-        <a href="/rooms/<%= a_room.id %>">
-          <i class="fas fa-info-circle text-dark"></i>
-        </a>
+        
 
-        <a href="/delete_room/<%= a_room.id %>">
-          <i class="far fa-trash-alt text-danger"></i>
-        </a> 
+
+      <div class="row">
+        <a href="#savetoelement" style="color: blue" data-bs-toggle="modal" data-bs-target="#savetoelement">
+          <i class="fas fa-plus-circle"></i>
+        </a>
       </div>
 
         <div class="row mt-2 g-2">
@@ -116,14 +128,6 @@
 
   <% end %>
   </div>
-
-<div class="row">
-  <div class="col">
-    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addelements">
-      <i class="fas fa-plus-circle"></i>
-    </button>
-  </div>
-</div>
 
 <div>
 

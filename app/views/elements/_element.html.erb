@@ -4,9 +4,9 @@
       <div class="card material">
         <a href="/elements/<%= the_element.id %>"><img src="<%= Material.where({ :id => the_element.material_id }).first.photo_ref%>" class="card-img-top" alt="..."></a>
           <div class="card-body">
-            <h6 class="card-subtitle mb-2 text-muted"><%= the_element.name %></h6>
+            <h6 class="card-subtitle mb-2"><%= the_element.name %></h6>
+            <h6 class="card-subtitle mb-2 text-muted"><%= the_element.material.name %></h6>
             <a href="/delete_element/<%= the_element.id %>" style="color: red"><i class="far fa-times-circle"></i></a>
-            <a href="#savetoelement" style="color: blue" data-bs-toggle="modal" data-bs-target="#savetoelement"><i class="fas fa-plus-circle"></i></a>
           </div>
       </div>
     </div>
