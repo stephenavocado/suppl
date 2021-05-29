@@ -13,6 +13,14 @@
 
   <div class="col-md-8 text-end" role="toolbar" aria-label="Toolbar with button groups">
     <div class="btn-group me-1" role="group" aria-label="First group">
+      <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+        <button class="btn btn-outline-dark btn-sm"><i class="fas fa-swatchbook"></i></button>
+      </a>
+      
+      <%= render "/palettes/palette_off_canvas" %>
+    </div>
+
+    <div class="btn-group me-1" role="group" aria-label="Second group">
       <a href="#editproject" data-bs-toggle="modal" data-bs-target="#editproject">
         <button class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></button>
       </a>
@@ -20,21 +28,12 @@
       <%= render "projects/edit_project_modal"%>
     </div>
 
-    <div class="btn-group me-1" role="group" aria-label="Second group">
+     <div class="btn-group me-1" role="group" aria-label="Third group">
       <a href="/delete_project/<%= @the_project.id %>" class="text-decoration-none"><button class="btn btn-danger btn-sm">
-      <i class="far fa-trash-alt"></i></button>
+        <i class="far fa-trash-alt"></i></button>
       </a>
     </div>
   </div>
-
-</div>
-
-<div class="row">
-  <div class="col">
-      <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fas fa-swatchbook"></i></button>
-  </div>
-
-  <%= render "/palettes/palette_off_canvas" %>
 
 </div>
 
@@ -105,21 +104,17 @@
       </div>
       </div>
 
-        
-
-
-      <div class="row">
-        <a href="#savetoelement" style="color: blue" data-bs-toggle="modal" data-bs-target="#savetoelement">
-          <i class="fas fa-plus-circle"></i>
-        </a>
-      </div>
-
-        <div class="row mt-2 g-2">
+        <div class="row mt-2 g-2 align-items-center">
           <% a_room.elements.each do |an_element| %>
             <div class="col-3">
               <%= render "elements/element", { :the_element => an_element } %>
             </div>
           <% end %>
+            <div class="col-1 text-center">
+              <a class="align-middle" href="#savetoelement" style="color: blue" data-bs-toggle="modal" data-bs-target="#savetoelement">
+                <i class="fas fa-plus-circle"></i>
+              </a>
+            </div>
         </div> 
 
       </div>
