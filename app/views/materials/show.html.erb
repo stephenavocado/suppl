@@ -30,6 +30,22 @@
   </div>
 </div>
 
+<%= render "/palette_saves/save_to_palette_modal" %>
+
 <hr>
 
-<%= render "/palette_saves/save_to_palette_modal" %>
+<div class="row fluid">
+
+  <div class="col-md-6">
+    <h5>Description</h5>
+    <p><%= @the_material.description %></p>
+
+  </div>
+
+  <div class="col-md-6">
+    <h5>Application</h5>
+    <p><h6>Indoor & Outdoor: </h6> <%=@the_material.indoor_outdoor%></p>
+
+  </div>
+
+</div>
