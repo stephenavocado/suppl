@@ -40,7 +40,7 @@
       }
 
     .home{
-     border-radius: 10px;
+     border-radius: 20px;
      background-color: rgb(247, 247, 248);
      border: none;
     }
@@ -60,7 +60,7 @@
       opacity: 0;
       transition: .5s ease;
       background-color: rgb(245, 217, 204);
-      border-radius: 10px;
+      border-radius: 20px;
     }
 
     .text {
@@ -146,7 +146,7 @@
               <li><div class="text-center"><strong>@<%= @current_user.username %></strong></div></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="/palettes"><strong>Account</strong></a></li>
-              <li><a class="dropdown-item" href="/user_sign_out">Log out</a></li>
+              <li><a class="dropdown-item" href="/user_sign_out">Sign out</a></li>
               <% end %>
             </ul>
         </div>
@@ -160,10 +160,21 @@
 
 
   <% if notice != nil %>
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+
+    <div class="col-md-4">
     <div class="alert alert-success alert-dismissible fade show" role="alert">
       <%= notice %>
       <button type="button" class="btn-close btn-sm" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
+
+    <div class="col-md-4">
+    </div>
+  </div>
+
+
   <% end %>
 
   <% if alert != nil %>
