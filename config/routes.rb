@@ -1,5 +1,24 @@
 Rails.application.routes.draw do
 
+  # Routes for the Approval request resource:
+
+  # CREATE
+  post("/insert_approval_request", { :controller => "approval_requests", :action => "create" })
+          
+  # READ
+  get("/approval_requests", { :controller => "approval_requests", :action => "index" })
+  
+  get("/approval_requests/:path_id", { :controller => "approval_requests", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_approval_request/:path_id", { :controller => "approval_requests", :action => "update" })
+  
+  # DELETE
+  get("/delete_approval_request/:path_id", { :controller => "approval_requests", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the Element type resource:
 
   # CREATE

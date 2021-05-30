@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_28_214831) do
+ActiveRecord::Schema.define(version: 2021_05_30_031351) do
+
+  create_table "approval_requests", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "recipient_id"
+    t.integer "project_save_id"
+    t.string "status"
+    t.integer "element_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "element_types", force: :cascade do |t|
     t.string "name"

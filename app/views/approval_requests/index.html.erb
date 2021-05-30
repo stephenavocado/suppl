@@ -1,0 +1,150 @@
+<div>
+  <div>
+    <h1>
+      List of all approval requests
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new approval request
+    </h2>
+
+    <form action="/insert_approval_request" method="post">
+      <div>
+        <label for="sender_id_box">
+          Sender
+        </label>
+
+        <input type="text" id="sender_id_box" name="query_sender_id">
+      </div>
+
+      <div>
+        <label for="recipient_id_box">
+          Recipient
+        </label>
+
+        <input type="text" id="recipient_id_box" name="query_recipient_id">
+      </div>
+
+      <div>
+        <label for="project_save_id_box">
+          Project save
+        </label>
+
+        <input type="text" id="project_save_id_box" name="query_project_save_id">
+      </div>
+
+      <div>
+        <label for="status_box">
+          Status
+        </label>
+
+        <input type="text" id="status_box" name="query_status">
+      </div>
+
+      <div>
+        <label for="element_id_box">
+          Element
+        </label>
+
+        <input type="text" id="element_id_box" name="query_element_id">
+      </div>
+
+      <button>
+        Create approval request
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Sender
+        </th>
+
+        <th>
+          Recipient
+        </th>
+
+        <th>
+          Project save
+        </th>
+
+        <th>
+          Status
+        </th>
+
+        <th>
+          Element
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_approval_requests.each do |an_approval_request| %>
+      <tr>
+        <td>
+          <%= an_approval_request.id %>
+        </td>
+
+        <td>
+          <%= an_approval_request.sender_id %>
+        </td>
+
+        <td>
+          <%= an_approval_request.recipient_id %>
+        </td>
+
+        <td>
+          <%= an_approval_request.project_save_id %>
+        </td>
+
+        <td>
+          <%= an_approval_request.status %>
+        </td>
+
+        <td>
+          <%= an_approval_request.element_id %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(an_approval_request.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(an_approval_request.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/approval_requests/<%= an_approval_request.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

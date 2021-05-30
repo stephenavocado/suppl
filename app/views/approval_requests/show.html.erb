@@ -1,0 +1,131 @@
+<div>
+  <div>
+    <h1>
+      Approval request #<%= @the_approval_request.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/approval_requests">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_approval_request/<%= @the_approval_request.id %>">
+          Delete approval request
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Sender
+      </dt>
+      <dd>
+        <%= @the_approval_request.sender_id %>
+      </dd>
+
+      <dt>
+        Recipient
+      </dt>
+      <dd>
+        <%= @the_approval_request.recipient_id %>
+      </dd>
+
+      <dt>
+        Project save
+      </dt>
+      <dd>
+        <%= @the_approval_request.project_save_id %>
+      </dd>
+
+      <dt>
+        Status
+      </dt>
+      <dd>
+        <%= @the_approval_request.status %>
+      </dd>
+
+      <dt>
+        Element
+      </dt>
+      <dd>
+        <%= @the_approval_request.element_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_approval_request.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_approval_request.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit approval request
+    </h2>
+
+    <form action="/modify_approval_request/<%= @the_approval_request.id %>"  method="post" >
+      <div>
+        <label for="sender_id_box">
+          Sender
+        </label>
+
+        <input type="text" id="sender_id_box" name="query_sender_id" value="<%= @the_approval_request.sender_id %>">
+      </div>
+
+      <div>
+        <label for="recipient_id_box">
+          Recipient
+        </label>
+
+        <input type="text" id="recipient_id_box" name="query_recipient_id" value="<%= @the_approval_request.recipient_id %>">
+      </div>
+
+      <div>
+        <label for="project_save_id_box">
+          Project save
+        </label>
+
+        <input type="text" id="project_save_id_box" name="query_project_save_id" value="<%= @the_approval_request.project_save_id %>">
+      </div>
+
+      <div>
+        <label for="status_box">
+          Status
+        </label>
+
+        <input type="text" id="status_box" name="query_status" value="<%= @the_approval_request.status %>">
+      </div>
+
+      <div>
+        <label for="element_id_box">
+          Element
+        </label>
+
+        <input type="text" id="element_id_box" name="query_element_id" value="<%= @the_approval_request.element_id %>">
+      </div>
+
+      <button>
+        Update approval request
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
