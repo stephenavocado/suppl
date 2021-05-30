@@ -13,6 +13,15 @@
 
   <div class="col-md-8 text-end" role="toolbar" aria-label="Toolbar with button groups">
     <div class="btn-group me-1" role="group" aria-label="First group">
+      <a href="#inviteuser" data-bs-toggle="modal" data-bs-target="#inviteuser">
+        <button class="btn btn-outline-dark btn-sm">Invite User <i class="far fa-envelope"></i></button>
+      </a>
+
+      <%= render "/invitations/invite_user_modal"%>
+      
+    </div>
+    
+    <div class="btn-group me-1" role="group" aria-label="Second group">
       <a href="#editproject" data-bs-toggle="modal" data-bs-target="#editproject">
         <button class="btn btn-outline-primary btn-sm">Edit Project <i class="fas fa-edit"></i></button>
       </a>
@@ -20,7 +29,7 @@
       <%= render "projects/edit_project_modal"%>
     </div>
 
-     <div class="btn-group me-1" role="group" aria-label="Second group">
+     <div class="btn-group me-1" role="group" aria-label="Third group">
       <a href="/delete_project/<%= @the_project.id %>" class="text-decoration-none"><button class="btn btn-outline-danger btn-sm">
         Delete Project <i class="far fa-trash-alt"></i></button>
       </a>

@@ -1,0 +1,35 @@
+<div class="modal fade" id="inviteuser" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="inviteuserLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="inviteuserLabel">Invite User</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body"> 
+
+      <form action="/insert_element" method="post">
+      <div>
+
+
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="recipient_id" placeholder="..." name="query_recipient_id">
+          <label for="material_id">User ID</label>
+        </div>
+
+        <input type="hidden" id="sender_id" name="query_project_id" value="<%= @the_project.id %>">
+
+        <input type="hidden" id="sender_id" name="query_sender_id" value="<%#= the_user.id )%>">
+
+        <input type="hidden" id="sender_id" name="query_status" value="Sent">
+
+        <div class="row text-end">
+          <div class="col">
+            <button class="btn btn-outline-dark btn-sm">Invite User <i class="far fa-envelope"></i> </button>
+          </div>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

@@ -15,4 +15,5 @@
 class Project < ApplicationRecord
   belongs_to(:user, { :required => false, :class_name => "User", :foreign_key => "user_id", :counter_cache => true })
   has_many(:spaces, { :class_name => "Room", :foreign_key => "project_id", :dependent => :destroy })
+  has_many(:invitations, { :class_name => "Invitation", :foreign_key => "project_id", :dependent => :destroy })
 end
