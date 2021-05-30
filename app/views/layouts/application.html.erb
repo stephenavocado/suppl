@@ -126,13 +126,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active text-muted" aria-current="page" href="/materials"><strong>Materials</strong></a>
+            <a class="nav-link active" aria-current="page" href="/materials"><button class="btn btn-outline-dark btn-sm">Materials <i class="fas fa-tree"></i></button></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-muted" aria-current="page" href="/palettes"><strong>Palettes</strong></a>
+            <a class="nav-link active" aria-current="page" href="/palettes"><button class="btn btn-outline-dark btn-sm">Palettes <i class="fas fa-swatchbook"></i></button></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-muted" aria-current="page" href="/projects"><strong>Projects</strong></a>
+            <a class="nav-link active" aria-current="page" href="/projects"><button class="btn btn-outline-dark btn-sm">Projects <i class="fas fa-home"></i></button></a>
           </li>
         </ul>
 
@@ -141,7 +141,7 @@
             <i class="far fa-user-circle fa-2x"></i>
           </button>
     
-            <ul class="dropdown-menu dropdown-menu-dark class dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton2">
+            <ul class="dropdown-menu class dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton2">
               <% if session.fetch(:user_id) != nil %>
               <li><div class="text-center"><strong>@<%= @current_user.username %></strong></div></li>
               <li><hr class="dropdown-divider"></li>

@@ -12,8 +12,8 @@
     <div class="input-group mb-3">
       <%#= f.label :name_cont, "Material Name" %>
       <%= f.text_field :name_cont, :placeholder => "Suppl away...", :class => "form-control" %>
-      <%= f.button(class: "btn btn-outline-dark") do %>
-      <i class="fas fa-search"></i>
+      <%= f.button(class: "btn btn-outline-dark btn-sm") do %>
+      Search <i class="fas fa-search"></i>
       <% end %>
     </div>
 
@@ -23,8 +23,10 @@
     </div>
 
   </div>
-  
-  <a href="/movies">Clear filters</a>
+
+  <div class="col-md-3 mt-1">
+  <a href="/movies" class="btn btn-outline-danger btn-sm">Clear filters <i class="fas fa-times"></i></a>
+  </div>
 <% end %>
 
 <hr>

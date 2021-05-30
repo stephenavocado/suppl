@@ -17,8 +17,8 @@
           <a href="/palettes/<%= a_palette.id %>" class="btn btn-outline-dark btn-sm">View Palette <i class="fas fa-swatchbook"></i></a>
         </div>
 
-        <%@list_of_palette_saves.limit(6).each do |a_save|%>
-          <% if a_palette.id == a_save.palette_id %>
+        <%@list_of_palette_saves.limit(7).each do |a_save|%>
+          <% if a_save.palette_id == a_palette.id %>
         
             <div class ="col-md-2">  
               <img src="<%=a_save.material.photo_ref%>" class="img-fluid rounded" width="200" height="200">
