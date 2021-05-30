@@ -14,7 +14,7 @@
         <div class="col-md-4">
           <h5 class="card-title"><%= a_palette.palette_name %></h5>
           <p class="card-text"><%= a_palette.description %></p>
-          <a href="/palettes/<%= a_palette.id %>" class="btn btn-outline-dark">View Palette</a>
+          <a href="/palettes/<%= a_palette.id %>" class="btn btn-outline-dark btn-sm">View Palette <i class="fas fa-swatchbook"></i></a>
         </div>
 
         <%@list_of_palette_saves.limit(6).each do |a_save|%>
@@ -34,7 +34,7 @@
 
 <hr>
 
-<button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#newpalette">
-<i class="fas fa-plus-circle"></i> New</button>
+<button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#newpalette">
+Create Palette <i class="fas fa-plus-circle"></i></button>
 
 <%= render "/palettes/new_palette_modal" %>

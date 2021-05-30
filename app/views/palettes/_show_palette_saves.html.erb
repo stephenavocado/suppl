@@ -5,7 +5,7 @@
         <a href="/materials/<%= the_save.material.id %>"><img src="<%= the_save.material.photo_ref%>" class="card-img-top" alt="..."></a>
           <div class="card-body">
             <h6 class="card-subtitle mb-2 text-muted"><%= the_save.material.name %></h6>
-            <a href="/delete_palette_safe/<%= the_save.id %>" style="color: red"><i class="far fa-times-circle"></i></a>
+            <a href="/delete_palette_safe/<%= the_save.id %>" class="btn btn-outline-danger btn-sm">Remove from Palette <i class="far fa-times-circle"></i></a>
           </div>
       </div>
     </div>
