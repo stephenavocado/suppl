@@ -75,6 +75,6 @@ class RoomsController < ApplicationController
 
     the_room.destroy
 
-    redirect_to("/projects/#{the_project_id}", { :notice => "Room deleted successfully."} )
+    redirect_to("/projects/#{the_project_id}", { :notice => "Space deleted successfully."} )
   end
 end
