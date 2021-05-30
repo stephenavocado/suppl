@@ -16,8 +16,9 @@
             <% if a_palette.id == a_save.palette_id %>
               <div class="col-4 mt-2">
 
-                <a href="/materials/<%=a_save.material.id%>">
+                <a href="/materials/<%=a_save.material.id%>" style="text-decoration: none">
                 <img src="<%=a_save.material.photo_ref%>" class="img-fluid rounded palette" width="125" height="125">
+                <figcaption class="figure-caption text-center"><strong>Mat ID: </strong><%= a_save.material.id %></figcaption>
                 </a>
               
               </div>
