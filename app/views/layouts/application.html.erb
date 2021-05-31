@@ -149,7 +149,7 @@
               <% if session.fetch(:user_id) != nil %>
               <li><div class="text-center"><strong>@<%= @current_user.username %></strong></div></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/palettes" data-bs-toggle="modal" data-bs-target="#edit_profile"><strong>Account</strong></a></li>
+              <li><a class="dropdown-item" href="/user/<%=session.fetch(:user_id)%>">Account</a></li>
               <li><a class="dropdown-item" href="/user_sign_out">Sign out</a></li>
               <% end %>
             </ul>
