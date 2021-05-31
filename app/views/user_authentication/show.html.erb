@@ -35,9 +35,15 @@
         </td>
 
         <td>
-          <a href="/accept_invitation/<%= an_invitation.id %>" method="post">
-            Accept
-          </a>
+          Status: <%= an_invitation.status %>
+        </td>
+
+        <td>
+          <form action="/accept_invitation/<%= an_invitation.id %>" method="post">
+            <button class="btn btn-outline-success btn-sm">
+              Accept
+            </Button>
+          </form>
         </td>
 
         <td>

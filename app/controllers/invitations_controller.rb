@@ -42,7 +42,7 @@ class InvitationsController < ApplicationController
 
       redirect_to("/user/#{session.fetch(:user_id)}", { :notice => "Invitation accepted."} )
     else
-      redirect_to("/user/#{session.fetch(:user_id)", { :alert => "Invitation failed to update successfully." })
+      redirect_to("/user/#{session.fetch(:user_id)}", { :alert => "Invitation failed to update successfully." })
     end
   end
 
@@ -56,7 +56,7 @@ class InvitationsController < ApplicationController
 
       redirect_to("/user/#{session.fetch(:user_id)}", { :notice => "Invitation declined."} )
     else
-      redirect_to("/user/#{session.fetch(:user_id)", { :alert => "Invitation failed to update successfully." })
+      redirect_to("/user/#{session.fetch(:user_id)}", { :alert => "Invitation failed to update successfully." })
     end
   end
 
@@ -75,7 +75,7 @@ class InvitationsController < ApplicationController
       redirect_to("/user/#{session.fetch(:user_id)}", { :notice => "Invitation accepted."} )
 
     else
-      redirect_to("/user/#{session.fetch(:user_id)", { :alert => "Invitation failed to update successfully." })
+      redirect_to("/user/#{session.fetch(:user_id)}", { :alert => "Invitation failed to update successfully." })
     end
   end
 
