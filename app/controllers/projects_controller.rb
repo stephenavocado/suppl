@@ -1,8 +1,10 @@
 class ProjectsController < ApplicationController
   def index
     matching_projects = Project.all
-
     @list_of_projects = matching_projects.order({ :created_at => :desc })
+
+    matching_invitations = Invitation.all
+    @list_of_invitations = matching_invitations.order({ :created_at => :desc })
 
     render({ :template => "projects/index.html.erb" })
   end
