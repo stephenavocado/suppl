@@ -34,8 +34,6 @@
 <div class="row g-2">
 <% @list_of_materials.each do |a_material| %>
   <div class="col-3"><%= render "materials/material", { :the_material => a_material } %></div>
+  <%= render "palette_saves/save_index_material_modal", { :the_material => a_material } %>
 <% end %>
-</div>
-
-<div class="row mt-4">
 </div>

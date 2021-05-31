@@ -1,21 +1,20 @@
 class MaterialsController < ApplicationController
   def index
     @q = Material.ransack(params[:q])
-
     @list_of_materials = @q.result.order({ :created_at => :desc })
+
+    matching_palettes = Palette.all
+    @list_of_palettes = matching_palettes.order({ :created_at => :desc })
 
     render({ :template => "materials/index.html.erb" })
   end
 
   def show
-     matching_palettes = Palette.all
-
+    matching_palettes = Palette.all
     @list_of_palettes = matching_palettes.order({ :created_at => :desc })
 
     the_id = params.fetch("path_id")
-
     matching_materials = Material.where({ :id => the_id })
-
     @the_material = matching_materials.at(0)
 
     render({ :template => "materials/show.html.erb" })
