@@ -25,13 +25,15 @@
     <h4>Invitations</h4>
 
     <% @list_of_invitations.each do |an_invitation| %>
+      <% if an_invitation.status == "Sent" %>
 
       <%= render "/invitations/invitation_card", {:the_invitation => an_invitation} %>
 
         <td>
           Status: <%= an_invitation.status %>
         </td>
-
+        
+      <% end %>
     <% end %>
   </div>
 

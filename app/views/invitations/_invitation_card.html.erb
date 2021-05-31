@@ -1,24 +1,31 @@
  <div class="card">
       <div class="card-body">
-        <div class="row fluid">
-          <div class="col-md-8">
-            <strong>@<%= the_invitation.sender_id %></strong> wants you to collaborate on <%= the_invitation.project.project_name %>
+        <div class="row">
+          <div class="col">
+            <strong>@<%= the_invitation.sender_id %></strong> wants you to join <%= the_invitation.project.project_name %>
           </div>
+        </div>
 
-          <div class="col-md-2">
-            <form action="/accept_invitation/<%= the_invitation.id %>" method="post">
-              <button class="btn btn-outline-success btn-sm">
-                Accept <i class="fas fa-check"></i>
-              </Button>
-            </form>
-          </div>
+        <div class="row mt-2">
+          <div class="col">
+            <div class="btn-toolbar text-end" role="toolbar" aria-label="Toolbar with button groups">
+              <div class="btn-group me-2" role="group" aria-label="First group">
+                <form action="/accept_invitation/<%= the_invitation.id %>" method="post">
+                  <button class="btn btn-outline-success btn-sm">
+                    Accept <i class="fas fa-check"></i>
+                  </Button>
+                </form>
+              </div>
 
-          <div class="col-md-2">
-            <form action="/decline_invitation/<%= the_invitation.id %>" method="post">
-              <button class="btn btn-outline-danger btn-sm">
-                Decline <i class="fas fa-times"></i>
-              </Button>
-            </form>
+              <div class="btn-group me-2" role="group" aria-label="Second group">
+                <form action="/decline_invitation/<%= the_invitation.id %>" method="post">
+                  <button class="btn btn-outline-danger btn-sm">
+                    Decline <i class="fas fa-times"></i>
+                  </Button>
+                </form>
+              </div>
+            
+            </div>
           </div>
 
         </div>
