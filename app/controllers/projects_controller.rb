@@ -10,6 +10,8 @@ class ProjectsController < ApplicationController
   def show
     the_id = params.fetch("an_id")
 
+    @user_id = session.fetch(:user_id)
+
     matching_projects = Project.where({ :id => the_id })
     @the_project = matching_projects.at(0)
 
