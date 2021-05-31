@@ -26,9 +26,9 @@ class InvitationsController < ApplicationController
 
     if the_invitation.valid?
       the_invitation.save
-      redirect_to("/invitations", { :notice => "Invitation created successfully." })
+      redirect_to("/projects/#{params.fetch("query_project_id")}", { :notice => "Invitation sent successfully!" })
     else
-      redirect_to("/invitations", { :notice => "Invitation failed to create successfully." })
+      redirect_to("/projects/#{params.fetch("query_project_id")}", { :notice => "Invitation failed to send." })
     end
   end
 
