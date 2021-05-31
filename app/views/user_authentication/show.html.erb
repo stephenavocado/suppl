@@ -1,3 +1,11 @@
-Hello world
+<div class="row fluid">
 
-<a class="dropdown-item" href="/palettes" data-bs-toggle="modal" data-bs-target="#edit_profile"><strong>Account</strong></a>
+  <div class="col-md-4">
+    <h1>@<%= @current_user.username %></h1>
+  </div>
+
+  <div class="col-md-3 mt-3">
+    <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#edit_profile">Update Account <i class="fas fa-edit"></i></a>
+  </div>
+
+</div>
