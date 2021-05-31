@@ -47,9 +47,11 @@
         </td>
 
         <td>
-          <a href="/decline_invitation/<%= an_invitation.id %>" method="post">
-            Reject
-          </a>
+          <form action="/decline_invitation/<%= an_invitation.id %>" method="post">
+            <button class="btn btn-outline-danger btn-sm">
+              Decline
+            </Button>
+          </form>
         </td>
       </tr>
     <% end %>
