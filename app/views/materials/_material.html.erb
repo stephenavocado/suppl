@@ -5,42 +5,32 @@
         <a href="/materials/<%= the_material.id %>"><img src="<%= the_material.photo_ref%>" class="card-img-top" alt="..."></a>
           <div class="card-body">
             <h6 class="card-subtitle mb-2 text-muted"><%= the_material.name %></h6>
-            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#save_index_material_<%=the_material.id%>">Save to Palette <i class="fas fa-swatchbook"></i></button>
+            
+            <div class="row text-start mt-2">
+              <div class="col-md-8">
+              <form action="/insert_palette_safe" method="post">
+                <input type="hidden" name="query_material_id" value="<%= the_material.id %>">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="query_palette_id">
+                  
+                  <option selected>Choose Palette</option>
+
+                  <% @list_of_palettes.each do |a_palette|%>
+                    <% if session.fetch(:user_id) == a_palette.user_id %>
+                      <option value="<%= a_palette.id %>"><%= a_palette.palette_name %></option>
+                    <% end %>
+                  <% end %>    
+                </select>
+              </div>
+
+              <div class="col-md-4">
+                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#save_index_material_<%=the_material.id%>">
+                  Save
+                </button>
+              </div>
+              </form>
+            </div>
+
           </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="save_index_material_<%=the_material.id%>" tabindex="-1" aria-labelledby="save_index_material_<%=the_material.id%>Label" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" id="save_index_material_<%=the_material.id%>Label"><strong>Save Material</strong></h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <div class="modal-body">
-
-        <form action="/insert_palette_safe" method="post">
-
-          <div>
-            <input type="hidden" name="query_material_id" value="<%=the_material.id%>">
-          </div>
-
-          <div class="form-floating mb-3">
-            <select class="form-select" id="paletteSelect" aria-label="Floating label select example" name="query_palette_id">
-              <% @list_of_palettes.each do |a_palette| %>
-                <%if a_palette.user_id == session.fetch(:user_id)%>
-                  <option value="<%=a_palette.id%>"><small><%=a_palette.palette_name%></small></option>
-                <% end %>
-              <% end %>
-            </select>
-            <label for="paletteSelect">Select Palette</label>
-          </div>
-
-          <button type="submit" class="btn btn-outline-dark">Save to palette</button>
-        </form>
       </div>
     </div>
   </div>
