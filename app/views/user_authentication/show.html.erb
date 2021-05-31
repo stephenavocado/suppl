@@ -10,7 +10,7 @@
 
 </div>
 
-<div class="row fluid mt-4">
+<div class="row fluid mt-4 mb-5">
 
   <div class="col-md-6">
     <h4>Approval Requests</h4>
@@ -21,40 +21,50 @@
 
     <% @list_of_invitations.each do |an_invitation| %>
 
-      <tr>
-        <td>
-          <%= an_invitation.project.project_name %>
-        </td>
+    <div class="card">
+      <div class="card-body">
+        <div class="row fluid">
+          <div class="col-md-4">
+            @<%= an_invitation.sender_id %> wants you to collaborate on <%= an_invitation.project.project_name %>
+          </div>
 
-        <td>
-          <%= an_invitation.sender_id %>
-        </td>
+          <div class="col-md-1">
+            <form action="/accept_invitation/<%= an_invitation.id %>" method="post">
+              <button class="btn btn-outline-success btn-sm">
+                Accept <i class="fas fa-check"></i>
+              </Button>
+            </form>
+          </div>
 
-        <td>
-          <%= time_ago_in_words(an_invitation.created_at) %> ago
-        </td>
+          <div class="col-md-1">
+            <form action="/decline_invitation/<%= an_invitation.id %>" method="post">
+              <button class="btn btn-outline-danger btn-sm">
+                Decline <i class="fas fa-times"></i>
+              </Button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
 
         <td>
           Status: <%= an_invitation.status %>
         </td>
 
-        <td>
-          <form action="/accept_invitation/<%= an_invitation.id %>" method="post">
-            <button class="btn btn-outline-success btn-sm">
-              Accept
-            </Button>
-          </form>
-        </td>
-
-        <td>
-          <form action="/decline_invitation/<%= an_invitation.id %>" method="post">
-            <button class="btn btn-outline-danger btn-sm">
-              Decline
-            </Button>
-          </form>
-        </td>
-      </tr>
     <% end %>
+  </div>
+
+</div>
+
+<div class="row fluid mt-5">
+
+  <div class="col-md-6">
+    <h4>Projects</h4>
+  </div>
+
+  <div class="col-md-6">
+    <h4>Palettes</h4>
   </div>
 
 </div>
