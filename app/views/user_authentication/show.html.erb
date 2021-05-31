@@ -45,6 +45,7 @@
     <% @list_of_projects.each do |a_project| %>
       <%if a_project.user_id == session.fetch(:user_id)%>
         <%= a_project.project_name %>
+        <a href="/projects/<%= a_project.id %>" class="btn btn-outline-dark btn-sm">View Project <i class="fas fa-home"></i></a>
       <%end%>
     <%end%>
 
