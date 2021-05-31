@@ -23,15 +23,7 @@
 
       <tr>
         <td>
-          <%= an_invitation.id %>
-        </td>
-
-        <td>
-          <%= an_invitation.recipient_id %>
-        </td>
-
-        <td>
-          <%= an_invitation.project_id %>
+          <%= an_invitation.project.project_name %>
         </td>
 
         <td>
@@ -39,19 +31,18 @@
         </td>
 
         <td>
-          <%= an_invitation.status %>
-        </td>
-
-        <td>
           <%= time_ago_in_words(an_invitation.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(an_invitation.updated_at) %> ago
         </td>
 
         <td>
           <a href="/invitations/<%= an_invitation.id %>">
-            Show details
+            Accept
+          </a>
+        </td>
+
+        <td>
+          <a href="/invitations/<%= an_invitation.id %>">
+            Reject
           </a>
         </td>
       </tr>
