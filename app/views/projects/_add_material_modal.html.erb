@@ -1,41 +1,45 @@
-<div class="modal fade" id="savetoelement" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addnewspaceLabel" aria-hidden="true">
+<div class="modal fade" id="savetoelement_<%=the_room.id%>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addnewspace_<%=the_room.id%>_Label" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
+
       <div class="modal-header">
-        <h5 class="modal-title" id="addnewspaceLabel">Add Material</h5>
+        <h5 class="modal-title" id="addnewspace_<%=the_room.id%>_Label">Add Material</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+
       <div class="modal-body"> 
 
-      <form action="/insert_element" method="post">
-      <div>
+        <form action="/insert_element" method="post">
+          <div>
 
-         <div class="form-floating mb-3">
-          <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="query_name">
-          <% @list_of_element_types.each do |a_type|%>
-            <option value="<%=a_type.name%>"><%=a_type.name%></option>
-          <%end%>
-          </select>
-          <label for="floatingSelect">Select Type</label>
-        </div>
+            <div class="form-floating mb-3">
+              <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="query_name">
+              <% @list_of_element_types.each do |a_type|%>
+                <option value="<%=a_type.name%>"><%=a_type.name%></option>
+              <%end%>
+              </select>
+              <label for="floatingSelect">Select Type</label>
+            </div>
 
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="material_id" placeholder="..." name="query_material_id">
-          <label for="material_id">Material ID</label>
-        </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="material_id" placeholder="..." name="query_material_id">
+              <label for="material_id">Material ID</label>
+            </div>
 
-        <input type="hidden" id="room_id_box" name="query_room_id" value="<%= the_room.id %>">
+            <div class="form-floating mb-3">
+              <input type="hidden" id="room_id_box" name="query_room_id" value="<%= the_room.id %>">
+            </div>
 
-        <div class="row text-end">
-        <div class="col">
-        <button class="btn btn-outline-dark btn-sm">
-            Add Material
-        </button>
-        </div>
-        </div>
-      </form>
+            <div class="row text-end">
+              <div class="col">
+                <button class="btn btn-outline-dark btn-sm">
+                    Add Material
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-</div>
 </div>

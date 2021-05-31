@@ -1,6 +1,5 @@
 <div class="row fluid">
   <div class="col-md-4">
-
     <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/projects" class="text-decoration-none">Projects</a></li>
@@ -8,26 +7,22 @@
         </li>
       </ol>
     </nav>
-
   </div>
 
   <div class="col-md-8 text-end" role="toolbar" aria-label="Toolbar with button groups">
     <div class="btn-group me-1" role="group" aria-label="First group">
       <a href="#inviteuser" data-bs-toggle="modal" data-bs-target="#inviteuser">
-      <button class="btn btn-outline-dark btn-sm">
-        Invite User <i class="far fa-envelope"></i>
-      </button>
+        <button class="btn btn-outline-dark btn-sm">
+          Invite User <i class="far fa-envelope"></i>
+        </button>
       </a>
-    
       <%= render "/invitations/invite_user_modal" %>
-      
     </div>
     
     <div class="btn-group me-1" role="group" aria-label="Second group">
       <a href="#editproject" data-bs-toggle="modal" data-bs-target="#editproject">
         <button class="btn btn-outline-primary btn-sm">Edit Project <i class="fas fa-edit"></i></button>
       </a>
-
       <%= render "projects/edit_project_modal"%>
     </div>
 
@@ -37,7 +32,6 @@
       </a>
     </div>
   </div>
-
 </div>
 
 <div class="row mb-3">
@@ -67,7 +61,6 @@
 <nav>
 
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-
     <% @the_project.spaces.each do |a_room| %>
       <% if @the_project.spaces.first == a_room %>
         <% active_class = "active"%>
@@ -86,50 +79,53 @@
 <div class="tab-content" id="nav-tabContent">
 
   <% @the_project.spaces.each do |a_room| %>
+
     <% if @the_project.spaces.first == a_room %>
       <% active_class = "show active"%>
     <% else %>
       <% active_class = "" %>
     <% end %>
 
-    <%= render "/projects/add_material_modal", { :the_room => a_room } %>
-
     <div class="tab-pane fade <%= active_class %>" id="Room<%= a_room.id %>" role="tabpanel" aria-labelledby="<%= a_room.name %>_<%= a_room.id%>">
 
       <div class="row mt-3">
 
-      <div class="col" role="toolbar" aria-label="Toolbar with button groups">
-        <div class="btn-group me-2" role="group" aria-label="Second group">
-          <a href="/rooms/<%= a_room.id %>">
-            <button class="btn btn-outline-primary btn-sm">Edit Space <i class="fas fa-pen-square"></i></button>
-          </a>
-        </div>
-        <div class="btn-group me-2" role="group" aria-label="Third group">
-          <a href="/delete_room/<%= a_room.id %>">
-            <button class="btn btn-outline-danger btn-sm">Delete Space <i class="far fa-trash-alt"></i></button>
-          </a> 
-        </div>
-        <div class="btn-group me-2" role="group" aria-label="Fourth group">
-          <a href="#savetoelement" style="color: blue" data-bs-toggle="modal" data-bs-target="#savetoelement">
-            <button class="btn btn-outline-success btn-sm">Add Material to Space <i class="fas fa-plus-circle"></i></button>
-          </a>
-        </div>
-      </div>
-      </div>
+        <div class="col" role="toolbar" aria-label="Toolbar with button groups">
 
-        <div class="row mt-2 g-2">
-          <% a_room.elements.each do |an_element| %>
-            <div class="col-md-3">
-              <%= render "elements/element", { :the_element => an_element } %>
-            </div>
-          <% end %>
-        </div> 
+          <div class="btn-group me-2" role="group" aria-label="Second group">
+            <a href="/rooms/<%= a_room.id %>">
+              <button class="btn btn-outline-primary btn-sm">Edit Space <i class="fas fa-pen-square"></i></button>
+            </a>
+          </div>
+
+          <div class="btn-group me-2" role="group" aria-label="Third group">
+            <a href="/delete_room/<%= a_room.id %>">
+              <button class="btn btn-outline-danger btn-sm">Delete Space <i class="far fa-trash-alt"></i></button>
+            </a> 
+          </div>
+
+          <div class="btn-group me-2" role="group" aria-label="Fourth group">
+            <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#savetoelement_<%=a_room.id%>">
+              Add Material to Space <i class="fas fa-plus-circle"></i>
+            </button>
+          </div>
+
 
       </div>
+
+    </div>
+
+      <div class="row mt-2 g-2">
+        <% a_room.elements.each do |an_element| %>
+          <div class="col-md-3">
+            <%= render "elements/element", { :the_element => an_element } %>
+          </div>
+        <% end %>
+      </div> 
+
+    </div>
+
+  <%= render "/projects/add_material_modal", {:the_room => a_room} %>
 
   <% end %>
   </div>
-
-<div>
-
-</div>
