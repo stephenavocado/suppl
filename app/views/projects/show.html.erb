@@ -48,15 +48,7 @@
 
 <%= render "rooms/new_space_modal" %>
 
-<div class="row mt-2 mb-4">
-  <div class="col">
-    <button class="btn btn-outline-dark btn-sm" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-      View Palettes <i class="fas fa-swatchbook"></i>
-    </button>
-
-    <%= render "/palettes/palette_off_canvas" %>
-  </div>
-</div>
+<%= render "/palettes/palette_off_canvas" %>
 
 <nav>
 
@@ -106,7 +98,13 @@
 
           <div class="btn-group me-2" role="group" aria-label="Fourth group">
             <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#savetoelement_<%=a_room.id%>">
-              Add Material to Space <i class="fas fa-plus-circle"></i>
+              Add Material <i class="fas fa-plus-circle"></i>
+            </button>
+          </div>
+
+          <div class="btn-group me-2" role="group" aria-label="Fifth group">
+            <button class="btn btn-outline-success btn-sm" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"">
+              Add Material From Palette <i class="fas fa-swatchbook"></i>
             </button>
           </div>
 

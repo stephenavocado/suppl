@@ -1,7 +1,14 @@
-<div>
-  <h1>
-    Your Palettes
-  </h1>
+<div class="row fluid">
+  <div class="col-md-3">
+    <h1>
+      Your Palettes
+    </h1>
+  </div>
+  <div class="col-md-4 mt-3">
+    <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#newpalette">
+      Create Palette <i class="fas fa-plus-circle"></i>
+    </button>
+  </div>
 </div>
 
 <hr>
@@ -31,14 +38,5 @@
     </div>
   <% end %>
 <% end %>
-
-<div class="row mt-4">
-<div class="col">
-
-<button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#newpalette">
-Create Palette <i class="fas fa-plus-circle"></i></button>
-
-</div>
-</div>
 
 <%= render "/palettes/new_palette_modal" %>
