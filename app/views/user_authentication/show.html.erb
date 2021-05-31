@@ -36,6 +36,12 @@
 
   <div class="col-md-6">
     <h4>Projects</h4>
+
+    <% @list_of_projects.each do |a_project| %>
+      <%if a_project.user_id == session.fetch(:user_id)%>
+        <%= a_project.project_name %>
+      <%end%>
+    <%end%>
   </div>
 
   <div class="col-md-6">
