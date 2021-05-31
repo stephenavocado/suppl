@@ -24,7 +24,7 @@ class PaletteSavesController < ApplicationController
 
     if the_palette_safe.valid?
       the_palette_safe.save
-      redirect_to("/materials", { :notice => "#{the_palette_safe.material.name} saved to palette." })
+      redirect_to("/materials", { :notice => "#{the_palette_safe.material.name} saved to #{the_palette_safe.palette.palette_name}." })
     else
       redirect_to("/materials", { :notice => "#{the_palette_safe.material.name} not saved to palette." })
     end
