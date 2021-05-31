@@ -1,30 +1,47 @@
 <div class="accordion accordion-flush" id="palettesaccordian">
-  <% @list_of_palettes.each do |a_palette| %>
+  <% @current_user.palettes.each do |a_palette| %>
   
   <div class="accordion-item">
     
-    <h2 class="accordion-header" id="<%= a_palette.id%>_<%=a_palette.palette_name%>">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#<%=a_palette.palette_name%>_<%=a_palette.id%>" aria-expanded="false" aria-controls="<%=a_palette.palette_name%>_<%=a_palette.id%>">
-        <%= a_palette.palette_name%>
+    <h2 class="accordion-header" id="palette_<%= a_palette.id %>_header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#palette_<%=a_palette.id%>" aria-expanded="false" aria-controls="#palette_<%=a_palette.id%>">
+        <%= a_palette.palette_name %>
       </button>
     </h2>
 
-    <div id="<%=a_palette.palette_name%>_<%=a_palette.id%>" class="accordion-collapse collapse" aria-labelledby="<%= a_palette.id%>_<%=a_palette.palette_name%>" data-bs-parent="#palettesaccordian">
+    <div id="palette_<%=a_palette.id%>" class="accordion-collapse collapse" aria-labelledby="palette_<%=a_palette.id%>" data-bs-parent="#palettesaccordian">
       <div class="accordion-body">
         <div class="row fluid">
-          <%@list_of_palette_saves.each do |a_save|%>
-            <% if a_palette.id == a_save.palette_id %>
+          <% a_palette.palette_saves.each do |a_save|%>
               <div class="col-4 mt-2">
 
                 <a href="/materials/<%=a_save.material.id%>" style="text-decoration: none">
+                
                 <img src="<%=a_save.material.photo_ref%>" class="img-fluid rounded palette" width="125" height="125">
                 <figcaption class="figure-caption text-center"><strong>Mat ID: </strong><%= a_save.material.id %></figcaption>
                 </a>
 
-                <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#addfrompalette"><i class="fas fa-plus-circle"></i></btn>
+                <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_for_palette_save_<%= a_save.id %>"><i class="fas fa-plus-circle"></i></btn>
               </div>
-            <% end %>
-            
+
+              <div class="modal fade" id="modal_for_palette_save_<%= a_save.id %>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="#modal_for_palette_save_<%= a_save.id %>" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+
+                    <div class="modal-header">
+                      <h5 class="modal-title">Add Material</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+
+                      <h1><%= a_save.id %></h1>
+
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
           <% end %>
         </div>
       </div>
@@ -32,7 +49,7 @@
 
   </div>
 
-  <%= render "/projects/add_material_from_palette" %>
+  <%#= render "/projects/add_material_from_palette" %>
 
   <% end %>
 
