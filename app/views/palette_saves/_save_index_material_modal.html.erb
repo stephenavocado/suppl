@@ -1,12 +1,13 @@
-<div class="modal fade" id="save_index_material" tabindex="-1" aria-labelledby="save_index_materialLabel" aria-hidden="true">
+<div class="modal fade" id="save_index_material_<%=the_material.id%>" tabindex="-1" aria-labelledby="save_index_material_<%=the_material.id%>Label" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="save_index_materialLabel"><strong>Save Material</strong></h4>
+        <h4 class="modal-title" id="save_index_material_<%=the_material.id%>Label"><strong>Save Material</strong></h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
       <div class="modal-body">
+
         <form action="/insert_palette_safe" method="post">
 
           <div>

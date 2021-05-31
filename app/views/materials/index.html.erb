@@ -32,7 +32,7 @@
 <hr>
 
 <div class="row g-2">
-<% @list_of_materials.each do |a_material| %>
-  <div class="col-3"><%= render "materials/material", { :the_material => a_material } %></div>
-<% end %>
+  <% @list_of_materials.each do |a_material| %>
+    <div class="col-3"><%= render "materials/material", { :the_material => a_material } %></div>
+  <% end %>
 </div>
