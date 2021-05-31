@@ -1,0 +1,26 @@
+ <div class="card">
+      <div class="card-body">
+        <div class="row fluid">
+          <div class="col-md-8">
+            <strong>@<%= the_invitation.sender_id %></strong> wants you to collaborate on <%= the_invitation.project.project_name %>
+          </div>
+
+          <div class="col-md-2">
+            <form action="/accept_invitation/<%= the_invitation.id %>" method="post">
+              <button class="btn btn-outline-success btn-sm">
+                Accept <i class="fas fa-check"></i>
+              </Button>
+            </form>
+          </div>
+
+          <div class="col-md-2">
+            <form action="/decline_invitation/<%= the_invitation.id %>" method="post">
+              <button class="btn btn-outline-danger btn-sm">
+                Decline <i class="fas fa-times"></i>
+              </Button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
