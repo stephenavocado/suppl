@@ -42,6 +42,12 @@
         <%= a_project.project_name %>
       <%end%>
     <%end%>
+
+    <% @list_of_invitations.each do |a_project| %>
+      <%if a_project.recipient_id == session.fetch(:user_id) && a_project.status == "Approved" %>
+        <%= a_project.project.project_name %>
+      <%end%>
+    <%end%>
   </div>
 
   <div class="col-md-6">
