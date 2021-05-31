@@ -86,7 +86,22 @@
 
     <% @list_of_palettes.each do |a_palette| %>
       <%if a_palette.user_id == session.fetch(:user_id)%>
-        <%= a_palette.palette_name %>
+        
+
+         <div class="card mb-2">
+          <div class="card-body">
+            <div class="row fluid">
+              <div class="col-md-6" align-middle>
+                <h5><%= a_palette.palette_name %></h5>
+              </div>
+              <div class="col-md-6 text-end">
+              <a href="/projects/<%= a_palette.id %>" class="btn btn-outline-dark btn-sm">View Palette <i class="fas fa-swatchbook"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
       <%end%>
     <%end%>
   </div>
