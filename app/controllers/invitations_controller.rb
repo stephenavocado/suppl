@@ -33,7 +33,7 @@ class InvitationsController < ApplicationController
   end
 
   def accept_invite
-    the_id = params.fetch("path_id")
+    the_id = params.fetch("invite_id")
     the_invitation = Invitation.where({ :id => the_id }).at(0)
     the_invitation.status = "Accepted"
 
@@ -47,7 +47,7 @@ class InvitationsController < ApplicationController
   end
 
   def decline_invite
-    the_id = params.fetch("path_id")
+    the_id = params.fetch("invite_id")
     the_invitation = Invitation.where({ :id => the_id }).at(0)
     the_invitation.status = "Declined"
 

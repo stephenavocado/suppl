@@ -93,6 +93,12 @@ Rails.application.routes.draw do
   # DELETE
   get("/delete_invitation/:path_id", { :controller => "invitations", :action => "destroy" })
 
+  #ACCEPT
+  post("/accept_invitation/:invite_id", { :controller => "invitations", :action => "accept_invite" })
+
+  #REJECT
+  post("/decline_invitation/:invite_id", { :controller => "invitations", :action => "decline_invite" })
+
   #------------------------------
 
   # Routes for the Manufacturer resource:
