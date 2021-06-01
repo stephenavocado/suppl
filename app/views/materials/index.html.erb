@@ -11,9 +11,9 @@
 
     <div class="input-group mb-3">
       <%#= f.label :name_cont, "Material Name" %>
-      <%= f.text_field :name_cont, :placeholder => "Suppl away...", :class => "form-control" %>
-      <%= f.button(class: "btn btn-outline-dark btn-sm") do %>
-      Search <i class="fas fa-search"></i>
+      <%= f.text_field :name_cont, :placeholder => "Suppl away...", :class => "form-control", :style => "border-top-left-radius: 20px; border-bottom-left-radius: 20px" %>
+      <%= f.button(class: "btn btn-outline-primary btn-sm", style: "border-top-right-radius: 20px; border-bottom-right-radius: 20px") do %>
+       Search <i class="fas fa-search"></i>
       <% end %>
     </div>
 

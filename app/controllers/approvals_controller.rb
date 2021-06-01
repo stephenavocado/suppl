@@ -23,7 +23,7 @@ class ApprovalsController < ApplicationController
     the_approval.requester_id = params.fetch("query_requester_id")
     the_approval.space_id = params.fetch("query_space_id")
     the_approval.status = params.fetch("query_status")
-    the_approval.note = params.fetch("query_note")
+    #the_approval.note = params.fetch("query_note")
 
     if the_approval.valid?
       the_approval.save
