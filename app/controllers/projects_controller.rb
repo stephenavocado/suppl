@@ -32,6 +32,9 @@ class ProjectsController < ApplicationController
     matching_element_types = ElementType.all
     @list_of_element_types = matching_element_types.order({ :created_at => :desc })
 
+    matching_materials = Material.all
+    @list_of_materials = matching_materials.order({ :created_at => :desc })
+
     render({ :template => "projects/show.html.erb" })
   end
 
