@@ -35,10 +35,38 @@
 
                     <div class="modal-body">
 
-                      <h1><%= a_save.id %></h1>
+                  <form action="/insert_element" method="post">
+                    <div class="form-floating mb-3">
+                      <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="query_room_id">
+                      <% @list_of_rooms.each do |a_room|%>
+                        <% if @the_project.id == a_room.project_id %>
+                        <option value="<%=a_room.id%>"><%=a_room.name%></option>
+                        <%end%>
+                      <%end%>
+                      </select>
+                      <label for="floatingSelect">Select Space</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="element_name" placeholder="..." name="query_name">
+                      <label for="element_name">Name</label>
+                    </div>
+
+                      <input type="hidden" name="query_material_id" value="<%= a_save.material_id %>">
+
+                      <div class="row text-end">
+                      <div class="col">
+                        <button class="btn btn-outline-success btn-sm">
+                            Add Material
+                        </button>
+                      </div>
+                    </div>
+                  </form>
 
                       
                     </div>
+
+                     
                   </div>
                 </div>
               </div>
