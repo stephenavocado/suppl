@@ -12,15 +12,17 @@
 
 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="recipient_id" placeholder="..." name="query_recipient_id">
+          <input type="text" class="form-control" id="recipient_id" placeholder="..." name="query_approver_id">
           <label for="material_id">User ID</label>
         </div>
 
         <input type="hidden" id="sender_id" name="query_project_id" value="<%= @the_project.id %>">
 
-        <input type="hidden" id="sender_id" name="query_sender_id" value="<%= @current_user.id %>">
+        <input type="hidden" id="sender_id" name="query_requester_id" value="<%= @current_user.id %>">
 
-        <input type="hidden" id="sender_id" name="query_status" value="Sent">
+        <input type="hidden" id="sender_id" name="query_status" value="Requested">
+
+        <input type="hidden" id="sender_id" name="query_note" value="Please approve these materials for <%= @the_project.project_name%>">
 
         <div class="row text-end">
           <div class="col">
