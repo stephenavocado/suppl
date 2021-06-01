@@ -1,0 +1,150 @@
+<div>
+  <div>
+    <h1>
+      List of all approvals
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new approval
+    </h2>
+
+    <form action="/insert_approval" method="post">
+      <div>
+        <label for="approver_id_box">
+          Approver
+        </label>
+
+        <input type="text" id="approver_id_box" name="query_approver_id">
+      </div>
+
+      <div>
+        <label for="requester_id_box">
+          Requester
+        </label>
+
+        <input type="text" id="requester_id_box" name="query_requester_id">
+      </div>
+
+      <div>
+        <label for="space_id_box">
+          Space
+        </label>
+
+        <input type="text" id="space_id_box" name="query_space_id">
+      </div>
+
+      <div>
+        <label for="status_box">
+          Status
+        </label>
+
+        <input type="text" id="status_box" name="query_status">
+      </div>
+
+      <div>
+        <label for="note_box">
+          Note
+        </label>
+
+        <input type="text" id="note_box" name="query_note">
+      </div>
+
+      <button>
+        Create approval
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Approver
+        </th>
+
+        <th>
+          Requester
+        </th>
+
+        <th>
+          Space
+        </th>
+
+        <th>
+          Status
+        </th>
+
+        <th>
+          Note
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_approvals.each do |an_approval| %>
+      <tr>
+        <td>
+          <%= an_approval.id %>
+        </td>
+
+        <td>
+          <%= an_approval.approver_id %>
+        </td>
+
+        <td>
+          <%= an_approval.requester_id %>
+        </td>
+
+        <td>
+          <%= an_approval.space_id %>
+        </td>
+
+        <td>
+          <%= an_approval.status %>
+        </td>
+
+        <td>
+          <%= an_approval.note %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(an_approval.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(an_approval.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/approvals/<%= an_approval.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

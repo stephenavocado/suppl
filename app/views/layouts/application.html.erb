@@ -101,10 +101,15 @@
       opacity: .5;
     }
 
+    .test{
+      transition: all .4s ease-in-out;
+    }
+
     .test:hover .overlay{
       background-color: rgb(245, 217, 204);
       transition: .4s;
       opacity: 1;
+      transform: scale(1.1); 
      }
 
     .overpalette {
@@ -168,7 +173,7 @@
 
         <div class="dropdown">
           <button class="btn" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="far fa-user-circle fa-2x"></i>
+            <i class="fas fa-user-circle fa-2x"></i>
           </button>
     
             <ul class="dropdown-menu class dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton2">

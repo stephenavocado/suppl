@@ -1,0 +1,131 @@
+<div>
+  <div>
+    <h1>
+      Approval #<%= @the_approval.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/approvals">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_approval/<%= @the_approval.id %>">
+          Delete approval
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Approver
+      </dt>
+      <dd>
+        <%= @the_approval.approver_id %>
+      </dd>
+
+      <dt>
+        Requester
+      </dt>
+      <dd>
+        <%= @the_approval.requester_id %>
+      </dd>
+
+      <dt>
+        Space
+      </dt>
+      <dd>
+        <%= @the_approval.space_id %>
+      </dd>
+
+      <dt>
+        Status
+      </dt>
+      <dd>
+        <%= @the_approval.status %>
+      </dd>
+
+      <dt>
+        Note
+      </dt>
+      <dd>
+        <%= @the_approval.note %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_approval.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_approval.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit approval
+    </h2>
+
+    <form action="/modify_approval/<%= @the_approval.id %>"  method="post" >
+      <div>
+        <label for="approver_id_box">
+          Approver
+        </label>
+
+        <input type="text" id="approver_id_box" name="query_approver_id" value="<%= @the_approval.approver_id %>">
+      </div>
+
+      <div>
+        <label for="requester_id_box">
+          Requester
+        </label>
+
+        <input type="text" id="requester_id_box" name="query_requester_id" value="<%= @the_approval.requester_id %>">
+      </div>
+
+      <div>
+        <label for="space_id_box">
+          Space
+        </label>
+
+        <input type="text" id="space_id_box" name="query_space_id" value="<%= @the_approval.space_id %>">
+      </div>
+
+      <div>
+        <label for="status_box">
+          Status
+        </label>
+
+        <input type="text" id="status_box" name="query_status" value="<%= @the_approval.status %>">
+      </div>
+
+      <div>
+        <label for="note_box">
+          Note
+        </label>
+
+        <input type="text" id="note_box" name="query_note" value="<%= @the_approval.note %>">
+      </div>
+
+      <button>
+        Update approval
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

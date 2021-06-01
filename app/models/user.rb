@@ -28,4 +28,7 @@ class User < ApplicationRecord
   
   has_many(:palettes, { :class_name => "Palette", :foreign_key => "user_id", :dependent => :destroy })
   has_many(:projects, { :class_name => "Project", :foreign_key => "user_id", :dependent => :destroy })
+
+  has_many(:approval_requests, { :class_name => "Approval", :foreign_key => "requester_id", :dependent => :destroy })
+  has_many(:approvals, { :class_name => "Approval", :foreign_key => "approver_id", :dependent => :destroy })
 end
