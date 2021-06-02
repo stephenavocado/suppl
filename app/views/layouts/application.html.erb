@@ -113,6 +113,31 @@
       transform: scale(1.1); 
      }
 
+    .accordianmat{
+      border-radius: 10px;
+      transition: all .4s ease-in-out;
+    }
+
+    .accordianmat:hover .over_palette{
+      background-color: rgb(245, 217, 204);
+      transition: .4s;
+      opacity: .5; 
+     }
+
+    .over_palette {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: .5s ease;
+      background-color: rgb(245, 217, 204);
+      border-radius: 10px;
+    }
+
     .imgpos {
       position: absolute;
       top: 50%;
@@ -121,27 +146,6 @@
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
       text-align: center;
-    }
-
-    .overpalette {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100%;
-      width: 100%;
-      opacity: .5;
-      transition: .5s ease;
-      background-color: rgb(219, 255, 205);
-      border-radius: 10px;
-    }
-
-    .palette:hover .overpalette{
-      background-color: rgb(219, 255, 205);
-      transition: .4s;
-      opacity: .5;
-      border-radius: 10px;
     }
 
     .signin-btn {

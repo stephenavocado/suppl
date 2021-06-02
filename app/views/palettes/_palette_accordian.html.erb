@@ -15,11 +15,11 @@
           <% a_palette.palette_saves.each do |a_save|%>
 
         <div class="col-4 mt-2">
-          <div class="card test">
-            <img src="<%=a_save.material.photo_ref%>" class="card-img-top img-fluid rounded" alt="...">
-              <div class="overlay">
-                <div class="text">
-                  <button type="button" class="btn btn-outline-success btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#modal_for_palette_save_<%= a_save.id %>"><i class="fas fa-plus-circle"></i></button>
+          <div class="card accordianmat">
+            <img src="<%=a_save.material.photo_ref%>" class="card-img-top" alt="..." style="border-radius: 10px">
+              <div class="over_palette">
+                <div class="imgpos">
+                  <button type="button" class="btn btn-outline-dark btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#modal_for_palette_save_<%= a_save.id %>"><i class="fas fa-plus-circle"></i></button>
                 </div>
               </div>
           </div>
