@@ -112,6 +112,16 @@
       transform: scale(1.1); 
      }
 
+    .imgpos {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
     .overpalette {
       position: absolute;
       top: 0;
@@ -126,7 +136,7 @@
       border-radius: 10px;
     }
 
-    .palette:hover{
+    .palette:hover .overpalette{
       background-color: rgb(219, 255, 205);
       transition: .4s;
       opacity: .5;

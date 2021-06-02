@@ -13,15 +13,17 @@
       <div class="accordion-body">
         <div class="row fluid">
           <% a_palette.palette_saves.each do |a_save|%>
-              <div class="col-4 mt-2">
 
-                <a href="/materials/<%=a_save.material.id%>" style="text-decoration: none">
-                
-                <img src="<%=a_save.material.photo_ref%>" class="img-fluid rounded palette" style="border-radius: 10px width="125" height="125">
-                </a>
-
-                <button type="button" class="btn btn-outline-success btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#modal_for_palette_save_<%= a_save.id %>"><i class="fas fa-plus-circle"></i></btn>
+        <div class="col-4 mt-2">
+          <div class="card test">
+            <img src="<%=a_save.material.photo_ref%>" class="card-img-top img-fluid rounded" alt="...">
+              <div class="overlay">
+                <div class="text">
+                  <button type="button" class="btn btn-outline-success btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#modal_for_palette_save_<%= a_save.id %>"><i class="fas fa-plus-circle"></i></button>
+                </div>
               </div>
+          </div>
+        </div>
 
               <div class="modal fade" id="modal_for_palette_save_<%= a_save.id %>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="#modal_for_palette_save_<%= a_save.id %>" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
