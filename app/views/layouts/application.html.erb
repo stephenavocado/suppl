@@ -30,7 +30,7 @@
      }
 
      .logo{
-       color: rgb(239, 131, 84);
+       color: #E9832A;
      }
 
     .btn-circle {
@@ -166,23 +166,23 @@
 
   <% if request.path != "/" %>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand"><strong>Suppl</strong></a>
+      <a class="navbar-brand"><strong style="color: white">suppl</strong></a>
    
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/materials"><button class="btn btn-outline-dark btn-sm"><i class="fas fa-search"></i> Search Materials</button></a>
+            <a class="nav-link active" aria-current="page" href="/materials" style="color: white"><i class="fas fa-search"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/palettes"><button class="btn btn-outline-dark btn-sm">Palettes <i class="fas fa-swatchbook"></i></button></a>
+            <a class="nav-link active" aria-current="page" href="/palettes"><i class="fas fa-swatchbook"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/projects"><button class="btn btn-outline-dark btn-sm">Projects <i class="fas fa-home"></i></button></a>
+            <a class="nav-link active" aria-current="page" href="/projects"><i class="far fa-building"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/user/<%=session.fetch(:user_id)%>"><button class="btn btn-outline-dark btn-sm">Dashboard <i class="fas fa-tachometer-alt"></i></button></a>
+            <a class="nav-link active" aria-current="page" href="/user/<%=session.fetch(:user_id)%>"><i class="fas fa-tachometer-alt"></i></a>
           </li>
         </ul>
 
