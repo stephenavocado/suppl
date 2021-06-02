@@ -172,12 +172,26 @@
    
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <% if request.path != "/materials" %>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/materials" style="color: white"><i class="fas fa-search"></i></a>
           </li>
+          <% end %>
+          <% if request.path == "/materials" %>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/materials" style="color: #E9832A"><i class="fas fa-search"></i></a>
+          </li>
+          <% end %>
+          <% if request.path != "/palettes" %>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/palettes"><i class="fas fa-swatchbook"></i></a>
           </li>
+          <% end %>
+          <% if request.path == "/palettes" %>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/palettes" style="color: #E9832A"><i class="fas fa-swatchbook"></i></a>
+          </li>
+          <% end %>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/projects"><i class="far fa-building"></i></a>
           </li>

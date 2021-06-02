@@ -1,26 +1,24 @@
 <div class="row fluid">
-  <div class="col-md-3">
-    <h1>
-      Your Palettes
-    </h1>
+  <div class="col-md-2 text-end">
+    <h1>Your Palettes</h1>
+    <a href="#newpalette" data-bs-toggle="modal" data-bs-target="#newpalette" class="logo">
+      <i class="fas fa-plus"></i>
+    </a>
   </div>
-  <div class="col-md-4 mt-3">
-    <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#newpalette">
-      Create Palette <i class="fas fa-plus-circle"></i>
-    </button>
+
+  <div class="col-md-1">
   </div>
-</div>
 
-<hr>
-
-<% @current_user.palettes.each do |a_palette| %>
+  <div class="col-md-8">
+    
+    <% @current_user.palettes.each do |a_palette| %>
     <div class="card mw-100 mt-2">
       <div class="card-body">
       <div class="row fluid">
         <div class="col-md-4">
           <h5 class="card-title"><%= a_palette.palette_name %></h5>
           <p class="card-text"><%= a_palette.description %></p>
-          <a href="/palettes/<%= a_palette.id %>" class="btn btn-outline-dark btn-sm">View Palette <i class="fas fa-swatchbook"></i></a>
+          <a href="/palettes/<%= a_palette.id %>" style="text-decoration: none"><p class="card-text" style="color: #E9832A"><small>View Palette</small></p></a>
         </div>
 
         <%a_palette.palette_saves.limit(4).each do |a_save|%>
@@ -37,3 +35,10 @@
 <% end %>
 
 <%= render "/palettes/new_palette_modal" %>
+
+
+  </div>
+
+
+</div>
+
