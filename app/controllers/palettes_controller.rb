@@ -1,11 +1,9 @@
 class PalettesController < ApplicationController
   def index
     matching_palettes = Palette.all
-
     @list_of_palettes = matching_palettes.order({ :created_at => :desc })
 
     matching_palette_saves = PaletteSafe.all
-
     @list_of_palette_saves = matching_palette_saves.order({ :created_at => :desc })
 
     render({ :template => "palettes/index.html.erb" })
