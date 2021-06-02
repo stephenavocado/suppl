@@ -1,61 +1,50 @@
-
-
 <div class="row fluid">
-  <div class="col-md-3">
-    <h1>
-      Your Projects
-    </h1>
+  <div class="col-md-2 text-end">
+    <h1>Your Projects</h1>
+    <a href="#addnewproject" data-bs-toggle="modal" data-bs-target="#addnewproject" class="logo">
+      <i class="fas fa-plus"></i>
+    </a>
   </div>
 
-  <div class="col-md-4 mt-3">
-    <utton" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addnewproject">
-      Create Project <i class="fas fa-plus-circle"></i>
-    </button>
+  <div class="col-md-1">
+  </div>
+
+  <div class="col-md-6">
+    <% @current_user.projects.each do |a_project| %>
+      <div class="card mb-3">
+        <div class="row g-0">
+
+          <div class="col-md-4">
+            <img class="card-img-left" src="https://cdn.vox-cdn.com/thumbor/2FT5GtjEuq26Kkc_mz7S0Ji5Yhc=/0x0:1800x1800/920x0/filters:focal(0x0:1800x1800):format(webp):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/19424357/4_Bungalow.jpg" width="200" length="200" alt="...">
+          </div>
+
+          <div class="col-md-1">
+          </div>
+
+          <div class="col-md-6">
+            <div class="card-body">
+              <h5 class="card-title"><%= a_project.project_name %></h5>
+              <p class="card-text"><%= a_project.description %></p>
+              <a href="/projects/<%= a_project.id %>" style="text-decoration: none"><p class="card-text" style="color: #E9832A"><small>View Project</small></p></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    <% end %>
+
+
+
+
+
+
+
   </div>
 </div>
 
-<hr>
 
-<% @current_user.projects.each do |a_project| %>
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img class="card-img-left" src="https://cdn.vox-cdn.com/thumbor/2FT5GtjEuq26Kkc_mz7S0Ji5Yhc=/0x0:1800x1800/920x0/filters:focal(0x0:1800x1800):format(webp):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/19424357/4_Bungalow.jpg" width="200" length="200" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title"><%= a_project.project_name %></h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <a href="/projects/<%= a_project.id %>" style="text-decoration: none"><p class="card-text" style="color: #E9832A"><small>View Project</small></p></a>
-      </div>
-    </div>
-  </div>
-</div>
 
-  <div class="card mw-100 mt-2">
-    <div class="card-body">
-      <div class="row fluid">
-        <div class="col-md-2">
-          <img class="img-thumbnail" src="https://cdn.vox-cdn.com/thumbor/2FT5GtjEuq26Kkc_mz7S0Ji5Yhc=/0x0:1800x1800/920x0/filters:focal(0x0:1800x1800):format(webp):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/19424357/4_Bungalow.jpg" class="img-fluid rounded" width="200" height="200">
-        </div>
-        
-        <div class="col-md-5">
-          <h5><strong><%= a_project.project_name %></strong></h5>
-          <div class="col mt-2">
-          <p class="card-text text-muted"><%= a_project.description %></p>
-          </div>
-          <div class="col mt-2">
-          <a href="/projects/<%= a_project.id %>" class="btn btn-outline-dark btn-sm">View Project <i class="fas fa-home"></i></a>
-          </div>
-          <i class="fas fa-user-friends"></i>
-        </div>
-      </div>
-    </div>
-  </div>
-<% end %>
-
-<% @list_of_invitations.each do |a_project| %>
-      <%if a_project.recipient_id == session.fetch(:user_id) && a_project.status == "Accepted" %>
+<% @current_user.invitation_requests.each do |a_project| %>
 
         <div class="card mw-100 mt-2">
           <div class="card-body">
@@ -80,7 +69,6 @@
           </div>
         </div>
 
-      <%end%>
     <%end%>
 
 <div class="row mt-4">
