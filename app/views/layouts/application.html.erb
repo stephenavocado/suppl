@@ -192,9 +192,16 @@
             <a class="nav-link active" aria-current="page" href="/palettes" style="color: #E9832A"><i class="fas fa-swatchbook"></i></a>
           </li>
           <% end %>
+          <% if request.path != "/projects" %>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/projects"><i class="far fa-building"></i></a>
           </li>
+          <% end %>
+          <% if request.path == "/projects" %>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/projects" style="color: #E9832A"><i class="far fa-building"></i></a>
+          </li>
+          <% end %>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/user/<%=session.fetch(:user_id)%>"><i class="fas fa-tachometer-alt"></i></a>
           </li>
