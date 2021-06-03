@@ -9,22 +9,20 @@
   <div class="col-md-1">
   </div>
 
-  <div class="col-md-6">
+  <div class="col-md-9">
     <% @current_user.projects.each do |a_project| %>
       <div class="card mb-3">
         <div class="row g-0">
 
-          <div class="col-md-4">
-            <img class="card-img-left" src="https://cdn.vox-cdn.com/thumbor/2FT5GtjEuq26Kkc_mz7S0Ji5Yhc=/0x0:1800x1800/920x0/filters:focal(0x0:1800x1800):format(webp):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/19424357/4_Bungalow.jpg" width="200" length="200" alt="...">
-          </div>
-
-          <div class="col-md-1">
+          <div class="col-md-2">
+            <img class="img-fluid rounded" src="https://cdn.vox-cdn.com/thumbor/2FT5GtjEuq26Kkc_mz7S0Ji5Yhc=/0x0:1800x1800/920x0/filters:focal(0x0:1800x1800):format(webp):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/19424357/4_Bungalow.jpg" width="200" length="200" alt="...">
           </div>
 
           <div class="col-md-6">
             <div class="card-body">
               <h5 class="card-title"><%= a_project.project_name %></h5>
               <p class="card-text"><%= a_project.description %></p>
+              <p class="card-text"><i class="fas fa-user-friends"> </i> <small class="text-muted">@<%= a_project.user.username %></small></p>
               <a href="/projects/<%= a_project.id %>" style="text-decoration: none"><p class="card-text" style="color: #E9832A"><small>View Project</small></p></a>
             </div>
           </div>
@@ -38,19 +36,16 @@
       <div class="card mb-3">
         <div class="row g-0">
 
-          <div class="col-md-4">
-            <img class="card-img-left" src="https://cdn.vox-cdn.com/thumbor/2FT5GtjEuq26Kkc_mz7S0Ji5Yhc=/0x0:1800x1800/920x0/filters:focal(0x0:1800x1800):format(webp):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/19424357/4_Bungalow.jpg" width="200" length="200" alt="...">
-          </div>
-
-          <div class="col-md-1">
+          <div class="col-md-2">
+            <img class="img-fluid rounded" src="https://cdn.vox-cdn.com/thumbor/2FT5GtjEuq26Kkc_mz7S0Ji5Yhc=/0x0:1800x1800/920x0/filters:focal(0x0:1800x1800):format(webp):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/19424357/4_Bungalow.jpg" width="200" length="200" alt="...">
           </div>
 
           <div class="col-md-6">
             <div class="card-body">
               <h5 class="card-title"><%= a_project.project.project_name %></h5>
               <p class="card-text"><%= a_project.project.description %></p>
+              <p class="card-text"><i class="fas fa-user-friends"> </i> <small class="text-muted">@<%= a_project.project.user.username %></small></p>
               <a href="/projects/<%= a_project.project.id %>" style="text-decoration: none"><p class="card-text" style="color: #E9832A"><small>View Project</small></p></a>
-              <p><small class="text-muted">Invite by: @<%= a_project.sender.username %></small></p>
             </div>
           </div>
 

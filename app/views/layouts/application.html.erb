@@ -122,9 +122,8 @@
     }
 
     .accordianmat:hover .over_palette{
-      background-color: rgb(245, 217, 204);
       transition: .4s;
-      opacity: .5; 
+      opacity: 1; 
      }
 
     .over_palette {
@@ -137,7 +136,6 @@
       width: 100%;
       opacity: 0;
       transition: .5s ease;
-      background-color: rgb(245, 217, 204);
       border-radius: 10px;
     }
 
@@ -201,16 +199,16 @@
           </li>
           <% end %>
           <% if request.path.first(9) == "/projects" %>
-          <li class="nav-item circlebtn">
+          <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/projects" style="color: #E9832A"><i class="far fa-building"></i></a>
           </li>
           <% end %>
-          <% if request.path != "/user" %>
+          <% if request.path.first(9) != "/user" %>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/user/<%=session.fetch(:user_id)%>"><i class="fas fa-tachometer-alt"></i></a>
           </li>
           <% end %>
-          <% if request.path == "/user" %>
+          <% if request.path.first(9) == "/user" %>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/user/<%=session.fetch(:user_id)%>" style="color: #E9832A"><i class="fas fa-tachometer-alt"></i></a>
           </li>
