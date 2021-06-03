@@ -47,35 +47,39 @@
     <h4>Projects</h4>
     <hr>
 
-    <% @list_of_projects.each do |a_project| %>
-      <%if a_project.user_id == session.fetch(:user_id)%>
+    <% @current_user.projects.each do |a_project| %>
 
         <div class="card mb-2">
           <div class="card-body">
             <div class="row fluid">
-              <div class="col-md-6" align-middle>
+              <div class="col-md-4" align-middle>
                 <h5><%= a_project.project_name %></h5>
               </div>
-              <div class="col-md-6 text-end">
+              <div class="col-md-4">
+                <p class="card-text"><i class="fas fa-user-friends"> </i> <small class="text-muted">@<%= a_project.user.username %></small></p>
+              </div>
+              <div class="col-md-4 text-end">
               <a href="/projects/<%= a_project.id %>" style="text-decoration: none"><p class="card-text" style="color: #E9832A"><small>View Project</small></p></a>
               </div>
             </div>
           </div>
         </div>
         
-      <%end%>
     <%end%>
 
-    <% @list_of_invitations.each do |a_project| %>
-      <%if a_project.recipient_id == session.fetch(:user_id) && a_project.status == "Accepted" %>
+    <% @current_user.invitation_requests.each do |a_project| %>
+      <%if a_project.status == "Accepted" %>
 
         <div class="card mb-2">
           <div class="card-body">
             <div class="row fluid">
-              <div class="col-md-6" align-middle>
+              <div class="col-md-4" align-middle>
                 <h5><%= a_project.project.project_name %></h5>
               </div>
-              <div class="col-md-6 text-end">
+              <div class="col-md-4">
+                <p class="card-text"><i class="fas fa-user-friends"> </i> <small class="text-muted">@<%= a_project.project.user.username %></small></p>
+              </div>
+              <div class="col-md-4 text-end">
               <a href="/projects/<%= a_project.project.id %>" style="text-decoration: none"><p class="card-text" style="color: #E9832A"><small>View Project</small></p></a>
               </div>
             </div>
