@@ -7,24 +7,22 @@
             <p><small><strong><%= the_material.name %></strong></small></p>
             
             <div class="row text-start mt-2">
+
               <div class="col-md-8">
               <form action="/insert_palette_safe" method="post">
                 <input type="hidden" name="query_material_id" value="<%= the_material.id %>">
+                
                 <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="query_palette_id">
                   
-                  <option selected>Choose Palette</option>
-
-                  <% @list_of_palettes.each do |a_palette|%>
-                    <% if session.fetch(:user_id) == a_palette.user_id %>
+                  <% @current_user.palettes.each do |a_palette|%>
                       <option value="<%= a_palette.id %>"><%= a_palette.palette_name %></option>
-                    <% end %>
                   <% end %>    
                 </select>
               </div>
 
-              <div class="col-md-4">
+              <div class="col-md-2">
                 <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#save_index_material_<%=the_material.id%>">
-                  Save
+                  <i class="far fa-bookmark"></i>
                 </button>
               </div>
               </form>

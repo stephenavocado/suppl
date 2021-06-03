@@ -4,8 +4,8 @@
       <div class="card mat-card">
         <a href="/materials/<%= the_save.material.id %>"><img src="<%= the_save.material.photo_ref%>" class="card-img-top material" alt="..." style="border-top-left-radius: 10px; border-top-right-radius: 10px"></a>
           <div class="card-body">
-            <h6 class="card-subtitle mb-2 text-muted"><%= the_save.material.name %></h6>
-            <a href="/delete_palette_safe/<%= the_save.id %>" class="btn btn-outline-danger btn-sm">Remove from Palette <i class="far fa-times-circle"></i></a>
+            <h6 class="card-subtitle mb-2"><small><%= the_save.material.name %></small></h6>
+            <a href="/delete_palette_safe/<%= the_save.id %>" style="text-decoration: none"><small style="color: red">Remove from Palette</small></a>
           </div>
       </div>
     </div>
