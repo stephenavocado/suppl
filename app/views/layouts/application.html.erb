@@ -33,15 +33,18 @@
       color: #E9832A;
      }
 
-    .btn-circle {
+    .circlebtn:hover {
       width: 30px;
       height: 30px;
       padding: 6px 0px;
       border-radius: 15px;
-      font-size: 8px; 
+      font-size: 10px;
       text-align: center;
       color: none;
       border-color: none;
+      background-color: #fef7f2;
+      transition: .4s;
+      opacity: .4;
       }
 
     .home{
@@ -172,33 +175,33 @@
    
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <% if request.path != "/materials" %>
+          <% if request.path.first(9) != "/materials" %>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/materials" style="color: white"><i class="fas fa-search"></i></a>
           </li>
           <% end %>
-          <% if request.path == "/materials" %>
+          <% if request.path.first(9) == "/materials" %>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/materials" style="color: #E9832A"><i class="fas fa-search"></i></a>
           </li>
           <% end %>
-          <% if request.path != "/palettes" %>
+          <% if request.path.first(9) != "/palettes" %>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/palettes"><i class="fas fa-swatchbook"></i></a>
           </li>
           <% end %>
-          <% if request.path == "/palettes" %>
+          <% if request.path.first(9) == "/palettes" %>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/palettes" style="color: #E9832A"><i class="fas fa-swatchbook"></i></a>
           </li>
           <% end %>
-          <% if request.path != "/projects" %>
+          <% if request.path.first(9) != "/projects" %>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/projects"><i class="far fa-building"></i></a>
           </li>
           <% end %>
-          <% if request.path == "/projects" %>
-          <li class="nav-item">
+          <% if request.path.first(9) == "/projects" %>
+          <li class="nav-item circlebtn">
             <a class="nav-link active" aria-current="page" href="/projects" style="color: #E9832A"><i class="far fa-building"></i></a>
           </li>
           <% end %>
