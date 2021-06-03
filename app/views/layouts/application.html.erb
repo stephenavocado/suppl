@@ -174,12 +174,12 @@
    
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <% if request.path.first(9) != "/materials" %>
+          <% if request.path.first(10) != "/materials" %>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/materials" style="color: white"><i class="fas fa-search"></i></a>
           </li>
           <% end %>
-          <% if request.path.first(9) == "/materials" %>
+          <% if request.path.first(10) == "/materials" %>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/materials" style="color: #E9832A"><i class="fas fa-search"></i></a>
           </li>
@@ -204,12 +204,12 @@
             <a class="nav-link active" aria-current="page" href="/projects" style="color: #E9832A"><i class="far fa-building"></i></a>
           </li>
           <% end %>
-          <% if request.path.first(9) != "/user" %>
+          <% if request.path.first(5) != "/user" %>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/user/<%=session.fetch(:user_id)%>"><i class="fas fa-tachometer-alt"></i></a>
           </li>
           <% end %>
-          <% if request.path.first(9) == "/user" %>
+          <% if request.path.first(5) == "/user" %>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/user/<%=session.fetch(:user_id)%>" style="color: #E9832A"><i class="fas fa-tachometer-alt"></i></a>
           </li>
