@@ -26,7 +26,7 @@
     <h4>Invitations</h4>
     <hr>
 
-    <% @list_of_invitations.each do |an_invitation| %>
+    <% @current_user.invitation_requests.each do |an_invitation| %>
       <% if an_invitation.status == "Sent" %>
 
       <%= render "/invitations/invitation_card", {:the_invitation => an_invitation} %>

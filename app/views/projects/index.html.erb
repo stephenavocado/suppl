@@ -32,6 +32,8 @@
     <% end %>
 
     <% @current_user.invitation_requests.each do |a_project| %>
+      <% if a_project.status == "Accepted" %>
+
 
       <div class="card mb-3">
         <div class="row g-0">
@@ -51,6 +53,7 @@
 
         </div>
       </div>
+    <%end%>
     <%end%>
 
     
